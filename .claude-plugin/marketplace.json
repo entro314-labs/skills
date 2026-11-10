@@ -14,6 +14,20 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/ui-declutter"]
+    },
+    {
+      "name": "brand-writing",
+      "description": "Six interlocking writing skills: positioning and messaging, brand voice, copywriting, landing-page copy, copy editing and UX writing.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/positioning-messaging",
+        "./skills/brand-voice",
+        "./skills/copywriting",
+        "./skills/landing-page-copy",
+        "./skills/copy-editing",
+        "./skills/ux-writing"
+      ]
     }
   ]
 }
