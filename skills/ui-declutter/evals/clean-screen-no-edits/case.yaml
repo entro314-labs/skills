@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: clean-screen-no-edits
+expected_outcome: |
+  The verdict is none. Settings.tsx is not modified. The password rule and the account-deletion consequence are recognised as text the user needs, and at most two optional refinements are offered.
+context:
+  scaffold_script: place-files.sh

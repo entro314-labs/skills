@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: pause-menu-stacked-titles
+expected_outcome: |
+  The pause menu ends with a single line telling the player the game is paused. The pointer-lock note is no longer visible text and survives as a code comment or is removed. The four menu buttons, the click handler and the heavy display styling are unchanged, and the report states who the user is and what was cut.
+context:
+  scaffold_script: place-files.sh

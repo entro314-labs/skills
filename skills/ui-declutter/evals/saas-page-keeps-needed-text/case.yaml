@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: saas-page-keeps-needed-text
+expected_outcome: |
+  Filler is cut across the default view and the loading, success, error, empty and confirmation states, while the seat limit and the charge disclosure are kept. No new product claims are written. The unsourced Trusted by line is removed and raised with the owner, and the report notes that the catch block discards the error cause.
+context:
+  scaffold_script: place-files.sh

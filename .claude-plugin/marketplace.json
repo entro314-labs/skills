@@ -1,0 +1,19 @@
+{
+  "name": "entro314-labs",
+  "owner": {
+    "name": "entro314.labs",
+    "url": "https://github.com/entro314-labs"
+  },
+  "metadata": {
+    "description": "Agent Skills from entro314.labs"
+  },
+  "plugins": [
+    {
+      "name": "ui-declutter",
+      "description": "Edit the visible text and decoration of an interface down to what its user needs.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/ui-declutter"]
+    }
+  ]
+}

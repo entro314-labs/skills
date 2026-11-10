@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Blackout Protocol</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #14171c; color: #ece8df; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; }
+  .panel { width: 420px; padding: 32px 28px 28px; background: #0b0c0e; border: 1px solid #2a2d33; border-top: 3px solid #f2b25a; }
+  .eyebrow { margin: 0 0 4px; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #8b8f98; }
+  h1 { margin: 0; font-size: 72px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1; }
+  .hint { margin: 12px 0 24px; font-family: ui-monospace, monospace; font-size: 12px; color: #8b8f98; }
+  .menu { display: grid; gap: 12px; }
+  .menu button { padding: 14px 18px; text-align: left; font: inherit; font-size: 16px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: #ece8df; background: transparent; border: 1px solid #5a5d63; cursor: pointer; }
+  .menu button.primary { background: #f2b25a; color: #0b0c0e; border-color: #f2b25a; }
+</style>
+</head>
+<body>
+  <div class="panel" role="dialog" aria-labelledby="pause-title">
+    <p class="eyebrow">Operation on hold</p>
+    <h1 id="pause-title">Paused</h1>
+    <p class="hint">Resume recaptures the mouse.</p>
+    <div class="menu">
+      <button class="primary" id="resume">Resume</button>
+      <button id="settings">Settings</button>
+      <button id="controls">Controls</button>
+      <button id="restart">Restart mission</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById('resume').addEventListener('click', () => {
+      document.body.requestPointerLock();
+      window.dispatchEvent(new CustomEvent('game:resume'));
+    });
+  </script>
+</body>
+</html>
