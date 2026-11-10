@@ -35,6 +35,10 @@ Seven skills for making videos in React with [Remotion](https://www.remotion.dev
 | [remotion-promo-videos](skills/remotion-promo-videos/SKILL.md) | Planning and building promo, launch and short-form social videos, with templates. |
 | [remotion-rendering](skills/remotion-rendering/SKILL.md) | Rendering to video, stills, GIF and transparent video from the CLI or Node.js. |
 
+### crete
+
+[Athens to Crete](https://github.com/entro314-labs/athens-to-crete), an integration-first engineering methodology: understand the real problem, reuse what exists, verify the path end to end. It is a full Claude Code plugin with ten `/crete:*` commands, four subagents, a session-start reminder and the `athens-to-crete` skill. It lives in its own repository and is listed here so it installs from the same marketplace; `npx skills` users install it from that repository.
+
 ## Install
 
 ### Claude Code
@@ -46,6 +50,7 @@ Add the marketplace once, then install the plugins you want:
 /plugin install ui-declutter@entro314-labs
 /plugin install brand-writing@entro314-labs
 /plugin install remotion@entro314-labs
+/plugin install crete@entro314-labs
 ```
 
 The same from a shell:
@@ -55,6 +60,7 @@ claude plugin marketplace add entro314-labs/skills
 claude plugin install ui-declutter@entro314-labs
 claude plugin install brand-writing@entro314-labs
 claude plugin install remotion@entro314-labs
+claude plugin install crete@entro314-labs
 ```
 
 ### Other agents

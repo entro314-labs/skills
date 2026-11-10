@@ -45,6 +45,14 @@
         "./skills/remotion-promo-videos",
         "./skills/remotion-rendering"
       ]
+    },
+    {
+      "name": "crete",
+      "description": "Athens to Crete: an integration-first engineering methodology, with commands, agents, a session hook and a skill.",
+      "source": {
+        "source": "github",
+        "repo": "entro314-labs/athens-to-crete"
+      }
     }
   ]
 }

@@ -8,3 +8,4 @@
 - `ui-declutter` skill.
 - `brand-writing` plugin with six skills: `positioning-messaging`, `brand-voice`, `copywriting`, `landing-page-copy`, `copy-editing` and `ux-writing`.
 - `remotion` plugin with seven skills: `remotion-core`, `remotion-project-conventions`, `remotion-transitions`, `remotion-maplibre-maps`, `remotion-explainer-videos`, `remotion-promo-videos` and `remotion-rendering`.
+- `crete` plugin (Athens to Crete methodology), installed from its own repository `entro314-labs/athens-to-crete`.
