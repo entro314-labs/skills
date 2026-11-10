@@ -23,7 +23,7 @@ Six writing skills that install together as the `brand-writing` plugin. Intended
 
 ### remotion
 
-Seven skills for making videos in React with [Remotion](https://www.remotion.dev) (v4+), installed together as the `remotion` plugin. `remotion-core` is the core; the others build on it. Remotion has its own license terms for company use.
+Eight skills for making videos in React with [Remotion](https://www.remotion.dev) (v4+), installed together as the `remotion` plugin. `remotion-core` is the core; the others build on it. Remotion has its own license terms for company use.
 
 | Skill | What it does |
 | --- | --- |
@@ -33,6 +33,7 @@ Seven skills for making videos in React with [Remotion](https://www.remotion.dev
 | [remotion-maplibre-maps](skills/remotion-maplibre-maps/SKILL.md) | Animated maps with MapLibre and Turf, with no account, API key or token. |
 | [remotion-explainer-videos](skills/remotion-explainer-videos/SKILL.md) | Workflow for explainer, tutorial, walkthrough and diagram-narrated videos. |
 | [remotion-promo-videos](skills/remotion-promo-videos/SKILL.md) | Planning and building promo, launch and short-form social videos, with templates. |
+| [remotion-product-film](skills/remotion-product-film/SKILL.md) | Writes a product video brief from the codebase, then builds a cinematic film from the real interface: perspective camera, lifted components, checks and delivery package. |
 | [remotion-rendering](skills/remotion-rendering/SKILL.md) | Rendering to video, stills, GIF and transparent video from the CLI or Node.js. |
 
 ### crete

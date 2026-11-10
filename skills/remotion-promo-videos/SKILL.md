@@ -1,13 +1,13 @@
 ---
 name: remotion-promo-videos
-description: Plan and build marketing and promo videos in Remotion (v4+) - product launch and demo videos, AIDA-structured product ads, 15/30/60-second video ads, short-form social videos in 9:16, 4:5, 1:1 and 16:9 variants, chat-conversation mockup videos, text-on-b-roll shorts, narrated illustrated shorts, cinematic launch films with perspective camera and lifted UI, plus shot-by-shot storyboards and promo scripts. Includes brand-agnostic React templates, safe-zone and text-size rules, pacing and transition guidance, and an AIDA plan generator script. Use when the user asks for a promo video, launch video, product demo, video ad, Reel/TikTok/Short, a chat-style video, a video script or storyboard, or multi-format social exports from one Remotion project.
+description: Plan and build marketing and promo videos in Remotion (v4+) - product launch and demo videos, AIDA-structured product ads, 15/30/60-second video ads, short-form social videos in 9:16, 4:5, 1:1 and 16:9 variants, chat-conversation mockup videos, text-on-b-roll shorts, narrated illustrated shorts, plus shot-by-shot storyboards and promo scripts. Includes brand-agnostic React templates, safe-zone and text-size rules, pacing and transition guidance, and an AIDA plan generator script. Use when the user asks for a promo video, launch video, product demo, video ad, Reel/TikTok/Short, a chat-style video, a video script or storyboard, or multi-format social exports from one Remotion project.
 ---
 
 # Remotion promo videos
 
 One workflow for videos whose job is to make someone act: understand the brief, pick a story structure, pick the format, build scenes from data-driven templates, QA against the checklist, preview, and render only when asked. Everything runs locally: Remotion, React, Node, FFmpeg, and files you supply or own. No image, video or voice generation services, no hosted APIs.
 
-Core Remotion API, project setup and Studio: `remotion-core`. Transitions: `remotion-transitions`. Render flags and automation: `remotion-rendering`. Code conventions and accessibility: `remotion-project-conventions`. Check Remotion's license terms for commercial promo work.
+Core Remotion API, project setup and Studio: `remotion-core`. Transitions: `remotion-transitions`. Render flags and automation: `remotion-rendering`. Code conventions and accessibility: `remotion-project-conventions`. Cinematic launch films built from the real interface: `remotion-product-film`. Check Remotion's license terms for commercial promo work.
 
 ## Workflow
 
@@ -30,7 +30,7 @@ Core Remotion API, project setup and Studio: `remotion-core`. Transitions: `remo
 | Chat conversation video | Event timeline | `templates/chat-mockup/`, [short-form-styles.md](references/short-form-styles.md) B |
 | Narrated story over images | Curiosity hook, loop | `templates/narrated-slides/`, [short-form-styles.md](references/short-form-styles.md) C |
 | Demo built from the real product | Storyboard with intro and outro | [story-structures.md](references/story-structures.md) sections 5-6 |
-| High-end launch film, multi-placement package | Evidence-to-film | [references/cinematic-product-launch.md](references/cinematic-product-launch.md) |
+| High-end launch film from the real interface, multi-placement package | Evidence-to-film | the `remotion-product-film` skill |
 | Plan only: script, storyboard, shot list | Script template | [story-structures.md](references/story-structures.md) section 6 |
 
 ## Templates
@@ -89,4 +89,3 @@ npx remotion render ProductAida out/aida.mp4 --props=plan.json
 - [references/formats-and-safe-zones.md](references/formats-and-safe-zones.md): canvases, platform limits, safe zones, text sizes, multi-format registration, render commands, 2x masters
 - [references/motion-and-pacing.md](references/motion-and-pacing.md): avoid/pursue, transitions, timing and spring values, persistent layers, style, quality tests, audio and narration timing
 - [references/short-form-styles.md](references/short-form-styles.md): text-on-b-roll, chat mockup, narrated illustrated short
-- [references/cinematic-product-launch.md](references/cinematic-product-launch.md): evidence-to-film launch package (folded-in source prompt)

@@ -33,7 +33,7 @@
     },
     {
       "name": "remotion",
-      "description": "Seven skills for making videos in React with Remotion: core practices, project conventions, transitions, maps, explainer videos, promo videos and rendering.",
+      "description": "Eight skills for making videos in React with Remotion: core practices, project conventions, transitions, maps, explainer videos, promo videos, product films and rendering.",
       "source": "./",
       "strict": false,
       "skills": [
@@ -43,6 +43,7 @@
         "./skills/remotion-maplibre-maps",
         "./skills/remotion-explainer-videos",
         "./skills/remotion-promo-videos",
+        "./skills/remotion-product-film",
         "./skills/remotion-rendering"
       ]
     },
