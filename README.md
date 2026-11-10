@@ -21,6 +21,20 @@ Six writing skills that install together as the `brand-writing` plugin. Intended
 | [copy-editing](skills/copy-editing/SKILL.md) | Improves existing copy in seven focused passes, with a readability scorer. |
 | [ux-writing](skills/ux-writing/SKILL.md) | Interface microcopy: buttons, labels, errors, empty states, forms and notifications. |
 
+### remotion
+
+Seven skills for making videos in React with [Remotion](https://www.remotion.dev) (v4+), installed together as the `remotion` plugin. `remotion-core` is the core; the others build on it. Remotion has its own license terms for company use.
+
+| Skill | What it does |
+| --- | --- |
+| [remotion-core](skills/remotion-core/SKILL.md) | Core Remotion guidance: compositions, frame-driven animation, timing, media, fonts, 3D and effects. |
+| [remotion-project-conventions](skills/remotion-project-conventions/SKILL.md) | Naming, file organisation, theming, accessibility and testing for a Remotion codebase. |
+| [remotion-transitions](skills/remotion-transitions/SKILL.md) | Scene transitions, light leaks and custom presentations with `@remotion/transitions`. |
+| [remotion-maplibre-maps](skills/remotion-maplibre-maps/SKILL.md) | Animated maps with MapLibre and Turf, with no account, API key or token. |
+| [remotion-explainer-videos](skills/remotion-explainer-videos/SKILL.md) | Workflow for explainer, tutorial, walkthrough and diagram-narrated videos. |
+| [remotion-promo-videos](skills/remotion-promo-videos/SKILL.md) | Planning and building promo, launch and short-form social videos, with templates. |
+| [remotion-rendering](skills/remotion-rendering/SKILL.md) | Rendering to video, stills, GIF and transparent video from the CLI or Node.js. |
+
 ## Install
 
 ### Claude Code
@@ -31,6 +45,7 @@ Add the marketplace once, then install the plugins you want:
 /plugin marketplace add entro314-labs/skills
 /plugin install ui-declutter@entro314-labs
 /plugin install brand-writing@entro314-labs
+/plugin install remotion@entro314-labs
 ```
 
 The same from a shell:
@@ -39,6 +54,7 @@ The same from a shell:
 claude plugin marketplace add entro314-labs/skills
 claude plugin install ui-declutter@entro314-labs
 claude plugin install brand-writing@entro314-labs
+claude plugin install remotion@entro314-labs
 ```
 
 ### Other agents

@@ -13,7 +13,9 @@
       "description": "Edit the visible text and decoration of an interface down to what its user needs.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/ui-declutter"]
+      "skills": [
+        "./skills/ui-declutter"
+      ]
     },
     {
       "name": "brand-writing",
@@ -27,6 +29,21 @@
         "./skills/landing-page-copy",
         "./skills/copy-editing",
         "./skills/ux-writing"
+      ]
+    },
+    {
+      "name": "remotion",
+      "description": "Seven skills for making videos in React with Remotion: core practices, project conventions, transitions, maps, explainer videos, promo videos and rendering.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/remotion-core",
+        "./skills/remotion-project-conventions",
+        "./skills/remotion-transitions",
+        "./skills/remotion-maplibre-maps",
+        "./skills/remotion-explainer-videos",
+        "./skills/remotion-promo-videos",
+        "./skills/remotion-rendering"
       ]
     }
   ]
