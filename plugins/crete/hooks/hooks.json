@@ -1,0 +1,16 @@
+{
+  "description": "Inject the one-paragraph Athens to Crete reminder whenever a fresh context starts (new session, /clear, or after compaction).",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/philosophy.md\""
+          }
+        ]
+      }
+    ]
+  }
+}

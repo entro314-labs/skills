@@ -37,7 +37,7 @@ Seven skills for making videos in React with [Remotion](https://www.remotion.dev
 
 ### crete
 
-[Athens to Crete](https://github.com/entro314-labs/athens-to-crete), an integration-first engineering methodology: understand the real problem, reuse what exists, verify the path end to end. It is a full Claude Code plugin with ten `/crete:*` commands, four subagents, a session-start reminder and the `athens-to-crete` skill. It lives in its own repository and is listed here so it installs from the same marketplace; `npx skills` users install it from that repository.
+[Athens to Crete](https://github.com/entro314-labs/athens-to-crete), an integration-first engineering methodology: understand the real problem, reuse what exists, verify the path end to end. It is a full Claude Code plugin with ten `/crete:*` commands, four subagents, a session-start reminder and the `athens-to-crete` skill. It lives in [`plugins/crete/`](plugins/crete/README.md).
 
 ## Install
 
