@@ -62,39 +62,26 @@ The Retro-Futurist palette combines deep space tones with vibrant atomic-age acc
 
 ```css
 :root {
-  /* Primary - Space Navy */
-  --space-navy: #0D1B2A;
-  --space-navy-light: #1B3A5F;
-  --space-navy-dark: #06101A;
-
-  /* Secondary - Cosmic Blue */
-  --cosmic-blue: #1B3A5F;
-  --cosmic-blue-light: #2E5A8C;
-  --cosmic-blue-dark: #0F2540;
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
 
   /* Accent - Retro Orange (PRIMARY ACCENT) */
-  --retro-orange: #F77F00;
-  --retro-orange-light: #FFA033;
-  --retro-orange-dark: #CC6600;
+  --retro-orange: var(--color-orange);
+  --retro-orange-light: var(--color-orange-light);
+  --retro-orange-dark: var(--color-orange-dark);
 
   /* Accent - Atomic Teal */
-  --atomic-teal: #00B4D8;
-  --atomic-teal-light: #48CAE4;
-  --atomic-teal-dark: #0096B4;
-
-  /* Warm Accents */
-  --cream: #EAE2B7;
-  --gold: #E9C46A;
-  --coral: #E76F51;
+  --atomic-teal: var(--color-teal);
+  --atomic-teal-light: var(--color-teal-light);
+  --atomic-teal-dark: var(--color-teal-dark);
 
   /* Text Colors */
-  --text-cream: #E0E1DD;
-  --text-white: #FAFAFA;
-  --text-dark: #0D1B2A;
+  --text-cream: var(--color-cream-text);
+  --text-white: var(--color-white);
+  --text-dark: var(--color-space-navy);
 
   /* Functional */
-  --background-primary: var(--space-navy);
-  --background-secondary: var(--cosmic-blue);
+  --background-primary: var(--color-space-navy);
+  --background-secondary: var(--color-cosmic-blue);
   --foreground: var(--text-cream);
   --accent-primary: var(--retro-orange);
   --accent-secondary: var(--atomic-teal);
@@ -141,11 +128,13 @@ The Retro-Futurist palette combines deep space tones with vibrant atomic-age acc
 
 ```css
 :root {
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
+
   /* Space Gradient - Primary Background */
   --gradient-space: linear-gradient(
     180deg,
-    var(--space-navy) 0%,
-    var(--cosmic-blue) 50%,
+    var(--color-space-navy) 0%,
+    var(--color-cosmic-blue) 50%,
     var(--atomic-teal) 100%
   );
 
@@ -153,16 +142,16 @@ The Retro-Futurist palette combines deep space tones with vibrant atomic-age acc
   --gradient-sunset: linear-gradient(
     180deg,
     var(--retro-orange) 0%,
-    var(--coral) 50%,
-    var(--space-navy) 100%
+    var(--color-coral) 50%,
+    var(--color-space-navy) 100%
   );
 
   /* Horizon Gradient - Section Transitions */
   --gradient-horizon: linear-gradient(
     90deg,
-    var(--space-navy) 0%,
-    var(--cosmic-blue-light) 50%,
-    var(--space-navy) 100%
+    var(--color-space-navy) 0%,
+    var(--color-cosmic-blue-light) 50%,
+    var(--color-space-navy) 100%
   );
 
   /* Atomic Glow - Accent Elements */
@@ -277,15 +266,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   --leading-snug: 1.25;
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
-
-  /* Letter Spacing - Key to Retro Feel */
-  --tracking-tight: -0.02em;
-  --tracking-normal: 0;
-  --tracking-wide: 0.05em;
-  --tracking-wider: 0.1em;
-  --tracking-widest: 0.15em;
-  --tracking-ultra: 0.25em;
-  --tracking-mega: 0.35em;
 }
 ```
 
@@ -321,6 +301,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   --text-7xl--line-height: 0.9;
 
   --tracking-*: initial;
+
+  /* Letter Spacing - Key to Retro Feel */
   --tracking-tight: -0.02em;
   --tracking-normal: 0;
   --tracking-wide: 0.05em;

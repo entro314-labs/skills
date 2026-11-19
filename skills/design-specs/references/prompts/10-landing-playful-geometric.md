@@ -139,31 +139,6 @@ For creative tools, design products, or when you want energetic optimism. Bold s
 
 ```css
 :root {
-  /* Primary Palette - Bold & Vibrant */
-  --play-blue: #3B82F6;
-  --play-blue-light: #60A5FA;
-  --play-blue-dark: #2563EB;
-
-  --play-pink: #EC4899;
-  --play-pink-light: #F472B6;
-  --play-pink-dark: #DB2777;
-
-  --play-yellow: #FBBF24;
-  --play-yellow-light: #FCD34D;
-  --play-yellow-dark: #F59E0B;
-
-  --play-green: #10B981;
-  --play-green-light: #34D399;
-  --play-green-dark: #059669;
-
-  --play-purple: #8B5CF6;
-  --play-purple-light: #A78BFA;
-  --play-purple-dark: #7C3AED;
-
-  --play-orange: #F97316;
-  --play-orange-light: #FB923C;
-  --play-orange-dark: #EA580C;
-
   /* Backgrounds */
   --bg-primary: #FAFAFA;
   --bg-secondary: #F4F4F5;
@@ -191,6 +166,7 @@ For creative tools, design products, or when you want energetic optimism. Bold s
 @import "tailwindcss";
 
 @theme {
+  /* Primary Palette - Bold & Vibrant */
   --color-play-blue: #3B82F6;
   --color-play-blue-light: #60A5FA;
   --color-play-blue-dark: #2563EB;

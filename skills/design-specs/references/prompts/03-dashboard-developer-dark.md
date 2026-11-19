@@ -37,19 +37,21 @@ The dashboard uses an IDE-style layout:
 ### CSS Custom Properties
 ```css
 :root {
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
+
   /* Backgrounds - Dark gradient */
-  --bg-base: #0A0A0B;           /* Deepest background */
-  --bg-surface: #111113;         /* Cards, panels */
-  --bg-elevated: #1A1A1D;        /* Modals, popovers */
-  --bg-hover: #222226;           /* Hover states */
-  --bg-active: #2A2A2E;          /* Active/pressed */
-  --bg-selected: #1E3A2F;        /* Selected row (green tint) */
-  --bg-code: #0D0D0F;            /* Code blocks */
+  --bg-base: var(--color-base);           /* Deepest background */
+  --bg-surface: var(--color-surface);         /* Cards, panels */
+  --bg-elevated: var(--color-elevated);        /* Modals, popovers */
+  --bg-hover: var(--color-hover);           /* Hover states */
+  --bg-active: var(--color-active);          /* Active/pressed */
+  --bg-selected: var(--color-selected);        /* Selected row (green tint) */
+  --bg-code: var(--color-code);            /* Code blocks */
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.04);
-  --border-default: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-subtle: var(--color-border-subtle);
+  --border-default: var(--color-border);
+  --border-strong: var(--color-border-strong);
   --border-focus: rgba(16, 185, 129, 0.5);
 
   /* Text */
@@ -59,10 +61,10 @@ The dashboard uses an IDE-style layout:
   --text-code: #E4E4E7;          /* Code text */
 
   /* Accent - Emerald (Developer green) */
-  --accent: #10B981;
-  --accent-hover: #0D9668;
-  --accent-soft: rgba(16, 185, 129, 0.1);
-  --accent-glow: rgba(16, 185, 129, 0.2);
+  --accent: var(--color-accent);
+  --accent-hover: var(--color-accent-hover);
+  --accent-soft: var(--color-accent-soft);
+  --accent-glow: var(--color-accent-glow);
   --accent-glow-strong: rgba(16, 185, 129, 0.4);
 
   /* Semantic Colors */
@@ -76,14 +78,14 @@ The dashboard uses an IDE-style layout:
   --info-soft: rgba(59, 130, 246, 0.15);
 
   /* Syntax Highlighting */
-  --syntax-keyword: #C792EA;     /* Purple - keywords */
-  --syntax-string: #C3E88D;      /* Green - strings */
-  --syntax-number: #F78C6C;      /* Orange - numbers */
-  --syntax-function: #82AAFF;    /* Blue - functions */
-  --syntax-variable: #FFCB6B;    /* Yellow - variables */
-  --syntax-comment: #546E7A;     /* Gray - comments */
-  --syntax-operator: #89DDFF;    /* Cyan - operators */
-  --syntax-property: #F07178;    /* Red - properties */
+  --syntax-keyword: var(--color-syntax-keyword);     /* Purple - keywords */
+  --syntax-string: var(--color-syntax-string);      /* Green - strings */
+  --syntax-number: var(--color-syntax-number);      /* Orange - numbers */
+  --syntax-function: var(--color-syntax-function);    /* Blue - functions */
+  --syntax-variable: var(--color-syntax-variable);    /* Yellow - variables */
+  --syntax-comment: var(--color-syntax-comment);     /* Gray - comments */
+  --syntax-operator: var(--color-syntax-operator);    /* Cyan - operators */
+  --syntax-property: var(--color-syntax-property);    /* Red - properties */
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);

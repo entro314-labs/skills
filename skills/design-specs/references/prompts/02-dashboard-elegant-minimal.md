@@ -75,14 +75,6 @@ The dashboard consists of these elements:
   --info: #3B82F6;
   --info-soft: rgba(59, 130, 246, 0.1);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 32px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 32px rgba(0, 0, 0, 0.08), 0 32px 64px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.08), 0 16px 32px rgba(0, 0, 0, 0.06);
-  --shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.2);
-
   /* Overlay */
   --overlay-light: rgba(0, 0, 0, 0.02);
   --overlay-medium: rgba(0, 0, 0, 0.4);
@@ -152,8 +144,7 @@ The dashboard consists of these elements:
   --radius-lg: 12px;
   --radius-xl: 16px;
 
-  /* Same values as the :root shadows above. In v4 a theme variable and a CSS
-     variable of the same name are one variable, so these cannot be var() references. */
+  /* Shadows: var(--shadow-sm) in plain CSS and the shadow-sm utility read the same variable */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04);
   --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 32px rgba(0, 0, 0, 0.04);

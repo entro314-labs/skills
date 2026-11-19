@@ -41,39 +41,41 @@ The dashboard consists of these elements:
 ### CSS Custom Properties
 ```css
 :root {
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
+
   /* Backgrounds */
-  --bg-base: #FDF9F6;            /* Warm cream - page background */
+  --bg-base: var(--color-cream-100);            /* Warm cream - page background */
   --bg-surface: #FFFFFF;          /* Cards, panels */
   --bg-elevated: #FFFFFF;         /* Modals, popovers */
   --bg-accent: #FFF4ED;           /* Soft peach tint - highlights */
   --bg-accent-secondary: #F0F7F4; /* Soft sage tint */
   --bg-accent-tertiary: #EEF4FD;  /* Soft blue tint */
-  --bg-muted: #FAF6F3;            /* Subtle sections */
+  --bg-muted: var(--color-cream-200);            /* Subtle sections */
 
   /* Text */
-  --text-primary: #2D2A26;        /* Warm dark brown - headlines */
-  --text-secondary: #6B6560;      /* Body text */
-  --text-muted: #9A9590;          /* Captions, labels */
+  --text-primary: var(--color-warm-brown-900);        /* Warm dark brown - headlines */
+  --text-secondary: var(--color-warm-brown-500);      /* Body text */
+  --text-muted: var(--color-warm-brown-300);          /* Captions, labels */
   --text-inverse: #FFFFFF;        /* On colored backgrounds */
   --text-accent: #E85D3B;         /* Accent text */
 
   /* Accent Colors - Warm & Friendly */
-  --accent-coral: #FF7F5C;        /* Primary accent - warm coral */
-  --accent-coral-hover: #F06C48;
-  --accent-coral-soft: rgba(255, 127, 92, 0.1);
-  --accent-coral-softer: rgba(255, 127, 92, 0.05);
+  --accent-coral: var(--color-coral-500);        /* Primary accent - warm coral */
+  --accent-coral-hover: var(--color-coral-600);
+  --accent-coral-soft: var(--color-coral-100);
+  --accent-coral-softer: var(--color-coral-50);
 
-  --accent-sage: #7CB798;         /* Success, positive - sage green */
-  --accent-sage-hover: #6AA588;
-  --accent-sage-soft: rgba(124, 183, 152, 0.1);
+  --accent-sage: var(--color-sage-500);         /* Success, positive - sage green */
+  --accent-sage-hover: var(--color-sage-600);
+  --accent-sage-soft: var(--color-sage-50);
 
-  --accent-blue: #5B8DEF;         /* Info, links - friendly blue */
+  --accent-blue: var(--color-friendly-blue);         /* Info, links - friendly blue */
   --accent-blue-soft: rgba(91, 141, 239, 0.1);
 
-  --accent-gold: #F5A623;         /* Achievements, stars */
+  --accent-gold: var(--color-friendly-gold);         /* Achievements, stars */
   --accent-gold-soft: rgba(245, 166, 35, 0.15);
 
-  --accent-lavender: #A78BFA;     /* Meditation, calm - soft purple */
+  --accent-lavender: var(--color-friendly-lavender);     /* Meditation, calm - soft purple */
   --accent-lavender-soft: rgba(167, 139, 250, 0.1);
 
   /* Semantic Colors */

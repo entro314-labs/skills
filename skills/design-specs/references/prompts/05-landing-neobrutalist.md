@@ -121,36 +121,38 @@ Generate a **single React component** that renders a complete neobrutalist landi
 
 ```css
 :root {
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
+
   /* Backgrounds */
-  --bg-primary: #FFFEF0;      /* Warm off-white, paper-like */
-  --bg-secondary: #E8E4D9;    /* Kraft paper tan */
-  --bg-tertiary: #D4CFC4;     /* Darker kraft */
-  --bg-inverse: #1A1A1A;      /* Near black for inverted sections */
+  --bg-primary: var(--color-neo-cream);      /* Warm off-white, paper-like */
+  --bg-secondary: var(--color-neo-kraft);    /* Kraft paper tan */
+  --bg-tertiary: var(--color-neo-kraft-dark);     /* Darker kraft */
+  --bg-inverse: var(--color-neo-black);      /* Near black for inverted sections */
 
   /* Accent Colors - Bold, No Subtlety */
-  --accent-hot: #FF5C00;      /* Aggressive orange - primary CTA */
-  --accent-electric: #0066FF; /* Pure saturated blue */
-  --accent-acid: #BFFF00;     /* Acid green-yellow */
-  --accent-magenta: #FF00FF;  /* Hot magenta */
-  --accent-cyan: #00FFFF;     /* Electric cyan */
+  --accent-hot: var(--color-neo-hot);      /* Aggressive orange - primary CTA */
+  --accent-electric: var(--color-neo-electric); /* Pure saturated blue */
+  --accent-acid: var(--color-neo-acid);     /* Acid green-yellow */
+  --accent-magenta: var(--color-neo-magenta);  /* Hot magenta */
+  --accent-cyan: var(--color-neo-cyan);     /* Electric cyan */
 
   /* Text */
-  --text-primary: #1A1A1A;    /* Near black */
+  --text-primary: var(--color-neo-black);    /* Near black */
   --text-secondary: #4A4A4A;  /* Dark gray */
   --text-muted: #6B6B6B;      /* Medium gray */
-  --text-inverse: #FFFEF0;    /* Off-white on dark */
+  --text-inverse: var(--color-neo-cream);    /* Off-white on dark */
 
   /* Borders & Shadows - ALWAYS SOLID, NEVER BLURRED */
-  --border-color: #1A1A1A;    /* Black borders */
+  --border-color: var(--color-neo-black);    /* Black borders */
   --border-width: 3px;        /* Thick borders everywhere */
-  --shadow-color: #1A1A1A;    /* Black shadow default */
+  --shadow-color: var(--color-neo-black);    /* Black shadow default */
   --shadow-offset: 6px;       /* Standard offset */
   --shadow-offset-lg: 10px;   /* Large offset for hover */
 
   /* Functional */
-  --success: #00CC66;         /* Bright green */
-  --error: #FF3333;           /* Bright red */
-  --warning: #FFCC00;         /* Yellow */
+  --success: var(--color-neo-success);         /* Bright green */
+  --error: var(--color-neo-error);           /* Bright red */
+  --warning: var(--color-neo-warning);         /* Yellow */
 }
 ```
 

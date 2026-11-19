@@ -43,29 +43,31 @@ The page consists of these sections in order:
 ### CSS Custom Properties
 ```css
 :root {
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
+
   /* Backgrounds */
-  --bg-primary: #F8F6F3;       /* Warm cream - main background */
+  --bg-primary: var(--color-cream-200);       /* Warm cream - main background */
   --bg-secondary: #FFFFFF;      /* Pure white - cards */
-  --bg-tertiary: #F0EDE8;       /* Slightly darker cream - alternating sections */
-  --bg-accent: #FFF9F5;         /* Peachy tint - highlight areas */
+  --bg-tertiary: var(--color-cream-300);       /* Slightly darker cream - alternating sections */
+  --bg-accent: var(--color-cream-100);         /* Peachy tint - highlight areas */
 
   /* Text */
-  --text-primary: #2B2B2B;      /* Deep earth tone - headlines */
-  --text-secondary: #5A5A5A;    /* Medium gray - body text */
+  --text-primary: var(--color-earth-900);      /* Deep earth tone - headlines */
+  --text-secondary: var(--color-earth-700);    /* Medium gray - body text */
   --text-tertiary: #8A8A8A;     /* Light gray - captions, labels */
   --text-inverse: #FFFFFF;      /* White - on colored backgrounds */
 
   /* Accent Colors */
-  --accent-coral: #FF7F6E;      /* Primary CTA, warm emphasis */
-  --accent-coral-hover: #FF6B57;
-  --accent-coral-light: rgba(255, 127, 110, 0.1);
+  --accent-coral: var(--color-coral-500);      /* Primary CTA, warm emphasis */
+  --accent-coral-hover: var(--color-coral-600);
+  --accent-coral-light: var(--color-coral-50);
   --accent-coral-glow: rgba(255, 127, 110, 0.3);
 
-  --accent-sage: #6EC1B5;       /* Secondary accent, trust */
-  --accent-sage-light: rgba(110, 193, 181, 0.1);
+  --accent-sage: var(--color-sage-500);       /* Secondary accent, trust */
+  --accent-sage-light: var(--color-sage-50);
 
-  --accent-lavender: #B4A7D6;   /* Tertiary accent, calm */
-  --accent-lavender-light: rgba(180, 167, 214, 0.1);
+  --accent-lavender: var(--color-lavender-500);   /* Tertiary accent, calm */
+  --accent-lavender-light: var(--color-lavender-50);
 
   --accent-peach: #FFB89A;      /* Warm backgrounds, gradients */
   --accent-gold: #F5C77E;       /* Highlights, stars */

@@ -189,35 +189,6 @@ A landing page inspired by Japanese design principles: Ma (negative space), Wabi
 
 ```css
 :root {
-  /* Base - Rice Paper Whites */
-  --washi: #FAF9F7;
-  --washi-warm: #F5F3EF;
-  --washi-cool: #FAFBFA;
-
-  /* Ink - Sumi Blacks */
-  --sumi: #1A1A1A;
-  --sumi-soft: #2D2D2D;
-  --sumi-light: #666666;
-  --sumi-faint: #999999;
-
-  /* Accent - Vermillion (Shu) */
-  --vermillion: #C7372F;
-  --vermillion-dark: #A62D27;
-
-  /* Secondary - Forest (Matsu) */
-  --matsu: #2D5A4A;
-  --matsu-light: #3D7A64;
-
-  /* Neutral - Stone (Ishi) */
-  --ishi: #8B8680;
-  --ishi-light: #B5B0A8;
-  --ishi-dark: #5C5955;
-
-  /* Natural - Wood (Ki) */
-  --ki: #C4A77D;
-  --ki-light: #D9C9A8;
-  --ki-dark: #A68B5B;
-
   /* Borders */
   --border-subtle: rgba(26, 26, 26, 0.08);
   --border-medium: rgba(26, 26, 26, 0.15);
@@ -231,20 +202,31 @@ A landing page inspired by Japanese design principles: Ma (negative space), Wabi
 @import "tailwindcss";
 
 @theme {
+  /* Base - Rice Paper Whites */
   --color-washi: #FAF9F7;
   --color-washi-warm: #F5F3EF;
   --color-washi-cool: #FAFBFA;
+
+  /* Ink - Sumi Blacks */
   --color-sumi: #1A1A1A;
   --color-sumi-soft: #2D2D2D;
   --color-sumi-light: #666666;
   --color-sumi-faint: #999999;
+
+  /* Accent - Vermillion (Shu) */
   --color-vermillion: #C7372F;
   --color-vermillion-dark: #A62D27;
+
+  /* Secondary - Forest (Matsu) */
   --color-matsu: #2D5A4A;
   --color-matsu-light: #3D7A64;
+
+  /* Neutral - Stone (Ishi) */
   --color-ishi: #8B8680;
   --color-ishi-light: #B5B0A8;
   --color-ishi-dark: #5C5955;
+
+  /* Natural - Wood (Ki) */
   --color-ki: #C4A77D;
   --color-ki-light: #D9C9A8;
   --color-ki-dark: #A68B5B;
@@ -348,8 +330,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   body {
-    background-color: var(--washi);
-    color: var(--sumi);
+    background-color: var(--color-washi);
+    color: var(--color-sumi);
     font-family: var(--font-inter);
     font-weight: 300;
     line-height: 1.9;
@@ -357,8 +339,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   ::selection {
-    background-color: var(--vermillion);
-    color: var(--washi);
+    background-color: var(--color-vermillion);
+    color: var(--color-washi);
   }
 }
 
@@ -370,7 +352,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     font-size: clamp(48px, 8vw, 120px);
     line-height: 1.0;
     letter-spacing: -0.02em;
-    color: var(--sumi);
+    color: var(--color-sumi);
   }
 
   .text-zen-headline {
@@ -396,7 +378,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     font-size: 16px;
     line-height: 1.9;
     letter-spacing: 0.02em;
-    color: var(--sumi-light);
+    color: var(--color-sumi-light);
   }
 
   .text-zen-body-large {
@@ -415,7 +397,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     line-height: 1.6;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--sumi-light);
+    color: var(--color-sumi-light);
   }
 
   .text-zen-label {
@@ -425,7 +407,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     line-height: 1.5;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--sumi-faint);
+    color: var(--color-sumi-faint);
   }
 
   /* Number Typography */
@@ -434,7 +416,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     font-weight: 300;
     font-size: 14px;
     letter-spacing: 0.05em;
-    color: var(--sumi-faint);
+    color: var(--color-sumi-faint);
   }
 
   /* Vertical Text */
@@ -883,13 +865,13 @@ export function Header({ brandName, navItems }: HeaderProps) {
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--sumi-light);
+    color: var(--color-sumi-light);
     text-decoration: none;
     transition: color 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .header-nav-link:hover {
-    color: var(--sumi);
+    color: var(--color-sumi);
   }
 }
 ```
@@ -983,7 +965,7 @@ export function Hero({ headline, subtitle, ctaText, ctaHref }: HeroProps) {
     font-size: clamp(48px, 10vw, 140px);
     line-height: 0.95;
     letter-spacing: -0.03em;
-    color: var(--sumi);
+    color: var(--color-sumi);
     display: block;
   }
 }
@@ -1590,8 +1572,8 @@ export function Footer({ brandName, links, socialLinks }: FooterProps) {
     justify-content: center;
     padding: 16px 32px;
     background-color: transparent;
-    border: 1px solid var(--sumi);
-    color: var(--sumi);
+    border: 1px solid var(--color-sumi);
+    color: var(--color-sumi);
     font-family: var(--font-inter);
     font-weight: 400;
     font-size: 10px;
@@ -1603,8 +1585,8 @@ export function Footer({ brandName, links, socialLinks }: FooterProps) {
   }
 
   .btn-zen-minimal:hover {
-    background-color: var(--sumi);
-    color: var(--washi);
+    background-color: var(--color-sumi);
+    color: var(--color-washi);
   }
 
   /* Ghost variant - even more subtle */
@@ -1615,7 +1597,7 @@ export function Footer({ brandName, links, socialLinks }: FooterProps) {
     padding: 8px 0;
     background: transparent;
     border: none;
-    color: var(--sumi-light);
+    color: var(--color-sumi-light);
     font-family: var(--font-inter);
     font-weight: 400;
     font-size: 10px;
@@ -1627,7 +1609,7 @@ export function Footer({ brandName, links, socialLinks }: FooterProps) {
   }
 
   .btn-zen-ghost:hover {
-    color: var(--sumi);
+    color: var(--color-sumi);
   }
 
   /* With underline animation */
@@ -1635,7 +1617,7 @@ export function Footer({ brandName, links, socialLinks }: FooterProps) {
     position: relative;
     display: inline-block;
     padding: 4px 0;
-    color: var(--sumi);
+    color: var(--color-sumi);
     font-family: var(--font-inter);
     font-weight: 400;
     font-size: 10px;
@@ -1652,7 +1634,7 @@ export function Footer({ brandName, links, socialLinks }: FooterProps) {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--sumi);
+    background-color: var(--color-sumi);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);

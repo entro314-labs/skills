@@ -165,33 +165,35 @@ Generate a **single React component** that renders a complete editorial/magazine
 
 ```css
 :root {
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
+
   /* Paper Tones - Warm, Not Stark */
-  --bg-paper: #FAFAF8;           /* Warm off-white, like quality paper stock */
-  --bg-cream: #F5F4F0;           /* Slightly darker cream for contrast */
-  --bg-ivory: #FFFEF9;           /* Lighter variation */
+  --bg-paper: var(--color-paper);           /* Warm off-white, like quality paper stock */
+  --bg-cream: var(--color-cream);           /* Slightly darker cream for contrast */
+  --bg-ivory: var(--color-ivory);           /* Lighter variation */
 
   /* Text - Ink-Like */
-  --text-primary: #1A1A1A;       /* Near black, not pure black */
-  --text-secondary: #4A4A4A;     /* Dark gray for secondary text */
-  --text-muted: #6B6B6B;         /* Muted for captions, dates */
-  --text-light: #999999;         /* Very light for subtle elements */
+  --text-primary: var(--color-ink);       /* Near black, not pure black */
+  --text-secondary: var(--color-ink-secondary);     /* Dark gray for secondary text */
+  --text-muted: var(--color-ink-muted);         /* Muted for captions, dates */
+  --text-light: var(--color-ink-light);         /* Very light for subtle elements */
 
   /* Editorial Accent - Restrained Use */
-  --accent-editorial: #C41E3A;   /* Classic editorial red - used sparingly */
-  --accent-hover: #A01830;       /* Darker red for hover */
+  --accent-editorial: var(--color-editorial-red);   /* Classic editorial red - used sparingly */
+  --accent-hover: var(--color-editorial-red-dark);       /* Darker red for hover */
 
   /* Rules & Dividers */
-  --rule-heavy: #1A1A1A;         /* Black for heavy rules */
-  --rule-light: #E5E4E0;         /* Light gray for subtle dividers */
-  --rule-medium: #CCCCCC;        /* Medium gray */
+  --rule-heavy: var(--color-rule-heavy);         /* Black for heavy rules */
+  --rule-light: var(--color-rule-light);         /* Light gray for subtle dividers */
+  --rule-medium: var(--color-rule-medium);        /* Medium gray */
 
   /* Functional */
-  --link-color: #1A1A1A;         /* Links same as text */
-  --link-underline: #C41E3A;     /* Red underline on hover */
+  --link-color: var(--color-ink);         /* Links same as text */
+  --link-underline: var(--color-editorial-red);     /* Red underline on hover */
 
   /* Duotone Overlay Colors */
-  --duotone-dark: #1A1A1A;
-  --duotone-light: #F5F4F0;
+  --duotone-dark: var(--color-ink);
+  --duotone-light: var(--color-cream);
 }
 ```
 

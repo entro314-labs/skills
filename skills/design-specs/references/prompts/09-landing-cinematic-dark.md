@@ -143,11 +143,7 @@ Linear's "liquid glass" aesthetic taken further. A landing page that feels like 
 
 ```css
 :root {
-  /* Backgrounds - Near Pure Black */
-  --void: #050505;
-  --void-light: #0A0A0B;
-  --surface: #111113;
-  --surface-elevated: #18181B;
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
 
   /* Text */
   --text-primary: #FAFAFA;
@@ -155,25 +151,9 @@ Linear's "liquid glass" aesthetic taken further. A landing page that feels like 
   --text-dim: #52525B;
   --text-muted: #3F3F46;
 
-  /* Accent - Subtle Indigo */
-  --accent: #6366F1;
-  --accent-glow: rgba(99, 102, 241, 0.15);
-  --accent-dim: rgba(99, 102, 241, 0.08);
-
-  /* Secondary Accent - Emerald */
-  --accent-alt: #10B981;
-  --accent-alt-glow: rgba(16, 185, 129, 0.10);
-
-  /* Glass Effects */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-bg-hover: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-bright: rgba(255, 255, 255, 0.12);
-  --glass-rim: rgba(255, 255, 255, 0.1);
-
   /* Shadows & Glows */
-  --glow-accent: 0 0 80px 20px var(--accent-glow);
-  --glow-accent-alt: 0 0 80px 20px var(--accent-alt-glow);
+  --glow-accent: 0 0 80px 20px var(--color-accent-glow);
+  --glow-accent-alt: 0 0 80px 20px var(--color-accent-alt-glow);
   --shadow-elevated: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 ```
@@ -187,15 +167,22 @@ Linear's "liquid glass" aesthetic taken further. A landing page that feels like 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* Backgrounds - Near Pure Black */
   --color-void: #050505;
   --color-void-light: #0A0A0B;
   --color-surface: #111113;
   --color-surface-elevated: #18181B;
+
+  /* Accent - Subtle Indigo */
   --color-accent: #6366F1;
   --color-accent-glow: rgba(99, 102, 241, 0.15);
   --color-accent-dim: rgba(99, 102, 241, 0.08);
+
+  /* Secondary Accent - Emerald */
   --color-accent-alt: #10B981;
   --color-accent-alt-glow: rgba(16, 185, 129, 0.10);
+
+  /* Glass Effects */
   --color-glass-bg: rgba(255, 255, 255, 0.03);
   --color-glass-bg-hover: rgba(255, 255, 255, 0.05);
   --color-glass-border: rgba(255, 255, 255, 0.08);

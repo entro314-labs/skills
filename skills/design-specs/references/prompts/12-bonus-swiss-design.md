@@ -46,34 +46,25 @@ Swiss Design uses an extremely limited palette. The constraint IS the feature.
 
 ```css
 :root {
-  /* Primary Colors - The Swiss Palette */
-  --swiss-white: #FFFFFF;
-  --swiss-black: #000000;
-  --swiss-red: #FF0000;        /* Pure red - the ONLY accent */
+  /* Colours that also exist in the Tailwind theme point at it, so each value is written once, in @theme. */
 
-  /* Gray Scale - Mathematical Steps */
-  --gray-100: #F5F5F5;         /* 96% white */
-  --gray-200: #E5E5E5;         /* 90% white */
-  --gray-300: #D4D4D4;         /* 83% white */
-  --gray-400: #A3A3A3;         /* 64% white */
-  --gray-500: #737373;         /* 45% white */
-  --gray-600: #525252;         /* 32% white */
-  --gray-700: #404040;         /* 25% white */
-  --gray-800: #262626;         /* 15% white */
-  --gray-900: #171717;         /* 9% white */
+  /* Primary Colors - The Swiss Palette */
+  --swiss-white: var(--color-white);
+  --swiss-black: var(--color-black);
+  --swiss-red: var(--color-red);        /* Pure red - the ONLY accent */
 
   /* Functional Colors */
   --text-primary: var(--swiss-black);
-  --text-secondary: var(--gray-600);
-  --text-tertiary: var(--gray-400);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-400);
   --text-inverted: var(--swiss-white);
 
   --bg-primary: var(--swiss-white);
-  --bg-secondary: var(--gray-100);
+  --bg-secondary: var(--color-gray-100);
   --bg-inverted: var(--swiss-black);
 
-  --border-light: var(--gray-200);
-  --border-medium: var(--gray-400);
+  --border-light: var(--color-gray-200);
+  --border-medium: var(--color-gray-400);
   --border-strong: var(--swiss-black);
 
   --accent: var(--swiss-red);
@@ -93,15 +84,17 @@ Swiss Design uses an extremely limited palette. The constraint IS the feature.
   --color-white: #FFFFFF;
   --color-black: #000000;
   --color-red: #FF0000;
-  --color-gray-100: #F5F5F5;
-  --color-gray-200: #E5E5E5;
-  --color-gray-300: #D4D4D4;
-  --color-gray-400: #A3A3A3;
-  --color-gray-500: #737373;
-  --color-gray-600: #525252;
-  --color-gray-700: #404040;
-  --color-gray-800: #262626;
-  --color-gray-900: #171717;
+
+  /* Gray Scale - Mathematical Steps */
+  --color-gray-100: #F5F5F5; /* 96% white */
+  --color-gray-200: #E5E5E5; /* 90% white */
+  --color-gray-300: #D4D4D4; /* 83% white */
+  --color-gray-400: #A3A3A3; /* 64% white */
+  --color-gray-500: #737373; /* 45% white */
+  --color-gray-600: #525252; /* 32% white */
+  --color-gray-700: #404040; /* 25% white */
+  --color-gray-800: #262626; /* 15% white */
+  --color-gray-900: #171717; /* 9% white */
 }
 ```
 
@@ -243,15 +236,6 @@ The type scale follows a mathematical ratio (1.333 - Perfect Fourth):
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
   --leading-loose: 2;
-
-  /* Letter Spacing */
-  --tracking-tighter: -0.05em;
-  --tracking-tight: -0.025em;
-  --tracking-normal: 0;
-  --tracking-wide: 0.05em;
-  --tracking-wider: 0.1em;
-  --tracking-widest: 0.15em;
-  --tracking-ultra: 0.25em;
 }
 ```
 
@@ -285,6 +269,8 @@ The type scale follows a mathematical ratio (1.333 - Perfect Fourth):
   --text-7xl--line-height: 0.9;
 
   --tracking-*: initial;
+
+  /* Letter Spacing */
   --tracking-tighter: -0.05em;
   --tracking-tight: -0.025em;
   --tracking-normal: 0;
