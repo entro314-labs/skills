@@ -49,17 +49,19 @@ const visualReferences = {
 // Required dependencies
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "motion": "^14.14.0",
-    "@studio-freight/lenis": "^1.0.0",
-    "clsx": "^2.0.0"
+    "lenis": "^1.3.0",
+    "clsx": "^2.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.2.0",
-    "typescript": "^5.0.0",
-    "tailwindcss": "^3.4.0"
+    "@types/node": "^26.6.0",
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.0",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0"
   }
 }
 ```
@@ -115,53 +117,38 @@ The Retro-Futurist palette combines deep space tones with vibrant atomic-age acc
 
 ### Tailwind Color Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
 
-      // Space Navy
-      'space-navy': {
-        DEFAULT: '#0D1B2A',
-        light: '#1B3A5F',
-        dark: '#06101A',
-      },
-
-      // Cosmic Blue
-      'cosmic-blue': {
-        DEFAULT: '#1B3A5F',
-        light: '#2E5A8C',
-        dark: '#0F2540',
-      },
-
-      // Retro Orange
-      orange: {
-        DEFAULT: '#F77F00',
-        light: '#FFA033',
-        dark: '#CC6600',
-      },
-
-      // Atomic Teal
-      teal: {
-        DEFAULT: '#00B4D8',
-        light: '#48CAE4',
-        dark: '#0096B4',
-      },
-
-      // Warm Accents
-      cream: '#EAE2B7',
-      gold: '#E9C46A',
-      coral: '#E76F51',
-
-      // Text
-      white: '#FAFAFA',
-      'cream-text': '#E0E1DD',
-    },
-  },
-};
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  /* Space Navy */
+  --color-space-navy: #0D1B2A;
+  --color-space-navy-light: #1B3A5F;
+  --color-space-navy-dark: #06101A;
+  /* Cosmic Blue */
+  --color-cosmic-blue: #1B3A5F;
+  --color-cosmic-blue-light: #2E5A8C;
+  --color-cosmic-blue-dark: #0F2540;
+  /* Retro Orange */
+  --color-orange: #F77F00;
+  --color-orange-light: #FFA033;
+  --color-orange-dark: #CC6600;
+  /* Atomic Teal */
+  --color-teal: #00B4D8;
+  --color-teal-light: #48CAE4;
+  --color-teal-dark: #0096B4;
+  /* Warm Accents */
+  --color-cream: #EAE2B7;
+  --color-gold: #E9C46A;
+  --color-coral: #E76F51;
+  /* Text */
+  --color-white: #FAFAFA;
+  --color-cream-text: #E0E1DD;
+}
 ```
 
 ### Gradient Definitions
@@ -211,21 +198,15 @@ module.exports = {
 
 ### Tailwind Gradient Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-space': 'linear-gradient(180deg, #0D1B2A 0%, #1B3A5F 50%, #00B4D8 100%)',
-        'gradient-sunset': 'linear-gradient(180deg, #F77F00 0%, #E76F51 50%, #0D1B2A 100%)',
-        'gradient-horizon': 'linear-gradient(90deg, #0D1B2A 0%, #2E5A8C 50%, #0D1B2A 100%)',
-        'gradient-atomic': 'linear-gradient(135deg, #00B4D8 0%, #0096B4 100%)',
-        'gradient-burst': 'linear-gradient(135deg, #FFA033 0%, #F77F00 50%, #CC6600 100%)',
-      },
-    },
-  },
-};
+```css
+/* src/app/globals.css */
+@theme {
+  --background-image-gradient-space: linear-gradient(180deg, #0D1B2A 0%, #1B3A5F 50%, #00B4D8 100%);
+  --background-image-gradient-sunset: linear-gradient(180deg, #F77F00 0%, #E76F51 50%, #0D1B2A 100%);
+  --background-image-gradient-horizon: linear-gradient(90deg, #0D1B2A 0%, #2E5A8C 50%, #0D1B2A 100%);
+  --background-image-gradient-atomic: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%);
+  --background-image-gradient-burst: linear-gradient(135deg, #FFA033 0%, #F77F00 50%, #CC6600 100%);
+}
 ```
 
 ---
@@ -239,13 +220,13 @@ Typography is BOLD, GEOMETRIC, and WIDE-TRACKED. Think Futura, not Helvetica.
 ```css
 :root {
   /* Display Font - Geometric Sans */
-  --font-display: 'Space Grotesk', 'Futura', 'Avant Garde Gothic', sans-serif;
+  --font-display: var(--font-space-grotesk), 'Futura', 'Avant Garde Gothic', sans-serif;
 
   /* Body Font - Readable Geometric */
-  --font-body: 'Inter', 'Jost', sans-serif;
+  --font-body: var(--font-inter), 'Jost', sans-serif;
 
   /* Mono Font - Retro Numbers */
-  --font-mono: 'Space Mono', 'JetBrains Mono', monospace;
+  --font-mono: var(--font-space-mono), 'JetBrains Mono', monospace;
 }
 ```
 
@@ -258,21 +239,21 @@ import { Space_Grotesk, Space_Mono, Inter } from 'next/font/google';
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-display',
+  variable: '--font-space-grotesk',
   display: 'swap',
 });
 
 const spaceMono = Space_Mono({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-mono',
+  variable: '--font-space-mono',
   display: 'swap',
 });
 
 const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
-  variable: '--font-body',
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -324,39 +305,50 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ### Tailwind Typography Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    fontFamily: {
-      display: ['var(--font-display)', 'Futura', 'sans-serif'],
-      body: ['var(--font-body)', 'Inter', 'sans-serif'],
-      mono: ['var(--font-mono)', 'Space Mono', 'monospace'],
-    },
-    fontSize: {
-      'xs': ['0.75rem', { lineHeight: '1rem' }],
-      'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-      'base': ['1rem', { lineHeight: '1.5rem' }],
-      'lg': ['1.25rem', { lineHeight: '1.75rem' }],
-      'xl': ['1.5rem', { lineHeight: '2rem' }],
-      '2xl': ['2rem', { lineHeight: '2.25rem' }],
-      '3xl': ['2.5rem', { lineHeight: '1.1' }],
-      '4xl': ['3.5rem', { lineHeight: '1.1' }],
-      '5xl': ['4.5rem', { lineHeight: '1' }],
-      '6xl': ['6rem', { lineHeight: '1' }],
-      '7xl': ['8rem', { lineHeight: '0.9' }],
-    },
-    letterSpacing: {
-      tight: '-0.02em',
-      normal: '0',
-      wide: '0.05em',
-      wider: '0.1em',
-      widest: '0.15em',
-      ultra: '0.25em',
-      mega: '0.35em',
-    },
-  },
-};
+```css
+/* src/app/globals.css */
+@theme {
+  --font-*: initial;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 2rem;
+  --text-2xl--line-height: 2.25rem;
+  --text-3xl: 2.5rem;
+  --text-3xl--line-height: 1.1;
+  --text-4xl: 3.5rem;
+  --text-4xl--line-height: 1.1;
+  --text-5xl: 4.5rem;
+  --text-5xl--line-height: 1;
+  --text-6xl: 6rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 8rem;
+  --text-7xl--line-height: 0.9;
+
+  --tracking-*: initial;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.15em;
+  --tracking-ultra: 0.25em;
+  --tracking-mega: 0.35em;
+}
+
+@theme inline {
+  --font-display: var(--font-space-grotesk), Futura, sans-serif;
+  --font-body: var(--font-inter), Inter, sans-serif;
+  --font-mono: var(--font-space-mono), "Space Mono", monospace;
+}
 ```
 
 ### Typography Classes
@@ -452,7 +444,7 @@ export function Typography({
       className={cn(
         variantStyles[variant],
         glow && 'drop-shadow-[0_0_20px_rgba(247,127,0,0.5)]',
-        outline && 'text-transparent bg-clip-text bg-gradient-to-r from-cream to-cream [-webkit-text-stroke:2px_#E0E1DD]',
+        outline && 'text-transparent bg-clip-text bg-linear-to-r from-cream to-cream [-webkit-text-stroke:2px_#E0E1DD]',
         className
       )}
     >
@@ -788,7 +780,7 @@ export const typewriter = (text: string, speed: number = 100) => {
 // lib/scroll.ts
 'use client';
 
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 export function initSmoothScroll() {
   const lenis = new Lenis({
@@ -1041,10 +1033,10 @@ Retro buttons have angled shapes and bold colors.
 ```tsx
 // components/Button.tsx
 import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import { motion, type HTMLMotionProps } from 'motion/react';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+// React 19: ref is a regular prop (HTMLMotionProps<'button'> includes it), so no forwardRef
+interface ButtonProps extends HTMLMotionProps<'button'> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   angled?: boolean;
@@ -1063,32 +1055,27 @@ const sizes = {
   lg: 'px-10 py-4 text-base',
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'primary', size = 'md', angled = true, className, children, ...props }, ref) => {
-    return (
-      <motion.button
-        ref={ref}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.98 }}
-        className={cn(
-          'font-display font-bold uppercase tracking-widest',
-          'transition-colors duration-300',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 focus-visible:ring-offset-space-navy',
-          'disabled:opacity-50 disabled:pointer-events-none',
-          angled && 'clip-path-angled', // Custom clip-path class
-          variants[variant],
-          sizes[size],
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </motion.button>
-    );
-  }
-);
-
-Button.displayName = 'Button';
+export function Button({ variant = 'primary', size = 'md', angled = true, className, children, ...props }: ButtonProps) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+      className={cn(
+        'font-display font-bold uppercase tracking-widest',
+        'transition-colors duration-300',
+        'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 focus-visible:ring-offset-space-navy',
+        'disabled:opacity-50 disabled:pointer-events-none',
+        angled && 'clip-path-angled', // Custom clip-path class
+        variants[variant],
+        sizes[size],
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </motion.button>
+  );
+}
 ```
 
 ### CSS for Angled Button
@@ -1152,7 +1139,7 @@ export function RetroCard({
       <div className="relative z-10">{children}</div>
 
       {/* Subtle glow on hover */}
-      <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-orange/10 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-orange/10 to-transparent pointer-events-none" />
     </motion.div>
   );
 }
@@ -1515,7 +1502,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-space-navy to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-space-navy to-transparent" />
     </section>
   );
 }
@@ -1686,7 +1673,7 @@ export function TechnologySection() {
               <RetroCard variant="glass" cornerAccent>
                 <div className="flex items-start gap-6">
                   {/* Icon */}
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-atomic flex items-center justify-center">
+                  <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-atomic flex items-center justify-center">
                     <span className="text-space-navy text-2xl">{tech.icon}</span>
                   </div>
 
@@ -1770,7 +1757,7 @@ export function TimelineSection() {
           className="relative"
         >
           {/* Center line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal via-orange to-teal -translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-teal via-orange to-teal -translate-x-1/2" />
 
           {/* Timeline items */}
           {timelineSteps.map((step, index) => (
@@ -1832,7 +1819,7 @@ export function CTASection() {
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-space-navy/90 via-space-navy/70 to-space-navy/90" />
+      <div className="absolute inset-0 bg-linear-to-b from-space-navy/90 via-space-navy/70 to-space-navy/90" />
 
       {/* Starbursts */}
       <div className="absolute top-10 left-1/4 opacity-30">
@@ -1932,7 +1919,7 @@ export function ContactSection() {
               <input
                 type="text"
                 placeholder="Your name"
-                className="w-full px-4 py-3 bg-space-navy/50 border-2 border-teal/30 rounded-lg text-cream-text font-body placeholder:text-cream-text/30 focus:outline-none focus:border-orange transition-colors"
+                className="w-full px-4 py-3 bg-space-navy/50 border-2 border-teal/30 rounded-lg text-cream-text font-body placeholder:text-cream-text/30 focus:outline-hidden focus:border-orange transition-colors"
               />
             </motion.div>
             <motion.div variants={fadeUpScale}>
@@ -1942,7 +1929,7 @@ export function ContactSection() {
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="w-full px-4 py-3 bg-space-navy/50 border-2 border-teal/30 rounded-lg text-cream-text font-body placeholder:text-cream-text/30 focus:outline-none focus:border-orange transition-colors"
+                className="w-full px-4 py-3 bg-space-navy/50 border-2 border-teal/30 rounded-lg text-cream-text font-body placeholder:text-cream-text/30 focus:outline-hidden focus:border-orange transition-colors"
               />
             </motion.div>
           </div>
@@ -1954,7 +1941,7 @@ export function ContactSection() {
             <textarea
               rows={6}
               placeholder="Your message..."
-              className="w-full px-4 py-3 bg-space-navy/50 border-2 border-teal/30 rounded-lg text-cream-text font-body placeholder:text-cream-text/30 focus:outline-none focus:border-orange transition-colors resize-none"
+              className="w-full px-4 py-3 bg-space-navy/50 border-2 border-teal/30 rounded-lg text-cream-text font-body placeholder:text-cream-text/30 focus:outline-hidden focus:border-orange transition-colors resize-none"
             />
           </motion.div>
 
@@ -2100,9 +2087,8 @@ export default function Home() {
 
 ```css
 /* app/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @theme tokens: see the Tailwind theme blocks above */
 
 @layer base {
   * {
@@ -2149,30 +2135,28 @@ export default function Home() {
   }
 }
 
-@layer utilities {
-  /* Clip paths */
-  .clip-path-angled {
-    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
-  }
+/* Clip paths */
+@utility clip-path-angled {
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+}
 
-  .clip-path-chevron {
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
-  }
+@utility clip-path-chevron {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
 
-  /* Text effects */
-  .text-glow-orange {
-    text-shadow:
-      0 0 10px rgba(247, 127, 0, 0.5),
-      0 0 20px rgba(247, 127, 0, 0.3),
-      0 0 40px rgba(247, 127, 0, 0.2);
-  }
+/* Text effects */
+@utility text-glow-orange {
+  text-shadow:
+    0 0 10px rgba(247, 127, 0, 0.5),
+    0 0 20px rgba(247, 127, 0, 0.3),
+    0 0 40px rgba(247, 127, 0, 0.2);
+}
 
-  .text-glow-teal {
-    text-shadow:
-      0 0 10px rgba(0, 180, 216, 0.5),
-      0 0 20px rgba(0, 180, 216, 0.3),
-      0 0 40px rgba(0, 180, 216, 0.2);
-  }
+@utility text-glow-teal {
+  text-shadow:
+    0 0 10px rgba(0, 180, 216, 0.5),
+    0 0 20px rgba(0, 180, 216, 0.3),
+    0 0 40px rgba(0, 180, 216, 0.2);
 }
 ```
 
@@ -2191,7 +2175,7 @@ const forbiddenElements = {
   mutedPalette: 'bg-slate-100 text-slate-600', // NEVER
 
   // NO subtle shadows
-  subtleShadow: 'shadow-sm', // NEVER - go bold or none
+  subtleShadow: 'shadow-xs', // NEVER - go bold or none
 
   // NO tiny, delicate typography
   tinyText: 'text-xs font-light tracking-normal', // NEVER

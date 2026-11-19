@@ -3,9 +3,9 @@
 ## Output Requirements
 
 Generate a **single React component** that renders a complete editorial/magazine-style landing page. Requirements:
-- Next.js 14+ with App Router
+- Next.js 16+ with App Router
 - TypeScript strict mode
-- Tailwind CSS with custom configuration below
+- Tailwind CSS v4 with the custom theme below
 - Motion for minimal scroll reveals (images only)
 - Mobile-first responsive design
 - CSS Grid for complex editorial layouts
@@ -195,137 +195,99 @@ Generate a **single React component** that renders a complete editorial/magazine
 }
 ```
 
-### Tailwind Extension (tailwind.config.ts)
+### Tailwind Theme (globals.css)
 
-```typescript
-import type { Config } from 'tailwindcss';
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
 
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  theme: {
-    extend: {
-      colors: {
-        'paper': '#FAFAF8',
-        'cream': '#F5F4F0',
-        'ivory': '#FFFEF9',
-        'ink': '#1A1A1A',
-        'ink-secondary': '#4A4A4A',
-        'ink-muted': '#6B6B6B',
-        'ink-light': '#999999',
-        'editorial-red': '#C41E3A',
-        'editorial-red-dark': '#A01830',
-        'rule-heavy': '#1A1A1A',
-        'rule-light': '#E5E4E0',
-        'rule-medium': '#CCCCCC',
-      },
-      fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'Times New Roman', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
-      },
-      fontSize: {
-        /* Display Sizes - For Headlines */
-        'display-hero': ['clamp(64px, 10vw, 120px)', {
-          lineHeight: '0.95',
-          letterSpacing: '-0.03em',
-          fontWeight: '400',
-        }],
-        'display-xl': ['clamp(48px, 8vw, 96px)', {
-          lineHeight: '1',
-          letterSpacing: '-0.025em',
-          fontWeight: '400',
-        }],
-        'display-lg': ['clamp(40px, 6vw, 72px)', {
-          lineHeight: '1.05',
-          letterSpacing: '-0.02em',
-          fontWeight: '400',
-        }],
-        'display-md': ['clamp(32px, 5vw, 56px)', {
-          lineHeight: '1.1',
-          letterSpacing: '-0.015em',
-          fontWeight: '400',
-        }],
-        'display-sm': ['clamp(28px, 4vw, 40px)', {
-          lineHeight: '1.15',
-          letterSpacing: '-0.01em',
-          fontWeight: '400',
-        }],
+@theme {
+  --color-paper: #FAFAF8;
+  --color-cream: #F5F4F0;
+  --color-ivory: #FFFEF9;
+  --color-ink: #1A1A1A;
+  --color-ink-secondary: #4A4A4A;
+  --color-ink-muted: #6B6B6B;
+  --color-ink-light: #999999;
+  --color-editorial-red: #C41E3A;
+  --color-editorial-red-dark: #A01830;
+  --color-rule-heavy: #1A1A1A;
+  --color-rule-light: #E5E4E0;
+  --color-rule-medium: #CCCCCC;
 
-        /* Section Headlines */
-        'section-title': ['clamp(36px, 5vw, 56px)', {
-          lineHeight: '1.1',
-          letterSpacing: '-0.02em',
-          fontWeight: '400',
-        }],
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
 
-        /* Pull Quotes */
-        'pull-quote': ['clamp(24px, 3vw, 36px)', {
-          lineHeight: '1.35',
-          letterSpacing: '-0.01em',
-          fontWeight: '400',
-        }],
+  /* Display Sizes - For Headlines */
+  --text-display-hero: clamp(64px, 10vw, 120px);
+  --text-display-hero--line-height: 0.95;
+  --text-display-hero--letter-spacing: -0.03em;
+  --text-display-hero--font-weight: 400;
+  --text-display-xl: clamp(48px, 8vw, 96px);
+  --text-display-xl--line-height: 1;
+  --text-display-xl--letter-spacing: -0.025em;
+  --text-display-xl--font-weight: 400;
+  --text-display-lg: clamp(40px, 6vw, 72px);
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 400;
+  --text-display-md: clamp(32px, 5vw, 56px);
+  --text-display-md--line-height: 1.1;
+  --text-display-md--letter-spacing: -0.015em;
+  --text-display-md--font-weight: 400;
+  --text-display-sm: clamp(28px, 4vw, 40px);
+  --text-display-sm--line-height: 1.15;
+  --text-display-sm--letter-spacing: -0.01em;
+  --text-display-sm--font-weight: 400;
+  /* Section Headlines */
+  --text-section-title: clamp(36px, 5vw, 56px);
+  --text-section-title--line-height: 1.1;
+  --text-section-title--letter-spacing: -0.02em;
+  --text-section-title--font-weight: 400;
+  /* Pull Quotes */
+  --text-pull-quote: clamp(24px, 3vw, 36px);
+  --text-pull-quote--line-height: 1.35;
+  --text-pull-quote--letter-spacing: -0.01em;
+  --text-pull-quote--font-weight: 400;
+  /* Body Text */
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 1.75;
+  --text-body-lg--font-weight: 400;
+  --text-body: 18px;
+  --text-body--line-height: 1.7;
+  --text-body--font-weight: 400;
+  --text-body-sm: 16px;
+  --text-body-sm--line-height: 1.65;
+  --text-body-sm--font-weight: 400;
+  /* Utility Text */
+  --text-caption: 12px;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.1em;
+  --text-caption--font-weight: 500;
+  --text-overline: 11px;
+  --text-overline--line-height: 1.4;
+  --text-overline--letter-spacing: 0.15em;
+  --text-overline--font-weight: 600;
+  --text-byline: 14px;
+  --text-byline--line-height: 1.5;
+  --text-byline--letter-spacing: 0.02em;
+  --text-byline--font-weight: 400;
+  /* Section Numbers */
+  --text-section-num: 14px;
+  --text-section-num--line-height: 1;
+  --text-section-num--letter-spacing: 0.1em;
+  --text-section-num--font-weight: 600;
 
-        /* Body Text */
-        'body-lg': ['20px', { lineHeight: '1.75', fontWeight: '400' }],
-        'body': ['18px', { lineHeight: '1.7', fontWeight: '400' }],
-        'body-sm': ['16px', { lineHeight: '1.65', fontWeight: '400' }],
+  --container-prose: 65ch;
+  --container-prose-wide: 75ch;
+  --container-prose-narrow: 55ch;
+  --container-article: 720px;
+  --container-content: 1200px;
+  --container-full-bleed: 1400px;
+}
 
-        /* Utility Text */
-        'caption': ['12px', {
-          lineHeight: '1.5',
-          letterSpacing: '0.1em',
-          fontWeight: '500',
-        }],
-        'overline': ['11px', {
-          lineHeight: '1.4',
-          letterSpacing: '0.15em',
-          fontWeight: '600',
-        }],
-        'byline': ['14px', {
-          lineHeight: '1.5',
-          letterSpacing: '0.02em',
-          fontWeight: '400',
-        }],
-
-        /* Section Numbers */
-        'section-num': ['14px', {
-          lineHeight: '1',
-          letterSpacing: '0.1em',
-          fontWeight: '600',
-        }],
-      },
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-        '26': '6.5rem',
-        '30': '7.5rem',
-        '34': '8.5rem',
-        '38': '9.5rem',
-        '42': '10.5rem',
-      },
-      maxWidth: {
-        'prose': '65ch',
-        'prose-wide': '75ch',
-        'prose-narrow': '55ch',
-        'article': '720px',
-        'content': '1200px',
-        'full-bleed': '1400px',
-      },
-      borderWidth: {
-        '3': '3px',
-        '4': '4px',
-      },
-      transitionDuration: {
-        '600': '600ms',
-        '800': '800ms',
-        '1000': '1000ms',
-      },
-    },
-  },
-  plugins: [],
-};
-
-export default config;
+/* No theme entry needed in v4: spacing 18, spacing 22, spacing 26, spacing 30, spacing 34, spacing 38, spacing 42, border-3, border-4, duration-600, duration-800, duration-1000 */
 ```
 
 ---
@@ -1954,19 +1916,19 @@ export function EditorialLink({ href, children, external }: EditorialLinkProps) 
 ```json
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "motion": "^14.14.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
+    "typescript": "^7.0.0",
+    "@types/node": "^26.6.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "postcss": "^8.5.0"
   }
 }
 ```

@@ -6,7 +6,7 @@ A landing page inspired by Japanese design principles: Ma (negative space), Wabi
 
 ## Output Requirements
 
-- **Framework**: Next.js 14+ with App Router
+- **Framework**: Next.js 16+ with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom configuration
 - **Animation**: Motion (extremely subtle - nearly imperceptible)
@@ -224,98 +224,78 @@ A landing page inspired by Japanese design principles: Ma (negative space), Wabi
 }
 ```
 
-### Tailwind Extension
+### Tailwind Theme
 
-```typescript
-// tailwind.config.ts
-import type { Config } from 'tailwindcss';
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
 
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  theme: {
-    extend: {
-      colors: {
-        washi: {
-          DEFAULT: '#FAF9F7',
-          warm: '#F5F3EF',
-          cool: '#FAFBFA',
-        },
-        sumi: {
-          DEFAULT: '#1A1A1A',
-          soft: '#2D2D2D',
-          light: '#666666',
-          faint: '#999999',
-        },
-        vermillion: {
-          DEFAULT: '#C7372F',
-          dark: '#A62D27',
-        },
-        matsu: {
-          DEFAULT: '#2D5A4A',
-          light: '#3D7A64',
-        },
-        ishi: {
-          DEFAULT: '#8B8680',
-          light: '#B5B0A8',
-          dark: '#5C5955',
-        },
-        ki: {
-          DEFAULT: '#C4A77D',
-          light: '#D9C9A8',
-          dark: '#A68B5B',
-        },
-      },
-      fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-cormorant)', 'Georgia', 'serif'],
-      },
-      fontSize: {
-        'display-xl': ['clamp(48px, 8vw, 120px)', { lineHeight: '1.0', letterSpacing: '-0.02em' }],
-        'display-lg': ['clamp(36px, 5vw, 72px)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
-        'display-md': ['clamp(28px, 4vw, 48px)', { lineHeight: '1.2', letterSpacing: '0' }],
-        'body-lg': ['18px', { lineHeight: '1.9', letterSpacing: '0.02em' }],
-        'body': ['16px', { lineHeight: '1.9', letterSpacing: '0.02em' }],
-        'body-sm': ['14px', { lineHeight: '1.8', letterSpacing: '0.02em' }],
-        'caption': ['11px', { lineHeight: '1.6', letterSpacing: '0.15em' }],
-        'label': ['10px', { lineHeight: '1.5', letterSpacing: '0.2em' }],
-      },
-      fontWeight: {
-        thin: '100',
-        extralight: '200',
-        light: '300',
-        normal: '400',
-      },
-      spacing: {
-        'ma-xs': '40px',
-        'ma-sm': '80px',
-        'ma-md': '120px',
-        'ma-lg': '200px',
-        'ma-xl': '280px',
-      },
-      maxWidth: {
-        'content-narrow': '480px',
-        'content': '640px',
-        'content-wide': '800px',
-        'container': '1200px',
-        'container-wide': '1400px',
-      },
-      transitionDuration: {
-        '800': '800ms',
-        '1000': '1000ms',
-        '1200': '1200ms',
-        '1500': '1500ms',
-        '2000': '2000ms',
-      },
-      transitionTimingFunction: {
-        'zen': 'cubic-bezier(0.25, 0.1, 0.25, 1)',
-        'settle': 'cubic-bezier(0.22, 1, 0.36, 1)',
-      },
-    },
-  },
-  plugins: [],
-};
+@theme {
+  --color-washi: #FAF9F7;
+  --color-washi-warm: #F5F3EF;
+  --color-washi-cool: #FAFBFA;
+  --color-sumi: #1A1A1A;
+  --color-sumi-soft: #2D2D2D;
+  --color-sumi-light: #666666;
+  --color-sumi-faint: #999999;
+  --color-vermillion: #C7372F;
+  --color-vermillion-dark: #A62D27;
+  --color-matsu: #2D5A4A;
+  --color-matsu-light: #3D7A64;
+  --color-ishi: #8B8680;
+  --color-ishi-light: #B5B0A8;
+  --color-ishi-dark: #5C5955;
+  --color-ki: #C4A77D;
+  --color-ki-light: #D9C9A8;
+  --color-ki-dark: #A68B5B;
 
-export default config;
+  --text-display-xl: clamp(48px, 8vw, 120px);
+  --text-display-xl--line-height: 1.0;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-lg: clamp(36px, 5vw, 72px);
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.01em;
+  --text-display-md: clamp(28px, 4vw, 48px);
+  --text-display-md--line-height: 1.2;
+  --text-display-md--letter-spacing: 0;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.9;
+  --text-body-lg--letter-spacing: 0.02em;
+  --text-body: 16px;
+  --text-body--line-height: 1.9;
+  --text-body--letter-spacing: 0.02em;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.8;
+  --text-body-sm--letter-spacing: 0.02em;
+  --text-caption: 11px;
+  --text-caption--line-height: 1.6;
+  --text-caption--letter-spacing: 0.15em;
+  --text-label: 10px;
+  --text-label--line-height: 1.5;
+  --text-label--letter-spacing: 0.2em;
+
+  --spacing-ma-xs: 40px;
+  --spacing-ma-sm: 80px;
+  --spacing-ma-md: 120px;
+  --spacing-ma-lg: 200px;
+  --spacing-ma-xl: 280px;
+
+  --container-content-narrow: 480px;
+  --container-content: 640px;
+  --container-content-wide: 800px;
+  --container-container: 1200px;
+  --container-container-wide: 1400px;
+
+  --ease-zen: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
+}
+
+/* No theme entry needed in v4: font-thin, font-extralight, font-light, font-normal, duration-800, duration-1000, duration-1200, duration-1500, duration-2000 */
 ```
 
 ---
@@ -357,9 +337,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ```css
 /* src/app/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @theme tokens: see the Tailwind theme blocks above */
 
 @layer base {
   html {
@@ -753,7 +732,7 @@ export const imageReveal: Variants = {
 'use client';
 
 import { useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 export function useZenScroll() {
   useEffect(() => {
@@ -849,7 +828,7 @@ export function Header({ brandName, navItems }: HeaderProps) {
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="fixed top-0 left-0 right-0 z-50 bg-washi/80 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-washi/80 backdrop-blur-xs"
     >
       <div className="container-zen">
         <div className="flex items-center justify-between h-20">
@@ -877,7 +856,7 @@ export function Header({ brandName, navItems }: HeaderProps) {
       </div>
 
       {/* Subtle bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sumi/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sumi/10 to-transparent" />
     </motion.header>
   );
 }
@@ -1120,7 +1099,7 @@ export function Feature({
             initial={{ opacity: 0, scale: 1.02 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.02 }}
             transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className={`relative aspect-[4/5] overflow-hidden ${reverse ? 'order-2' : 'order-1'}`}
+            className={`relative aspect-4/5 overflow-hidden ${reverse ? 'order-2' : 'order-1'}`}
           >
             <Image
               src={imageSrc}
@@ -1230,7 +1209,7 @@ export function FullBleedImage({ imageSrc, imageAlt, caption }: FullBleedImagePr
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }}
-        className="relative w-full aspect-[16/9] md:aspect-[21/9]"
+        className="relative w-full aspect-video md:aspect-21/9"
       >
         <Image
           src={imageSrc}
@@ -1993,19 +1972,19 @@ export function ZenImage({
 ```json
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "motion": "^14.14.0",
-    "@studio-freight/lenis": "^1.0.0"
+    "lenis": "^1.3.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/react": "^18.2.0",
-    "@types/node": "^20.0.0",
-    "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
+    "typescript": "^7.0.0",
+    "@types/react": "^19.3.0",
+    "@types/node": "^26.6.0",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "postcss": "^8.5.0"
   }
 }
 ```

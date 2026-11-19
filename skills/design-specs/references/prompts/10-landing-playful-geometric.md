@@ -6,7 +6,7 @@ For creative tools, design products, or when you want energetic optimism. Bold s
 
 ## Output Requirements
 
-- **Framework**: Next.js 14+ with App Router
+- **Framework**: Next.js 16+ with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom configuration
 - **Animation**: Motion (spring physics, bouncy feel)
@@ -184,121 +184,92 @@ For creative tools, design products, or when you want energetic optimism. Bold s
 }
 ```
 
-### Tailwind Extension
+### Tailwind Theme
 
-```typescript
-// tailwind.config.ts
-import type { Config } from 'tailwindcss';
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
 
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  theme: {
-    extend: {
-      colors: {
-        play: {
-          blue: {
-            DEFAULT: '#3B82F6',
-            light: '#60A5FA',
-            dark: '#2563EB',
-          },
-          pink: {
-            DEFAULT: '#EC4899',
-            light: '#F472B6',
-            dark: '#DB2777',
-          },
-          yellow: {
-            DEFAULT: '#FBBF24',
-            light: '#FCD34D',
-            dark: '#F59E0B',
-          },
-          green: {
-            DEFAULT: '#10B981',
-            light: '#34D399',
-            dark: '#059669',
-          },
-          purple: {
-            DEFAULT: '#8B5CF6',
-            light: '#A78BFA',
-            dark: '#7C3AED',
-          },
-          orange: {
-            DEFAULT: '#F97316',
-            light: '#FB923C',
-            dark: '#EA580C',
-          },
-        },
-      },
-      fontFamily: {
-        sans: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-cabinet)', 'var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
-      },
-      fontSize: {
-        'display-xl': ['clamp(56px, 12vw, 140px)', { lineHeight: '1.0', letterSpacing: '-0.03em' }],
-        'display-lg': ['clamp(48px, 10vw, 96px)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        'display-md': ['clamp(36px, 6vw, 64px)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        'display-sm': ['clamp(28px, 4vw, 40px)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
-        'body-lg': ['20px', { lineHeight: '1.6' }],
-        'body': ['16px', { lineHeight: '1.6' }],
-        'body-sm': ['14px', { lineHeight: '1.5' }],
-      },
-      fontWeight: {
-        normal: '400',
-        medium: '500',
-        semibold: '600',
-        bold: '700',
-        extrabold: '800',
-      },
-      borderRadius: {
-        'pill': '100px',
-        'blob': '30% 70% 70% 30% / 30% 30% 70% 70%',
-        '2xl': '20px',
-        '3xl': '28px',
-        '4xl': '36px',
-      },
-      boxShadow: {
-        'play-blue': '0 10px 30px -5px rgba(59, 130, 246, 0.4)',
-        'play-pink': '0 10px 30px -5px rgba(236, 72, 153, 0.4)',
-        'play-yellow': '0 10px 30px -5px rgba(251, 191, 36, 0.4)',
-        'play-green': '0 10px 30px -5px rgba(16, 185, 129, 0.4)',
-        'play-purple': '0 10px 30px -5px rgba(139, 92, 246, 0.4)',
-        'play-orange': '0 10px 30px -5px rgba(249, 115, 22, 0.4)',
-        'card': '0 4px 20px rgba(0, 0, 0, 0.08)',
-        'card-hover': '0 20px 40px rgba(0, 0, 0, 0.12)',
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'float-delayed': 'float 6s ease-in-out 2s infinite',
-        'spin-slow': 'spin 30s linear infinite',
-        'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
-        'wiggle': 'wiggle 2s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-          '50%': { transform: 'translateY(-20px) rotate(5deg)' },
-        },
-        'bounce-gentle': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
-        },
-      },
-      rotate: {
-        '-3': '-3deg',
-        '-2': '-2deg',
-        '2': '2deg',
-        '3': '3deg',
-        '5': '5deg',
-      },
-    },
-  },
-  plugins: [],
-};
+@theme {
+  --color-play-blue: #3B82F6;
+  --color-play-blue-light: #60A5FA;
+  --color-play-blue-dark: #2563EB;
+  --color-play-pink: #EC4899;
+  --color-play-pink-light: #F472B6;
+  --color-play-pink-dark: #DB2777;
+  --color-play-yellow: #FBBF24;
+  --color-play-yellow-light: #FCD34D;
+  --color-play-yellow-dark: #F59E0B;
+  --color-play-green: #10B981;
+  --color-play-green-light: #34D399;
+  --color-play-green-dark: #059669;
+  --color-play-purple: #8B5CF6;
+  --color-play-purple-light: #A78BFA;
+  --color-play-purple-dark: #7C3AED;
+  --color-play-orange: #F97316;
+  --color-play-orange-light: #FB923C;
+  --color-play-orange-dark: #EA580C;
 
-export default config;
+  --text-display-xl: clamp(56px, 12vw, 140px);
+  --text-display-xl--line-height: 1.0;
+  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-lg: clamp(48px, 10vw, 96px);
+  --text-display-lg--line-height: 1.05;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: clamp(36px, 6vw, 64px);
+  --text-display-md--line-height: 1.1;
+  --text-display-md--letter-spacing: -0.02em;
+  --text-display-sm: clamp(28px, 4vw, 40px);
+  --text-display-sm--line-height: 1.2;
+  --text-display-sm--letter-spacing: -0.01em;
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 16px;
+  --text-body--line-height: 1.6;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.5;
+
+  --radius-pill: 100px;
+  --radius-blob: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  --radius-2xl: 20px;
+  --radius-3xl: 28px;
+  --radius-4xl: 36px;
+
+  --shadow-play-blue: 0 10px 30px -5px rgba(59, 130, 246, 0.4);
+  --shadow-play-pink: 0 10px 30px -5px rgba(236, 72, 153, 0.4);
+  --shadow-play-yellow: 0 10px 30px -5px rgba(251, 191, 36, 0.4);
+  --shadow-play-green: 0 10px 30px -5px rgba(16, 185, 129, 0.4);
+  --shadow-play-purple: 0 10px 30px -5px rgba(139, 92, 246, 0.4);
+  --shadow-play-orange: 0 10px 30px -5px rgba(249, 115, 22, 0.4);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 2s infinite;
+  --animate-spin-slow: spin 30s linear infinite;
+  --animate-bounce-gentle: bounce-gentle 2s ease-in-out infinite;
+  --animate-wiggle: wiggle 2s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+  @keyframes bounce-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-display: var(--font-cabinet), var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+/* No theme entry needed in v4: font-normal, font-medium, font-semibold, font-bold, font-extrabold, -rotate-3, -rotate-2, rotate-2, rotate-3, rotate-5 */
 ```
 
 ---
@@ -344,9 +315,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ```css
 /* src/app/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @theme tokens: see the Tailwind theme blocks above */
 
 @layer base {
   html {
@@ -1101,7 +1071,7 @@ export function LogoMarquee({ logos }: LogoMarqueeProps) {
           {duplicatedLogos.map((logo, index) => (
             <motion.div
               key={index}
-              className="flex-shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               whileHover={{ scale: 1.1, y: -5 }}
             >
               <Image
@@ -1721,7 +1691,7 @@ export function Footer({ brandName, columns, socialLinks }: FooterProps) {
           {/* Decorative shapes */}
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-play-blue" />
-            <div className="w-2 h-2 rounded bg-play-pink" />
+            <div className="w-2 h-2 rounded-sm bg-play-pink" />
             <div
               className="w-0 h-0"
               style={{
@@ -1835,18 +1805,18 @@ export function Footer({ brandName, columns, socialLinks }: FooterProps) {
 ```json
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "motion": "^14.14.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/react": "^18.2.0",
-    "@types/node": "^20.0.0",
-    "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
+    "typescript": "^7.0.0",
+    "@types/react": "^19.3.0",
+    "@types/node": "^26.6.0",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "postcss": "^8.5.0"
   }
 }
 ```

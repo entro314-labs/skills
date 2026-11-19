@@ -11,7 +11,7 @@ Generate a complete, production-ready developer dashboard using Next.js, TypeScr
 ## Output Requirements
 
 - Single React component (or page with imported components)
-- Next.js 14+ with App Router
+- Next.js 16+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
 - Motion for minimal, fast animations
@@ -98,92 +98,88 @@ The dashboard uses an IDE-style layout:
 }
 ```
 
-### Tailwind Extension
-```javascript
-// tailwind.config.js
-module.exports = {
-  darkMode: 'class',
-  theme: {
-    extend: {
-      colors: {
-        base: '#0A0A0B',
-        surface: '#111113',
-        elevated: '#1A1A1D',
-        hover: '#222226',
-        active: '#2A2A2E',
-        selected: '#1E3A2F',
-        code: '#0D0D0F',
-        accent: {
-          DEFAULT: '#10B981',
-          hover: '#0D9668',
-          soft: 'rgba(16, 185, 129, 0.1)',
-          glow: 'rgba(16, 185, 129, 0.2)',
-        },
-        border: {
-          subtle: 'rgba(255, 255, 255, 0.04)',
-          DEFAULT: 'rgba(255, 255, 255, 0.08)',
-          strong: 'rgba(255, 255, 255, 0.12)',
-        },
-        syntax: {
-          keyword: '#C792EA',
-          string: '#C3E88D',
-          number: '#F78C6C',
-          function: '#82AAFF',
-          variable: '#FFCB6B',
-          comment: '#546E7A',
-          operator: '#89DDFF',
-          property: '#F07178',
-        },
-      },
-      fontFamily: {
-        sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', 'monospace'],
-      },
-      fontSize: {
-        'xs': ['11px', { lineHeight: '14px', letterSpacing: '0.02em' }],
-        'sm': ['12px', { lineHeight: '16px' }],
-        'base': ['13px', { lineHeight: '20px' }],
-        'md': ['14px', { lineHeight: '20px' }],
-        'lg': ['15px', { lineHeight: '22px' }],
-        'xl': ['16px', { lineHeight: '24px' }],
-        '2xl': ['18px', { lineHeight: '26px' }],
-        '3xl': ['20px', { lineHeight: '28px' }],
-        'code': ['13px', { lineHeight: '20px' }],
-      },
-      spacing: {
-        'sidebar': '220px',
-        'inspector': '320px',
-        'command-bar': '48px',
-        'status-bar': '24px',
-      },
-      borderRadius: {
-        'sm': '4px',
-        'md': '6px',
-        'lg': '8px',
-        'xl': '12px',
-      },
-      animation: {
-        'shimmer': 'shimmer 2s infinite linear',
-        'pulse-glow': 'pulse-glow 2s infinite',
-        'slide-in': 'slide-in 0.15s ease-out',
-      },
-      keyframes: {
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
-        'pulse-glow': {
-          '0%, 100%': { opacity: '0.5' },
-          '50%': { opacity: '1' },
-        },
-        'slide-in': {
-          '0%': { transform: 'translateY(-8px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-      },
-    },
-  },
-};
+### Tailwind Theme
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-base: #0A0A0B;
+  --color-surface: #111113;
+  --color-elevated: #1A1A1D;
+  --color-hover: #222226;
+  --color-active: #2A2A2E;
+  --color-selected: #1E3A2F;
+  --color-code: #0D0D0F;
+  --color-accent: #10B981;
+  --color-accent-hover: #0D9668;
+  --color-accent-soft: rgba(16, 185, 129, 0.1);
+  --color-accent-glow: rgba(16, 185, 129, 0.2);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+  --color-syntax-keyword: #C792EA;
+  --color-syntax-string: #C3E88D;
+  --color-syntax-number: #F78C6C;
+  --color-syntax-function: #82AAFF;
+  --color-syntax-variable: #FFCB6B;
+  --color-syntax-comment: #546E7A;
+  --color-syntax-operator: #89DDFF;
+  --color-syntax-property: #F07178;
+
+  --font-sans: Inter, "SF Pro Display", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
+
+  --text-xs: 11px;
+  --text-xs--line-height: 14px;
+  --text-xs--letter-spacing: 0.02em;
+  --text-sm: 12px;
+  --text-sm--line-height: 16px;
+  --text-base: 13px;
+  --text-base--line-height: 20px;
+  --text-md: 14px;
+  --text-md--line-height: 20px;
+  --text-lg: 15px;
+  --text-lg--line-height: 22px;
+  --text-xl: 16px;
+  --text-xl--line-height: 24px;
+  --text-2xl: 18px;
+  --text-2xl--line-height: 26px;
+  --text-3xl: 20px;
+  --text-3xl--line-height: 28px;
+  /* Named code-size, not code: --text-code is already the code text colour in :root */
+  --text-code-size: 13px;
+  --text-code-size--line-height: 20px;
+
+  --spacing-sidebar: 220px;
+  --spacing-inspector: 320px;
+  --spacing-command-bar: 48px;
+  --spacing-status-bar: 24px;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  --animate-shimmer: shimmer 2s infinite linear;
+  --animate-pulse-glow: pulse-glow 2s infinite;
+  --animate-slide-in: slide-in 0.15s ease-out;
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  @keyframes slide-in {
+    0% { transform: translateY(-8px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+}
 ```
 
 ---

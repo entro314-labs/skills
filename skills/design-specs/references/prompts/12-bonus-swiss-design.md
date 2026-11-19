@@ -31,16 +31,18 @@ Swiss Design is the **opposite** of decorative design. There are:
 // Required dependencies
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "motion": "^14.14.0", // Minimal use - page transitions only
-    "clsx": "^2.0.0"
+    "clsx": "^2.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.2.0",
-    "typescript": "^5.0.0",
-    "tailwindcss": "^3.4.0"
+    "@types/node": "^26.6.0",
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.0",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0"
   }
 }
 ```
@@ -91,30 +93,27 @@ Swiss Design uses an extremely limited palette. The constraint IS the feature.
 
 ### Tailwind Color Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      white: '#FFFFFF',
-      black: '#000000',
-      red: '#FF0000',
-      gray: {
-        100: '#F5F5F5',
-        200: '#E5E5E5',
-        300: '#D4D4D4',
-        400: '#A3A3A3',
-        500: '#737373',
-        600: '#525252',
-        700: '#404040',
-        800: '#262626',
-        900: '#171717',
-      },
-    },
-  },
-};
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-red: #FF0000;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E5E5E5;
+  --color-gray-300: #D4D4D4;
+  --color-gray-400: #A3A3A3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+}
 ```
 
 ### Color Usage Rules
@@ -147,7 +146,7 @@ const incorrectUsage = {
   wrongColor: 'text-blue-500', // NEVER
 
   // NO gradients
-  gradient: 'bg-gradient-to-r', // NEVER
+  gradient: 'bg-linear-to-r', // NEVER
 
   // NO multiple accent colors
   multiAccent: ['red', 'blue'], // NEVER - only red
@@ -269,42 +268,50 @@ The type scale follows a mathematical ratio (1.333 - Perfect Fourth):
 
 ### Tailwind Typography Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    fontSize: {
-      'xs': ['0.75rem', { lineHeight: '1rem' }],
-      'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-      'base': ['1rem', { lineHeight: '1.5rem' }],
-      'lg': ['1.333rem', { lineHeight: '1.75rem' }],
-      'xl': ['1.777rem', { lineHeight: '2rem' }],
-      '2xl': ['2.369rem', { lineHeight: '2.5rem' }],
-      '3xl': ['3.157rem', { lineHeight: '1.1' }],
-      '4xl': ['4.209rem', { lineHeight: '1.1' }],
-      '5xl': ['5.61rem', { lineHeight: '1' }],
-      '6xl': ['7.478rem', { lineHeight: '1' }],
-      '7xl': ['9.969rem', { lineHeight: '0.9' }],
-    },
-    letterSpacing: {
-      tighter: '-0.05em',
-      tight: '-0.025em',
-      normal: '0',
-      wide: '0.05em',
-      wider: '0.1em',
-      widest: '0.15em',
-      ultra: '0.25em',
-    },
-    fontWeight: {
-      light: '300',
-      normal: '400',
-      medium: '500',
-      semibold: '600',
-      bold: '700',
-      black: '900',
-    },
-  },
-};
+```css
+/* src/app/globals.css */
+@theme {
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.333rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.777rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 2.369rem;
+  --text-2xl--line-height: 2.5rem;
+  --text-3xl: 3.157rem;
+  --text-3xl--line-height: 1.1;
+  --text-4xl: 4.209rem;
+  --text-4xl--line-height: 1.1;
+  --text-5xl: 5.61rem;
+  --text-5xl--line-height: 1;
+  --text-6xl: 7.478rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 9.969rem;
+  --text-7xl--line-height: 0.9;
+
+  --tracking-*: initial;
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.15em;
+  --tracking-ultra: 0.25em;
+
+  --font-weight-*: initial;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
 ```
 
 ### Typography Classes
@@ -499,38 +506,29 @@ The grid is the foundation of Swiss Design. Every element must align to the grid
 
 ### Tailwind Grid Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      spacing: {
-        // Baseline grid spacing (8px increments)
-        'baseline': '8px',
-        'baseline-2': '16px',
-        'baseline-3': '24px',
-        'baseline-4': '32px',
-        'baseline-5': '40px',
-        'baseline-6': '48px',
-        'baseline-8': '64px',
-        'baseline-10': '80px',
-        'baseline-12': '96px',
-        'baseline-16': '128px',
-        'baseline-20': '160px',
-        'baseline-24': '192px',
-      },
-      maxWidth: {
-        'swiss': '1440px',
-      },
-      gap: {
-        'gutter': '24px',
-      },
-      padding: {
-        'margin-x': '48px',
-      },
-    },
-  },
-};
+```css
+/* src/app/globals.css */
+@theme {
+  /* Baseline grid spacing (8px increments) */
+  --spacing-baseline: 8px;
+  --spacing-baseline-2: 16px;
+  --spacing-baseline-3: 24px;
+  --spacing-baseline-4: 32px;
+  --spacing-baseline-5: 40px;
+  --spacing-baseline-6: 48px;
+  --spacing-baseline-8: 64px;
+  --spacing-baseline-10: 80px;
+  --spacing-baseline-12: 96px;
+  --spacing-baseline-16: 128px;
+  --spacing-baseline-20: 160px;
+  --spacing-baseline-24: 192px;
+
+  --container-swiss: 1440px;
+
+  --gap-gutter: 24px;
+
+  --padding-margin-x: 48px;
+}
 ```
 
 ### Grid Container Component
@@ -640,7 +638,7 @@ export function GridOverlay() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999]">
+    <div className="fixed inset-0 pointer-events-none z-9999">
       {/* Column Grid */}
       <div className="max-w-swiss mx-auto h-full px-12">
         <div className="grid grid-cols-12 gap-6 h-full">
@@ -695,28 +693,25 @@ All spacing follows the baseline grid (8px increments).
 
 ### Tailwind Spacing
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    spacing: {
-      '0': '0',
-      '1': '8px',
-      '2': '16px',
-      '3': '24px',
-      '4': '32px',
-      '5': '40px',
-      '6': '48px',
-      '8': '64px',
-      '10': '80px',
-      '12': '96px',
-      '16': '128px',
-      '20': '160px',
-      '24': '192px',
-      '32': '256px',
-    },
-  },
-};
+```css
+/* src/app/globals.css */
+@theme {
+  --spacing-*: initial;
+  --spacing-0: 0;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-10: 80px;
+  --spacing-12: 96px;
+  --spacing-16: 128px;
+  --spacing-20: 160px;
+  --spacing-24: 192px;
+  --spacing-32: 256px;
+}
 ```
 
 ### Section Spacing
@@ -783,23 +778,16 @@ Swiss Design uses **minimal to no animation**. Movement is only for **function**
 
 ### Tailwind Transition Configuration
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      transitionDuration: {
-        'instant': '100ms',
-        'fast': '150ms',
-        'normal': '200ms',
-        'slow': '300ms',
-      },
-      transitionTimingFunction: {
-        'swiss': 'ease',
-      },
-    },
-  },
-};
+```css
+/* src/app/globals.css */
+@theme {
+  --transition-duration-instant: 100ms;
+  --transition-duration-fast: 150ms;
+  --transition-duration-normal: 200ms;
+  --transition-duration-slow: 300ms;
+
+  --ease-swiss: ease;
+}
 ```
 
 ### Allowed Animations
@@ -947,9 +935,10 @@ Swiss buttons are rectangular, with no rounded corners. They communicate through
 ```tsx
 // components/Button.tsx
 import { cn } from '@/lib/utils';
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+// React 19: ref is a regular prop (ComponentProps<'button'> includes it), so no forwardRef
+interface ButtonProps extends ComponentProps<'button'> {
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';
 }
@@ -967,31 +956,26 @@ const sizes = {
   lg: 'px-8 py-4 text-base tracking-widest uppercase font-semibold',
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'primary', size = 'md', className, children, ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={cn(
-          // Base styles - NO rounded corners
-          'inline-flex items-center justify-center',
-          'transition-colors duration-instant',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2',
-          'disabled:opacity-50 disabled:pointer-events-none',
-          // Variant and size
-          variants[variant],
-          sizes[size],
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </button>
-    );
-  }
-);
-
-Button.displayName = 'Button';
+export function Button({ variant = 'primary', size = 'md', className, children, ...props }: ButtonProps) {
+  return (
+    <button
+      className={cn(
+        // Base styles - NO rounded corners
+        'inline-flex items-center justify-center',
+        'transition-colors duration-instant',
+        'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2',
+        'disabled:opacity-50 disabled:pointer-events-none',
+        // Variant and size
+        variants[variant],
+        sizes[size],
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
 ```
 
 ### Link Component
@@ -1050,56 +1034,51 @@ export function Link({
 ```tsx
 // components/Input.tsx
 import { cn } from '@/lib/utils';
-import { InputHTMLAttributes, forwardRef } from 'react';
+import { ComponentProps } from 'react';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends ComponentProps<'input'> {
   label?: string;
   error?: string;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, className, id, ...props }, ref) => {
-    const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+export function Input({ label, error, className, id, ...props }: InputProps) {
+  const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
 
-    return (
-      <div className="w-full">
-        {label && (
-          <label
-            htmlFor={inputId}
-            className="block text-xs font-medium tracking-widest uppercase mb-2"
-          >
-            {label}
-          </label>
+  return (
+    <div className="w-full">
+      {label && (
+        <label
+          htmlFor={inputId}
+          className="block text-xs font-medium tracking-widest uppercase mb-2"
+        >
+          {label}
+        </label>
+      )}
+      <input
+        id={inputId}
+        className={cn(
+          // Base styles - sharp corners
+          'w-full px-4 py-3',
+          'bg-white text-black',
+          'border-2 border-black',
+          'text-base font-normal',
+          // Focus state
+          'focus:outline-hidden focus:ring-0 focus:border-red',
+          'transition-colors duration-fast',
+          // Placeholder
+          'placeholder:text-gray-400',
+          // Error state
+          error && 'border-red',
+          className
         )}
-        <input
-          ref={ref}
-          id={inputId}
-          className={cn(
-            // Base styles - sharp corners
-            'w-full px-4 py-3',
-            'bg-white text-black',
-            'border-2 border-black',
-            'text-base font-normal',
-            // Focus state
-            'focus:outline-none focus:ring-0 focus:border-red',
-            'transition-colors duration-fast',
-            // Placeholder
-            'placeholder:text-gray-400',
-            // Error state
-            error && 'border-red',
-            className
-          )}
-          {...props}
-        />
-        {error && (
-          <p className="mt-2 text-xs text-red font-medium">{error}</p>
-        )}
-      </div>
-    );
-  }
-);
-
-Input.displayName = 'Input';
+        {...props}
+      />
+      {error && (
+        <p className="mt-2 text-xs text-red font-medium">{error}</p>
+      )}
+    </div>
+  );
+}
 ```
 
 ### Card Component
@@ -1580,7 +1559,7 @@ export function WorkSection() {
               className="group block"
             >
               {/* Project Image - Grayscale, no rounded corners */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <div className="relative aspect-4/3 overflow-hidden bg-gray-100">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -2044,7 +2023,7 @@ export function ContactSection() {
                 name="message"
                 rows={6}
                 placeholder="Tell us about your project..."
-                className="w-full px-4 py-3 bg-white text-black border-2 border-black focus:outline-none focus:border-red transition-colors duration-fast placeholder:text-gray-400 resize-none"
+                className="w-full px-4 py-3 bg-white text-black border-2 border-black focus:outline-hidden focus:border-red transition-colors duration-fast placeholder:text-gray-400 resize-none"
                 required
               />
             </div>
@@ -2223,9 +2202,8 @@ export default function Home() {
 
 ```css
 /* app/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @theme tokens: see the Tailwind theme blocks above */
 
 @layer base {
   * {
@@ -2281,20 +2259,13 @@ export default function Home() {
   }
 }
 
-@layer utilities {
-  /* Hide scrollbar but keep functionality */
-  .scrollbar-none {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+/* Hide scrollbar but keep functionality */
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
-  .scrollbar-none::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
-  }
-
-  /* Text balance */
-  .text-balance {
-    text-wrap: balance;
   }
 }
 ```
@@ -2358,7 +2329,7 @@ const forbiddenElements = {
   dropShadow: 'drop-shadow-md', // NEVER
 
   // NO gradients
-  gradient: 'bg-gradient-to-r', // NEVER
+  gradient: 'bg-linear-to-r', // NEVER
 
   // NO color variety
   extraColors: 'text-blue-500', // NEVER - only black, white, gray, red
@@ -2445,7 +2416,7 @@ const forbiddenTypography = {
 
   // NO colored text (except red accent)
   coloredText: 'text-blue-500', // NEVER
-  gradientText: 'bg-gradient-to-r bg-clip-text', // NEVER
+  gradientText: 'bg-linear-to-r bg-clip-text', // NEVER
 
   // NO text shadows
   textShadow: 'text-shadow', // NEVER

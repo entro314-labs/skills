@@ -13,7 +13,7 @@ Generate a complete, production-ready dashboard application using Next.js, TypeS
 ## Output Requirements
 
 - Single React component (or page with imported components)
-- Next.js 14+ with App Router
+- Next.js 16+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
 - Motion for gentle animations
@@ -108,106 +108,98 @@ The dashboard consists of these elements:
 }
 ```
 
-### Tailwind Extension
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        cream: {
-          50: '#FFFDFB',
-          100: '#FDF9F6',
-          200: '#FAF6F3',
-          300: '#F5F0EC',
-        },
-        warm: {
-          brown: {
-            900: '#2D2A26',
-            700: '#4A4540',
-            500: '#6B6560',
-            300: '#9A9590',
-          },
-        },
-        coral: {
-          50: 'rgba(255, 127, 92, 0.05)',
-          100: 'rgba(255, 127, 92, 0.1)',
-          200: '#FFCAB8',
-          400: '#FF9A7D',
-          500: '#FF7F5C',
-          600: '#F06C48',
-        },
-        sage: {
-          50: 'rgba(124, 183, 152, 0.1)',
-          100: '#D4EDE0',
-          200: '#B8DFC8',
-          400: '#8FC7A6',
-          500: '#7CB798',
-          600: '#6AA588',
-        },
-        friendly: {
-          blue: '#5B8DEF',
-          gold: '#F5A623',
-          lavender: '#A78BFA',
-        },
-      },
-      fontFamily: {
-        serif: ['Fraunces', 'Lora', 'Georgia', 'serif'],
-        sans: ['Inter', 'General Sans', 'system-ui', 'sans-serif'],
-      },
-      fontSize: {
-        'display': ['36px', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
-        'heading-lg': ['28px', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
-        'heading-md': ['24px', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
-        'heading-sm': ['20px', { lineHeight: '1.35' }],
-        'title': ['18px', { lineHeight: '1.4' }],
-        'body-lg': ['16px', { lineHeight: '1.6' }],
-        'body': ['15px', { lineHeight: '1.6' }],
-        'body-sm': ['14px', { lineHeight: '1.5' }],
-        'caption': ['13px', { lineHeight: '1.4' }],
-        'label': ['12px', { lineHeight: '1.4', letterSpacing: '0.02em' }],
-      },
-      borderRadius: {
-        'xl': '16px',
-        '2xl': '20px',
-        '3xl': '24px',
-        '4xl': '32px',
-        'blob': '60% 40% 30% 70% / 60% 30% 70% 40%',
-      },
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-        'safe': 'env(safe-area-inset-bottom)',
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
-        'bounce-gentle': 'bounce-gentle 0.6s ease-out',
-        'count-up': 'count-up 1s ease-out',
-        'confetti': 'confetti 0.8s ease-out forwards',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        'pulse-soft': {
-          '0%, 100%': { opacity: '0.6' },
-          '50%': { opacity: '1' },
-        },
-        'bounce-gentle': {
-          '0%': { transform: 'scale(0.8)', opacity: '0' },
-          '50%': { transform: 'scale(1.05)' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
-        confetti: {
-          '0%': { transform: 'scale(0) rotate(0deg)', opacity: '1' },
-          '100%': { transform: 'scale(1) rotate(360deg)', opacity: '0' },
-        },
-      },
-    },
-  },
-};
+### Tailwind Theme
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #FFFDFB;
+  --color-cream-100: #FDF9F6;
+  --color-cream-200: #FAF6F3;
+  --color-cream-300: #F5F0EC;
+  --color-warm-brown-900: #2D2A26;
+  --color-warm-brown-700: #4A4540;
+  --color-warm-brown-500: #6B6560;
+  --color-warm-brown-300: #9A9590;
+  --color-coral-50: rgba(255, 127, 92, 0.05);
+  --color-coral-100: rgba(255, 127, 92, 0.1);
+  --color-coral-200: #FFCAB8;
+  --color-coral-400: #FF9A7D;
+  --color-coral-500: #FF7F5C;
+  --color-coral-600: #F06C48;
+  --color-sage-50: rgba(124, 183, 152, 0.1);
+  --color-sage-100: #D4EDE0;
+  --color-sage-200: #B8DFC8;
+  --color-sage-400: #8FC7A6;
+  --color-sage-500: #7CB798;
+  --color-sage-600: #6AA588;
+  --color-friendly-blue: #5B8DEF;
+  --color-friendly-gold: #F5A623;
+  --color-friendly-lavender: #A78BFA;
+
+  --font-serif: Fraunces, Lora, Georgia, serif;
+  --font-sans: Inter, "General Sans", system-ui, sans-serif;
+
+  --text-display: 36px;
+  --text-display--line-height: 1.2;
+  --text-display--letter-spacing: -0.02em;
+  --text-heading-lg: 28px;
+  --text-heading-lg--line-height: 1.25;
+  --text-heading-lg--letter-spacing: -0.01em;
+  --text-heading-md: 24px;
+  --text-heading-md--line-height: 1.3;
+  --text-heading-md--letter-spacing: -0.01em;
+  --text-heading-sm: 20px;
+  --text-heading-sm--line-height: 1.35;
+  --text-title: 18px;
+  --text-title--line-height: 1.4;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 15px;
+  --text-body--line-height: 1.6;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.5;
+  --text-caption: 13px;
+  --text-caption--line-height: 1.4;
+  --text-label: 12px;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.02em;
+
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-blob: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+  --spacing-safe: env(safe-area-inset-bottom);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 3s ease-in-out infinite;
+  --animate-bounce-gentle: bounce-gentle 0.6s ease-out;
+  --animate-count-up: count-up 1s ease-out;
+  --animate-confetti: confetti 0.8s ease-out forwards;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  @keyframes bounce-gentle {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes confetti {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+    100% { transform: scale(1) rotate(360deg); opacity: 0; }
+  }
+}
+
+/* No theme entry needed in v4: spacing 18, spacing 22 */
 ```
 
 ---

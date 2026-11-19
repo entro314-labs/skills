@@ -11,7 +11,7 @@ Generate a complete, production-ready dashboard application using Next.js, TypeS
 ## Output Requirements
 
 - Single React component (or page with imported components)
-- Next.js 14+ with App Router
+- Next.js 16+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
 - Motion for all animations
@@ -115,68 +115,67 @@ The dashboard consists of these elements:
 }
 ```
 
-### Tailwind Extension
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        base: 'var(--bg-base)',
-        surface: 'var(--bg-surface)',
-        elevated: 'var(--bg-elevated)',
-        accent: {
-          DEFAULT: 'var(--accent-primary)',
-          hover: 'var(--accent-primary-hover)',
-          soft: 'var(--accent-soft)',
-          softer: 'var(--accent-softer)',
-        },
-        border: {
-          subtle: 'var(--border-subtle)',
-          DEFAULT: 'var(--border-default)',
-          strong: 'var(--border-strong)',
-        },
-      },
-      fontFamily: {
-        sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'SF Mono', 'Consolas', 'monospace'],
-      },
-      fontSize: {
-        'xs': ['12px', { lineHeight: '16px', letterSpacing: '0.01em' }],
-        'sm': ['13px', { lineHeight: '18px' }],
-        'base': ['14px', { lineHeight: '22px' }],
-        'md': ['15px', { lineHeight: '24px' }],
-        'lg': ['16px', { lineHeight: '24px' }],
-        'xl': ['18px', { lineHeight: '26px' }],
-        '2xl': ['20px', { lineHeight: '28px' }],
-        '3xl': ['24px', { lineHeight: '32px' }],
-        '4xl': ['28px', { lineHeight: '36px' }],
-      },
-      spacing: {
-        '4.5': '18px',
-        '13': '52px',
-        '15': '60px',
-        '18': '72px',
-        'sidebar': '240px',
-        'context': '320px',
-      },
-      borderRadius: {
-        'sm': '6px',
-        'md': '8px',
-        'lg': '12px',
-        'xl': '16px',
-      },
-      boxShadow: {
-        'sm': 'var(--shadow-sm)',
-        'md': 'var(--shadow-md)',
-        'lg': 'var(--shadow-lg)',
-        'xl': 'var(--shadow-xl)',
-        'hover': 'var(--shadow-hover)',
-        'focus': 'var(--shadow-focus)',
-      },
-    },
-  },
-};
+### Tailwind Theme
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, "SF Pro Display", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-xs--letter-spacing: 0.01em;
+  --text-sm: 13px;
+  --text-sm--line-height: 18px;
+  --text-base: 14px;
+  --text-base--line-height: 22px;
+  --text-md: 15px;
+  --text-md--line-height: 24px;
+  --text-lg: 16px;
+  --text-lg--line-height: 24px;
+  --text-xl: 18px;
+  --text-xl--line-height: 26px;
+  --text-2xl: 20px;
+  --text-2xl--line-height: 28px;
+  --text-3xl: 24px;
+  --text-3xl--line-height: 32px;
+  --text-4xl: 28px;
+  --text-4xl--line-height: 36px;
+
+  --spacing-sidebar: 240px;
+  --spacing-context: 320px;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Same values as the :root shadows above. In v4 a theme variable and a CSS
+     variable of the same name are one variable, so these cannot be var() references. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 32px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.06), 0 16px 32px rgba(0, 0, 0, 0.08), 0 32px 64px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.08), 0 16px 32px rgba(0, 0, 0, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+@theme inline {
+  --color-base: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-elevated: var(--bg-elevated);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-primary-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-softer: var(--accent-softer);
+  --color-border-subtle: var(--border-subtle);
+  --color-border: var(--border-default);
+  --color-border-strong: var(--border-strong);
+}
+
+/* No theme entry needed in v4: spacing 4.5, spacing 13, spacing 15, spacing 18 */
 ```
 
 ---
@@ -1571,7 +1570,7 @@ const CustomCursor = () => {
     <div
       ref={cursorRef}
       className={`
-        fixed top-0 left-0 pointer-events-none z-[9999]
+        fixed top-0 left-0 pointer-events-none z-9999
         rounded-full bg-accent-primary/20
         transition-[width,height] duration-150
         ${isHovering ? 'w-6 h-6' : 'w-3 h-3'}

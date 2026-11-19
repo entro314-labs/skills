@@ -11,7 +11,7 @@ Generate a complete, production-ready landing page using Next.js, TypeScript, Ta
 ## Output Requirements
 
 - Single React component (or page with imported components)
-- Next.js 14+ with App Router
+- Next.js 16+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
 - Motion for animations
@@ -93,83 +93,82 @@ The page consists of these sections in order:
 }
 ```
 
-### Tailwind Extension
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        cream: {
-          50: '#FFFDFB',
-          100: '#FFF9F5',
-          200: '#F8F6F3',
-          300: '#F0EDE8',
-          400: '#E5E0D9',
-        },
-        earth: {
-          700: '#5A5A5A',
-          800: '#3D3D3D',
-          900: '#2B2B2B',
-        },
-        coral: {
-          50: 'rgba(255, 127, 110, 0.1)',
-          100: '#FFE5E0',
-          400: '#FF9B8A',
-          500: '#FF7F6E',
-          600: '#FF6B57',
-        },
-        sage: {
-          50: 'rgba(110, 193, 181, 0.1)',
-          400: '#8DD4C8',
-          500: '#6EC1B5',
-          600: '#5BB0A4',
-        },
-        lavender: {
-          50: 'rgba(180, 167, 214, 0.1)',
-          400: '#C7BDE3',
-          500: '#B4A7D6',
-          600: '#A193C9',
-        },
-      },
-      fontFamily: {
-        serif: ['Fraunces', 'Lora', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
-      fontSize: {
-        'display-xl': ['72px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        'display-lg': ['56px', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
-        'display-md': ['44px', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
-        'display-sm': ['36px', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
-        'heading-lg': ['28px', { lineHeight: '1.3' }],
-        'heading-md': ['24px', { lineHeight: '1.35' }],
-        'heading-sm': ['20px', { lineHeight: '1.4' }],
-        'body-lg': ['18px', { lineHeight: '1.7', letterSpacing: '0.01em' }],
-        'body-md': ['16px', { lineHeight: '1.7', letterSpacing: '0.01em' }],
-        'body-sm': ['14px', { lineHeight: '1.6' }],
-        'caption': ['13px', { lineHeight: '1.5', letterSpacing: '0.02em' }],
-        'eyebrow': ['12px', { lineHeight: '1.4', letterSpacing: '0.15em' }],
-      },
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-        '30': '7.5rem',
-        '34': '8.5rem',
-        'section': '160px',
-        'section-sm': '100px',
-      },
-      borderRadius: {
-        '2xl': '16px',
-        '3xl': '24px',
-        '4xl': '32px',
-      },
-      maxWidth: {
-        'content': '1200px',
-        'reading': '70ch',
-      },
-    },
-  },
-};
+### Tailwind Theme
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #FFFDFB;
+  --color-cream-100: #FFF9F5;
+  --color-cream-200: #F8F6F3;
+  --color-cream-300: #F0EDE8;
+  --color-cream-400: #E5E0D9;
+  --color-earth-700: #5A5A5A;
+  --color-earth-800: #3D3D3D;
+  --color-earth-900: #2B2B2B;
+  --color-coral-50: rgba(255, 127, 110, 0.1);
+  --color-coral-100: #FFE5E0;
+  --color-coral-400: #FF9B8A;
+  --color-coral-500: #FF7F6E;
+  --color-coral-600: #FF6B57;
+  --color-sage-50: rgba(110, 193, 181, 0.1);
+  --color-sage-400: #8DD4C8;
+  --color-sage-500: #6EC1B5;
+  --color-sage-600: #5BB0A4;
+  --color-lavender-50: rgba(180, 167, 214, 0.1);
+  --color-lavender-400: #C7BDE3;
+  --color-lavender-500: #B4A7D6;
+  --color-lavender-600: #A193C9;
+
+  --font-serif: Fraunces, Lora, Georgia, serif;
+  --font-sans: Inter, system-ui, sans-serif;
+
+  --text-display-xl: 72px;
+  --text-display-xl--line-height: 1.1;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-lg: 56px;
+  --text-display-lg--line-height: 1.15;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: 44px;
+  --text-display-md--line-height: 1.2;
+  --text-display-md--letter-spacing: -0.01em;
+  --text-display-sm: 36px;
+  --text-display-sm--line-height: 1.25;
+  --text-display-sm--letter-spacing: -0.01em;
+  --text-heading-lg: 28px;
+  --text-heading-lg--line-height: 1.3;
+  --text-heading-md: 24px;
+  --text-heading-md--line-height: 1.35;
+  --text-heading-sm: 20px;
+  --text-heading-sm--line-height: 1.4;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.7;
+  --text-body-lg--letter-spacing: 0.01em;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.7;
+  --text-body-md--letter-spacing: 0.01em;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.6;
+  --text-caption: 13px;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.02em;
+  --text-eyebrow: 12px;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.15em;
+
+  --spacing-section: 160px;
+  --spacing-section-sm: 100px;
+
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+
+  --container-content: 1200px;
+  --container-reading: 70ch;
+}
+
+/* No theme entry needed in v4: spacing 18, spacing 22, spacing 30, spacing 34 */
 ```
 
 ---
@@ -438,7 +437,7 @@ module.exports = {
 ```tsx
 // Structure
 <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <nav className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-12">
+  <nav className="max-w-content mx-auto px-6 md:px-10 lg:px-12">
     <div className="flex items-center justify-between h-20 md:h-24">
       {/* Logo */}
       <Logo />
@@ -578,7 +577,7 @@ module.exports = {
 // Structure
 <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
   {/* Background */}
-  <div className="absolute inset-0 bg-gradient-to-b from-cream-100 to-cream-200" />
+  <div className="absolute inset-0 bg-linear-to-b from-cream-100 to-cream-200" />
 
   {/* Floating Circles */}
   <FloatingCircle size={300} color="coral" position={{ top: '10%', right: '-5%' }} />
@@ -589,7 +588,7 @@ module.exports = {
   <div className="absolute inset-0 bg-paper-texture opacity-[0.03] pointer-events-none" />
 
   <div className="container-main relative z-10">
-    <div className="grid lg:grid-cols-[1fr,1.2fr] gap-12 lg:gap-20 items-center">
+    <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
       {/* Content */}
       <div className="max-w-xl">
         <motion.span className="eyebrow mb-6 block">
@@ -641,7 +640,7 @@ module.exports = {
             className="w-full h-auto"
           />
           {/* Subtle Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
         </div>
 
         {/* Floating Card */}
@@ -997,7 +996,7 @@ const FeatureRow = ({ feature, reversed }: FeatureRowProps) => {
         <ul className="space-y-3">
           {feature.points.map((point, i) => (
             <li key={i} className="flex items-start gap-3">
-              <CheckIcon className="w-5 h-5 text-sage-500 mt-0.5 flex-shrink-0" />
+              <CheckIcon className="w-5 h-5 text-sage-500 mt-0.5 shrink-0" />
               <span className="text-earth-700">{point}</span>
             </li>
           ))}
@@ -1178,7 +1177,7 @@ const FeatureRow = ({ feature, reversed }: FeatureRowProps) => {
       {testimonials.map((testimonial, index) => (
         <motion.div
           key={testimonial.id}
-          className="testimonial-card flex-shrink-0 w-[380px]"
+          className="testimonial-card shrink-0 w-[380px]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -1211,8 +1210,8 @@ const FeatureRow = ({ feature, reversed }: FeatureRowProps) => {
     </motion.div>
 
     {/* Fade Edges */}
-    <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-cream-200 to-transparent pointer-events-none" />
-    <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-cream-200 to-transparent pointer-events-none" />
+    <div className="absolute left-0 top-0 bottom-0 w-16 bg-linear-to-r from-cream-200 to-transparent pointer-events-none" />
+    <div className="absolute right-0 top-0 bottom-0 w-16 bg-linear-to-l from-cream-200 to-transparent pointer-events-none" />
   </div>
 </section>
 ```
@@ -1307,7 +1306,7 @@ const FeatureRow = ({ feature, reversed }: FeatureRowProps) => {
           <ul className="mt-8 space-y-3">
             {plan.features.map((feature, i) => (
               <li key={i} className="flex items-start gap-3 text-sm">
-                <CheckIcon className="w-5 h-5 text-sage-500 flex-shrink-0" />
+                <CheckIcon className="w-5 h-5 text-sage-500 shrink-0" />
                 <span className="text-earth-700">{feature}</span>
               </li>
             ))}
@@ -1542,7 +1541,7 @@ const FeatureRow = ({ feature, reversed }: FeatureRowProps) => {
           <input
             type="email"
             placeholder="Your email"
-            className="flex-1 px-4 py-3 rounded-xl bg-white border border-border-light text-sm focus:outline-none focus:ring-2 focus:ring-coral-500/30"
+            className="flex-1 px-4 py-3 rounded-xl bg-white border border-border-light text-sm focus:outline-hidden focus:ring-2 focus:ring-coral-500/30"
           />
           <button className="px-4 py-3 bg-coral-500 text-white rounded-xl hover:bg-coral-600 transition-colors">
             <ArrowRightIcon className="w-5 h-5" />
@@ -1869,7 +1868,7 @@ const toggleSpring = {
 
 ### Lenis Configuration (Calm)
 ```typescript
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 const lenis = new Lenis({
   lerp: 0.1,        // Smoother than default (0.1 vs 0.15)
@@ -1988,7 +1987,7 @@ const CustomCursor = () => {
     <div
       ref={cursorRef}
       className={`
-        fixed top-0 left-0 pointer-events-none z-[9999]
+        fixed top-0 left-0 pointer-events-none z-9999
         w-[30px] h-[30px] rounded-full
         bg-coral-500/30
         transition-[width,height] duration-200
@@ -2145,7 +2144,7 @@ const CustomCursor = () => {
 ## Required npm Packages
 
 ```bash
-npm install motion @studio-freight/lenis
+npm install motion lenis
 npm install @radix-ui/react-accordion  # For FAQ
 npm install clsx tailwind-merge        # For conditional classes
 ```

@@ -6,7 +6,7 @@ Linear's "liquid glass" aesthetic taken further. A landing page that feels like 
 
 ## Output Requirements
 
-- **Framework**: Next.js 14+ with App Router
+- **Framework**: Next.js 16+ with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom configuration
 - **Animation**: Motion + GSAP (for scroll-triggered parallax)
@@ -178,102 +178,83 @@ Linear's "liquid glass" aesthetic taken further. A landing page that feels like 
 }
 ```
 
-### Tailwind Extension
+### Tailwind Theme
 
-```typescript
-// tailwind.config.ts
-import type { Config } from 'tailwindcss';
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
 
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  darkMode: 'class',
-  theme: {
-    extend: {
-      colors: {
-        void: {
-          DEFAULT: '#050505',
-          light: '#0A0A0B',
-        },
-        surface: {
-          DEFAULT: '#111113',
-          elevated: '#18181B',
-        },
-        accent: {
-          DEFAULT: '#6366F1',
-          glow: 'rgba(99, 102, 241, 0.15)',
-          dim: 'rgba(99, 102, 241, 0.08)',
-        },
-        'accent-alt': {
-          DEFAULT: '#10B981',
-          glow: 'rgba(16, 185, 129, 0.10)',
-        },
-        glass: {
-          bg: 'rgba(255, 255, 255, 0.03)',
-          'bg-hover': 'rgba(255, 255, 255, 0.05)',
-          border: 'rgba(255, 255, 255, 0.08)',
-          'border-bright': 'rgba(255, 255, 255, 0.12)',
-          rim: 'rgba(255, 255, 255, 0.1)',
-        },
-      },
-      fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-      },
-      fontSize: {
-        'cinematic-xl': ['clamp(56px, 10vw, 120px)', { lineHeight: '1.0', letterSpacing: '-0.04em' }],
-        'cinematic-lg': ['clamp(48px, 8vw, 96px)', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
-        'cinematic-md': ['clamp(36px, 5vw, 64px)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        'cinematic-sm': ['clamp(24px, 3vw, 36px)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
-        'body': ['18px', { lineHeight: '1.7', letterSpacing: '0' }],
-        'body-sm': ['14px', { lineHeight: '1.6', letterSpacing: '0.01em' }],
-        'caption': ['12px', { lineHeight: '1.5', letterSpacing: '0.05em' }],
-      },
-      fontWeight: {
-        normal: '400',
-        medium: '500',
-        semibold: '600',
-      },
-      backdropBlur: {
-        'glass': '40px',
-        'glass-lg': '60px',
-      },
-      transitionDuration: {
-        '400': '400ms',
-        '600': '600ms',
-        '800': '800ms',
-        '1000': '1000ms',
-        '1200': '1200ms',
-      },
-      transitionTimingFunction: {
-        'cinematic': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        'smooth-out': 'cubic-bezier(0.22, 1, 0.36, 1)',
-      },
-      animation: {
-        'gradient-pulse': 'gradient-pulse 20s ease-in-out infinite',
-        'light-flare': 'light-flare 8s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        'gradient-pulse': {
-          '0%, 100%': { opacity: '0.15', transform: 'scale(1)' },
-          '50%': { opacity: '0.25', transform: 'scale(1.1)' },
-        },
-        'light-flare': {
-          '0%': { transform: 'translateX(-100%) rotate(15deg)', opacity: '0' },
-          '10%': { opacity: '0.1' },
-          '100%': { transform: 'translateX(200%) rotate(15deg)', opacity: '0' },
-        },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-      },
-    },
-  },
-  plugins: [],
-};
+@custom-variant dark (&:where(.dark, .dark *));
 
-export default config;
+@theme {
+  --color-void: #050505;
+  --color-void-light: #0A0A0B;
+  --color-surface: #111113;
+  --color-surface-elevated: #18181B;
+  --color-accent: #6366F1;
+  --color-accent-glow: rgba(99, 102, 241, 0.15);
+  --color-accent-dim: rgba(99, 102, 241, 0.08);
+  --color-accent-alt: #10B981;
+  --color-accent-alt-glow: rgba(16, 185, 129, 0.10);
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --color-glass-bg-hover: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-border-bright: rgba(255, 255, 255, 0.12);
+  --color-glass-rim: rgba(255, 255, 255, 0.1);
+
+  --text-cinematic-xl: clamp(56px, 10vw, 120px);
+  --text-cinematic-xl--line-height: 1.0;
+  --text-cinematic-xl--letter-spacing: -0.04em;
+  --text-cinematic-lg: clamp(48px, 8vw, 96px);
+  --text-cinematic-lg--line-height: 1.05;
+  --text-cinematic-lg--letter-spacing: -0.03em;
+  --text-cinematic-md: clamp(36px, 5vw, 64px);
+  --text-cinematic-md--line-height: 1.1;
+  --text-cinematic-md--letter-spacing: -0.02em;
+  --text-cinematic-sm: clamp(24px, 3vw, 36px);
+  --text-cinematic-sm--line-height: 1.2;
+  --text-cinematic-sm--letter-spacing: -0.01em;
+  --text-body: 18px;
+  --text-body--line-height: 1.7;
+  --text-body--letter-spacing: 0;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.6;
+  --text-body-sm--letter-spacing: 0.01em;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.05em;
+
+  --backdrop-blur-glass: 40px;
+  --backdrop-blur-glass-lg: 60px;
+
+  --ease-cinematic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-gradient-pulse: gradient-pulse 20s ease-in-out infinite;
+  --animate-light-flare: light-flare 8s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes gradient-pulse {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(1.1); }
+  }
+  @keyframes light-flare {
+    0% { transform: translateX(-100%) rotate(15deg); opacity: 0; }
+    10% { opacity: 0.1; }
+    100% { transform: translateX(200%) rotate(15deg); opacity: 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-inter), system-ui, sans-serif;
+}
+
+/* No theme entry needed in v4: font-normal, font-medium, font-semibold, duration-400, duration-600, duration-800, duration-1000, duration-1200 */
 ```
 
 ---
@@ -308,9 +289,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ```css
 /* src/app/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @theme tokens: see the Tailwind theme blocks above */
 
 @layer base {
   html {
@@ -792,7 +772,7 @@ export const glowPulse: Variants = {
 'use client';
 
 import { useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 export function useCinematicScroll() {
   useEffect(() => {
@@ -833,7 +813,7 @@ interface ParallaxOptions {
 
 export function useParallax(
   options: ParallaxOptions = {}
-): { ref: React.RefObject<HTMLDivElement>; y: MotionValue<string> } {
+): { ref: React.RefObject<HTMLDivElement | null>; y: MotionValue<string> } {
   const { offset = ['start end', 'end start'], speed = 0.3 } = options;
   const ref = useRef<HTMLDivElement>(null);
 
@@ -1231,7 +1211,7 @@ export function FullWidthVisual({ imageSrc, imageAlt, headline }: FullWidthVisua
         >
           {/* Glow behind image */}
           <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1/2 bg-gradient-to-t from-accent-glow to-transparent blur-3xl" />
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1/2 bg-linear-to-t from-accent-glow to-transparent blur-3xl" />
           </div>
 
           <div className="relative rounded-2xl overflow-hidden border border-glass-border">
@@ -1634,20 +1614,20 @@ export const Discord = ({ className = '' }: { className?: string }) => (
 ```json
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "motion": "^14.14.0",
-    "@studio-freight/lenis": "^1.0.0",
-    "gsap": "^3.12.0"
+    "lenis": "^1.3.0",
+    "gsap": "^3.15.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/react": "^18.2.0",
-    "@types/node": "^20.0.0",
-    "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
+    "typescript": "^7.0.0",
+    "@types/react": "^19.3.0",
+    "@types/node": "^26.6.0",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "postcss": "^8.5.0"
   }
 }
 ```

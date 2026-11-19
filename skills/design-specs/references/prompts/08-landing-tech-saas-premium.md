@@ -9,11 +9,11 @@ You are a senior product designer and front-end engineer. Build a complete landi
 ## Technical Stack
 
 ```bash
-npm install motion gsap @studio-freight/lenis
+npm install motion gsap lenis
 ```
 
-- Next.js 14+ with App Router
-- React 18+ with TypeScript
+- Next.js 16+ with App Router
+- React 19+ with TypeScript
 - Tailwind CSS for all styling
 - Motion for component animations
 - GSAP + ScrollTrigger for scroll-based animations
@@ -1312,7 +1312,7 @@ export function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-5 h-5 rounded-full border border-white/30 pointer-events-none z-[9999] mix-blend-difference"
+      className="fixed top-0 left-0 w-5 h-5 rounded-full border border-white/30 pointer-events-none z-9999 mix-blend-difference"
       style={{ x, y }}
     />
   );
@@ -1327,7 +1327,7 @@ export function CustomCursor() {
 // components/SmoothScroll.tsx
 'use client';
 import { useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {

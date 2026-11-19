@@ -209,7 +209,7 @@
 
 **Core Libraries:**
 ```
-npm install gsap @studio-freight/lenis motion
+npm install gsap lenis motion
 ```
 
 **Simplified Patterns:**

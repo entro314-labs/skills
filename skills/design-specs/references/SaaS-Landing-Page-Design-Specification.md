@@ -153,7 +153,7 @@
 
 **Libraries:**
 ```
-npm install gsap @studio-freight/lenis motion
+npm install gsap lenis motion
 npm install locomotive-scroll splitting
 ```
 

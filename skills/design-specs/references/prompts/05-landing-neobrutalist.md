@@ -3,9 +3,9 @@
 ## Output Requirements
 
 Generate a **single React component** that renders a complete neobrutalist landing page. Requirements:
-- Next.js 14+ with App Router
+- Next.js 16+ with App Router
 - TypeScript strict mode
-- Tailwind CSS with custom configuration below
+- Tailwind CSS v4 with the custom theme below
 - Motion for animations (TWEEN ONLY - NO SPRINGS)
 - NO external icon libraries - custom stroke-only SVG icons
 - Mobile-first responsive design
@@ -154,105 +154,117 @@ Generate a **single React component** that renders a complete neobrutalist landi
 }
 ```
 
-### Tailwind Extension (tailwind.config.ts)
+### Tailwind Theme (globals.css)
 
-```typescript
-import type { Config } from 'tailwindcss';
+```css
+/* src/app/globals.css */
+@import "tailwindcss";
 
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  theme: {
-    extend: {
-      colors: {
-        'neo-cream': '#FFFEF0',
-        'neo-kraft': '#E8E4D9',
-        'neo-kraft-dark': '#D4CFC4',
-        'neo-black': '#1A1A1A',
-        'neo-hot': '#FF5C00',
-        'neo-electric': '#0066FF',
-        'neo-acid': '#BFFF00',
-        'neo-magenta': '#FF00FF',
-        'neo-cyan': '#00FFFF',
-        'neo-success': '#00CC66',
-        'neo-error': '#FF3333',
-        'neo-warning': '#FFCC00',
-      },
-      fontFamily: {
-        sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        mono: ['Space Mono', 'Menlo', 'monospace'],
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
-      },
-      fontSize: {
-        'display-xl': ['120px', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '900' }],
-        'display-lg': ['96px', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '900' }],
-        'display-md': ['72px', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '900' }],
-        'display-sm': ['56px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
-        'heading-xl': ['48px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'heading-lg': ['36px', { lineHeight: '1.15', letterSpacing: '-0.01em', fontWeight: '700' }],
-        'heading-md': ['28px', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
-        'heading-sm': ['24px', { lineHeight: '1.25', fontWeight: '700' }],
-        'body-xl': ['20px', { lineHeight: '1.5', fontWeight: '500' }],
-        'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '500' }],
-        'body-md': ['16px', { lineHeight: '1.6', fontWeight: '500' }],
-        'body-sm': ['14px', { lineHeight: '1.5', fontWeight: '500' }],
-        'label': ['12px', { lineHeight: '1.4', letterSpacing: '0.1em', fontWeight: '700' }],
-        'number-huge': ['160px', { lineHeight: '0.85', letterSpacing: '-0.04em', fontWeight: '900' }],
-        'number-large': ['120px', { lineHeight: '0.85', letterSpacing: '-0.04em', fontWeight: '900' }],
-      },
-      borderWidth: {
-        '3': '3px',
-        '4': '4px',
-        '5': '5px',
-      },
-      boxShadow: {
-        'neo-sm': '4px 4px 0 0 #1A1A1A',
-        'neo-md': '6px 6px 0 0 #1A1A1A',
-        'neo-lg': '10px 10px 0 0 #1A1A1A',
-        'neo-xl': '14px 14px 0 0 #1A1A1A',
-        'neo-hot': '6px 6px 0 0 #FF5C00',
-        'neo-hot-lg': '10px 10px 0 0 #FF5C00',
-        'neo-electric': '6px 6px 0 0 #0066FF',
-        'neo-electric-lg': '10px 10px 0 0 #0066FF',
-        'neo-acid': '6px 6px 0 0 #BFFF00',
-        'neo-acid-lg': '10px 10px 0 0 #BFFF00',
-        'neo-magenta': '6px 6px 0 0 #FF00FF',
-        'neo-cyan': '6px 6px 0 0 #00FFFF',
-      },
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-        '30': '7.5rem',
-        '34': '8.5rem',
-      },
-      transitionDuration: {
-        '75': '75ms',
-        '100': '100ms',
-        '150': '150ms',
-      },
-      animation: {
-        'marquee': 'marquee 25s linear infinite',
-        'marquee-reverse': 'marquee-reverse 25s linear infinite',
-        'blink': 'blink 1s step-end infinite',
-      },
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-        'marquee-reverse': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-        blink: {
-          '50%': { opacity: '0' },
-        },
-      },
-    },
-  },
-  plugins: [],
-};
+@theme {
+  --color-neo-cream: #FFFEF0;
+  --color-neo-kraft: #E8E4D9;
+  --color-neo-kraft-dark: #D4CFC4;
+  --color-neo-black: #1A1A1A;
+  --color-neo-hot: #FF5C00;
+  --color-neo-electric: #0066FF;
+  --color-neo-acid: #BFFF00;
+  --color-neo-magenta: #FF00FF;
+  --color-neo-cyan: #00FFFF;
+  --color-neo-success: #00CC66;
+  --color-neo-error: #FF3333;
+  --color-neo-warning: #FFCC00;
 
-export default config;
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Space Mono", Menlo, monospace;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+
+  --text-display-xl: 120px;
+  --text-display-xl--line-height: 1;
+  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-xl--font-weight: 900;
+  --text-display-lg: 96px;
+  --text-display-lg--line-height: 1;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-lg--font-weight: 900;
+  --text-display-md: 72px;
+  --text-display-md--line-height: 1.05;
+  --text-display-md--letter-spacing: -0.02em;
+  --text-display-md--font-weight: 900;
+  --text-display-sm: 56px;
+  --text-display-sm--line-height: 1.1;
+  --text-display-sm--letter-spacing: -0.02em;
+  --text-display-sm--font-weight: 800;
+  --text-heading-xl: 48px;
+  --text-heading-xl--line-height: 1.1;
+  --text-heading-xl--letter-spacing: -0.02em;
+  --text-heading-xl--font-weight: 700;
+  --text-heading-lg: 36px;
+  --text-heading-lg--line-height: 1.15;
+  --text-heading-lg--letter-spacing: -0.01em;
+  --text-heading-lg--font-weight: 700;
+  --text-heading-md: 28px;
+  --text-heading-md--line-height: 1.2;
+  --text-heading-md--letter-spacing: -0.01em;
+  --text-heading-md--font-weight: 700;
+  --text-heading-sm: 24px;
+  --text-heading-sm--line-height: 1.25;
+  --text-heading-sm--font-weight: 700;
+  --text-body-xl: 20px;
+  --text-body-xl--line-height: 1.5;
+  --text-body-xl--font-weight: 500;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 500;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 500;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.5;
+  --text-body-sm--font-weight: 500;
+  --text-label: 12px;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.1em;
+  --text-label--font-weight: 700;
+  --text-number-huge: 160px;
+  --text-number-huge--line-height: 0.85;
+  --text-number-huge--letter-spacing: -0.04em;
+  --text-number-huge--font-weight: 900;
+  --text-number-large: 120px;
+  --text-number-large--line-height: 0.85;
+  --text-number-large--letter-spacing: -0.04em;
+  --text-number-large--font-weight: 900;
+
+  --shadow-neo-sm: 4px 4px 0 0 #1A1A1A;
+  --shadow-neo-md: 6px 6px 0 0 #1A1A1A;
+  --shadow-neo-lg: 10px 10px 0 0 #1A1A1A;
+  --shadow-neo-xl: 14px 14px 0 0 #1A1A1A;
+  --shadow-neo-hot: 6px 6px 0 0 #FF5C00;
+  --shadow-neo-hot-lg: 10px 10px 0 0 #FF5C00;
+  --shadow-neo-electric: 6px 6px 0 0 #0066FF;
+  --shadow-neo-electric-lg: 10px 10px 0 0 #0066FF;
+  --shadow-neo-acid: 6px 6px 0 0 #BFFF00;
+  --shadow-neo-acid-lg: 10px 10px 0 0 #BFFF00;
+  --shadow-neo-magenta: 6px 6px 0 0 #FF00FF;
+  --shadow-neo-cyan: 6px 6px 0 0 #00FFFF;
+
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 25s linear infinite;
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+/* No theme entry needed in v4: border-3, border-4, border-5, spacing 18, spacing 22, spacing 30, spacing 34, duration-75, duration-100, duration-150 */
 ```
 
 ---
@@ -2588,19 +2600,19 @@ export function AnimatedCounter({
 ```json
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "motion": "^14.14.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
+    "typescript": "^7.0.0",
+    "@types/node": "^26.6.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "postcss": "^8.5.0"
   }
 }
 ```
