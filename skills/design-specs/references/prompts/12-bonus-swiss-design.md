@@ -509,6 +509,10 @@ The grid is the foundation of Swiss Design. Every element must align to the grid
 ```css
 /* src/app/globals.css */
 @theme {
+  /* Clear Tailwind's default spacing scale first. The 8px scale that replaces it is under
+     "Tailwind Spacing" below; a reset placed there would also clear the baseline tokens. */
+  --spacing-*: initial;
+
   /* Baseline grid spacing (8px increments) */
   --spacing-baseline: 8px;
   --spacing-baseline-2: 16px;
@@ -696,7 +700,7 @@ All spacing follows the baseline grid (8px increments).
 ```css
 /* src/app/globals.css */
 @theme {
-  --spacing-*: initial;
+  /* Replaces the default scale: --spacing-*: initial is declared with the grid tokens above */
   --spacing-0: 0;
   --spacing-1: 8px;
   --spacing-2: 16px;
