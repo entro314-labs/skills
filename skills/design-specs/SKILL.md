@@ -1,39 +1,52 @@
 ---
 name: design-specs
-description: "Library of exhaustive design specifications for dashboards and landing pages in named styles (neobrutalist, elegant minimal, developer dark, warm human, editorial, tech SaaS premium, cinematic dark, playful geometric, Japanese minimalist, Swiss, retro-futurist), plus layout notes and master design prompts. Use when the user asks for one of these design styles or their design specs."
+description: "Library of design specifications for dashboards and landing pages in named styles (neobrutalist, elegant minimal, developer dark, warm human, editorial, tech SaaS premium, cinematic dark, playful geometric, Japanese minimalist, Swiss, retro-futurist), each with a brief prompt and an exhaustive specification split into parts, plus technique and prompting notes. Use when the user asks for one of these design styles or their design specs."
 disable-model-invocation: true
 ---
 
 # design-specs
 
-Thirteen named visual styles for dashboards and landing pages. Each style exists twice: a brief prompt (40-150 lines) and an exhaustive specification (1,000-2,800 lines) with tokens, component code, animation values and sample data.
+Thirteen named visual styles for dashboards and landing pages, engineered to produce bespoke designs that avoid typical AI patterns. Each style has its own folder under `references/styles/` with a brief (35-150 lines) and an exhaustive specification (1,000-2,800 lines, split into parts) covering tokens, component code, animation values and sample data.
 
 ## How to use
 
 1. Pick one style from the table below. If the request does not name one, match on the "Best for" column and say which style was picked.
-2. Read the brief first: the matching numbered section of [references/master-design-prompts.md](references/master-design-prompts.md). It is enough for a first pass or a single section.
-3. Read the full spec only for the chosen style, and only when building the complete page. Do not load more than one full spec; they are long and they contradict each other on purpose.
-4. Replace the placeholders (product description, accent colors, typography, sections) with the project's own, then build section by section.
+2. Read that style's `brief.md` first. It is enough for a first pass or a single section.
+3. For a full build, read the style's `index.md`. It holds the output requirements, the page structure, what to avoid and a table of the parts, so only the parts the task needs are loaded.
+4. Stay inside one style folder. The styles contradict each other on purpose.
+5. Replace the placeholders (product description, accent colors, typography, sections) with the project's own, then build section by section.
 
 ## Styles
 
-| # | Style | Kind | Best for | Key characteristics | Full spec | Lines |
-|---|---|---|---|---|---|---|
-| 1 | Neobrutalist | Dashboard | Bold statements, anti-corporate | Thick borders, solid shadows, zero radius, raw | [01-dashboard-neobrutalist.md](references/prompts/01-dashboard-neobrutalist.md) | 998 |
-| 2 | Elegant Minimal | Dashboard | Productivity tools, workspaces | Craft/Cal/Linear fusion, spring physics, content-first | [02-dashboard-elegant-minimal.md](references/prompts/02-dashboard-elegant-minimal.md) | 1,860 |
-| 3 | Developer Dark | Dashboard | Dev tools, infrastructure | IDE-style, glassmorphism, keyboard-first | [03-dashboard-developer-dark.md](references/prompts/03-dashboard-developer-dark.md) | 2,467 |
-| 4 | Warm Human | Dashboard | Wellness, education, personal | Headspace/Airbnb feel, gentle gamification | [04-dashboard-warm-human.md](references/prompts/04-dashboard-warm-human.md) | 1,917 |
-| 5 | Neobrutalist | Landing | Bold brands, anti-SaaS | Hard shadows, no curves, marquee, raw energy | [05-landing-neobrutalist.md](references/prompts/05-landing-neobrutalist.md) | 2,812 |
-| 6 | Warm Human | Landing | Wellness, home services, education | Serif headlines, floating circles, editorial warmth | [06-landing-warm-human.md](references/prompts/06-landing-warm-human.md) | 2,230 |
-| 7 | Editorial/Magazine | Landing | Content brands, publications | Typography-driven, drop caps, art-directed images | [07-landing-editorial-magazine.md](references/prompts/07-landing-editorial-magazine.md) | 2,110 |
-| 8 | Tech SaaS Premium | Landing | Dev tools, B2B SaaS | Linear/Supabase fusion, canvas particles, custom cursor | [08-landing-tech-saas-premium.md](references/prompts/08-landing-tech-saas-premium.md) | 1,408 |
-| 9 | Cinematic Dark | Landing | Premium products, dramatic reveals | Liquid glass, maximum negative space, movie-like | [09-landing-cinematic-dark.md](references/prompts/09-landing-cinematic-dark.md) | 1,911 |
-| 10 | Playful Geometric | Landing | Creative tools, design products | Bold shapes, vibrant colors, bouncy motion | [10-landing-playful-geometric.md](references/prompts/10-landing-playful-geometric.md) | 2,063 |
-| 11 | Japanese Minimalist | Landing | Luxury, craft, contemplative | Wabi-sabi, massive whitespace, asymmetry | [11-bonus-japanese-minimalist.md](references/prompts/11-bonus-japanese-minimalist.md) | 2,318 |
-| 12 | Swiss Design | Landing | Information-heavy, systematic | Grid perfection, typography-is-design, objective | [12-bonus-swiss-design.md](references/prompts/12-bonus-swiss-design.md) | 2,555 |
-| 13 | Retro-Futurist | Landing | Space tech, vintage-inspired | 1960s space-age, atomic motifs, orbit animations | [13-bonus-retro-futurist.md](references/prompts/13-bonus-retro-futurist.md) | 2,317 |
+| # | Style | Kind | Best for | Key characteristics | Folder | Brief | Full spec |
+|---|---|---|---|---|---|---|---|
+| 1 | Neobrutalist | Dashboard | Bold statements, anti-corporate | Thick borders, solid shadows, zero radius, raw | [01-dashboard-neobrutalist](references/styles/01-dashboard-neobrutalist/index.md) | 134 lines | 1,017 lines |
+| 2 | Elegant Minimal | Dashboard | Productivity tools, workspaces | Craft/Cal/Linear fusion, spring physics, content-first | [02-dashboard-elegant-minimal](references/styles/02-dashboard-elegant-minimal/index.md) | 149 lines | 1,866 lines |
+| 3 | Developer Dark | Dashboard | Dev tools, infrastructure | IDE-style, glassmorphism, keyboard-first | [03-dashboard-developer-dark](references/styles/03-dashboard-developer-dark/index.md) | 104 lines | 2,482 lines |
+| 4 | Warm Human | Dashboard | Wellness, education, personal | Headspace/Airbnb feel, gentle gamification | [04-dashboard-warm-human](references/styles/04-dashboard-warm-human/index.md) | 81 lines | 1,926 lines |
+| 5 | Neobrutalist | Landing | Bold brands, anti-SaaS | Hard shadows, no curves, marquee, raw energy | [05-landing-neobrutalist](references/styles/05-landing-neobrutalist/index.md) | 35 lines | 2,814 lines |
+| 6 | Warm Human | Landing | Wellness, home services, education | Serif headlines, floating circles, editorial warmth | [06-landing-warm-human](references/styles/06-landing-warm-human/index.md) | 74 lines | 2,235 lines |
+| 7 | Editorial/Magazine | Landing | Content brands, publications | Typography-driven, drop caps, art-directed images | [07-landing-editorial-magazine](references/styles/07-landing-editorial-magazine/index.md) | 47 lines | 2,106 lines |
+| 8 | Tech SaaS Premium | Landing | Dev tools, B2B SaaS | Linear/Supabase fusion, canvas particles, custom cursor | [08-landing-tech-saas-premium](references/styles/08-landing-tech-saas-premium/index.md) | 145 lines | 1,429 lines |
+| 9 | Cinematic Dark | Landing | Premium products, dramatic reveals | Liquid glass, maximum negative space, movie-like | [09-landing-cinematic-dark](references/styles/09-landing-cinematic-dark/index.md) | 63 lines | 1,903 lines |
+| 10 | Playful Geometric | Landing | Creative tools, design products | Bold shapes, vibrant colors, bouncy motion | [10-landing-playful-geometric](references/styles/10-landing-playful-geometric/index.md) | 55 lines | 2,046 lines |
+| 11 | Japanese Minimalist | Landing | Luxury, craft, contemplative | Wabi-sabi, massive whitespace, asymmetry | [11-landing-japanese-minimalist](references/styles/11-landing-japanese-minimalist/index.md) | 38 lines | 2,306 lines |
+| 12 | Swiss Design | Landing | Information-heavy, systematic | Grid perfection, typography-is-design, objective | [12-landing-swiss-design](references/styles/12-landing-swiss-design/index.md) | 44 lines | 2,555 lines |
+| 13 | Retro-Futurist | Landing | Space tech, vintage-inspired | 1960s space-age, atomic motifs, orbit animations | [13-landing-retro-futurist](references/styles/13-landing-retro-futurist/index.md) | 34 lines | 2,306 lines |
 
-The brief for style N is section "N." of [references/master-design-prompts.md](references/master-design-prompts.md).
+Every style folder uses the same file names:
+
+| File | Holds |
+|---|---|
+| `brief.md` | The short prompt for the style |
+| `index.md` | Entry point: output requirements, structure overview, what to avoid, final notes, and the parts table |
+| `tokens.md` | Colors, typography, layout, spacing and global styles. The Tailwind theme blocks are here in paste order (the Swiss spec also keeps its transition tokens in `motion.md`) |
+| `motion.md` | Animation system, timing, smooth scroll, cursor |
+| `components.md` | Buttons, forms, icons and other shared components |
+| `sections.md` | Page sections (landing pages) or dashboard views, in page order |
+| `page.md` | Sample data and the assembled page |
+
+A part over 900 lines is split into numbered files (`sections-1.md`, `sections-2.md`); the parts table in `index.md` lists which headings each file contains. Not every style has every part.
 
 ## Other references
 
