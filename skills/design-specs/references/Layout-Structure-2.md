@@ -51,7 +51,7 @@
 - Use `gsap.to()` with `repeat: -1, ease: "none", duration: 20` for seamless loop
 
 **Common Animation Techniques:**
-1. Scroll-triggered reveals using IntersectionObserver + Framer Motion
+1. Scroll-triggered reveals using IntersectionObserver + Motion
 2. Number counters using countUp.js or custom animation loop
 3. SVG path drawing with stroke-dashoffset animation
 4. Staggered children animations with sequential delays

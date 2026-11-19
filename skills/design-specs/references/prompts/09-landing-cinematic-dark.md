@@ -9,7 +9,7 @@ Linear's "liquid glass" aesthetic taken further. A landing page that feels like 
 - **Framework**: Next.js 14+ with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom configuration
-- **Animation**: Framer Motion + GSAP (for scroll-triggered parallax)
+- **Animation**: Motion + GSAP (for scroll-triggered parallax)
 - **Smooth Scroll**: Lenis (very slow lerp: 0.07 for cinematic feel)
 - **Output**: Single page component with all sections
 - **Mode**: Dark mode ONLY - no light mode variant
@@ -426,7 +426,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 // src/components/GradientOrbs.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface GradientOrbProps {
   color?: 'indigo' | 'emerald' | 'purple';
@@ -606,7 +606,7 @@ export function CinematicBackground() {
 // src/components/GlassPanel.tsx
 'use client';
 
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'motion/react';
 import { useRef, ReactNode } from 'react';
 
 interface GlassPanelProps {
@@ -678,7 +678,7 @@ export function GlassPanel({
 
 ```typescript
 // src/lib/animations.ts
-import { Variants, Transition } from 'framer-motion';
+import { Variants, Transition } from 'motion/react';
 
 // Base cinematic transition
 export const cinematicTransition: Transition = {
@@ -824,7 +824,7 @@ export function useCinematicScroll() {
 'use client';
 
 import { useRef } from 'react';
-import { useScroll, useTransform, MotionValue } from 'framer-motion';
+import { useScroll, useTransform, MotionValue } from 'motion/react';
 
 interface ParallaxOptions {
   offset?: [string, string];
@@ -862,7 +862,7 @@ export function useParallax(
 // src/components/Header.tsx
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'motion/react';
 import Link from 'next/link';
 
 interface HeaderProps {
@@ -945,7 +945,7 @@ export function Header({ brandName, ctaText, ctaHref }: HeaderProps) {
 // src/components/Hero.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { staggerContainer, staggerItem, slideUp } from '@/lib/animations';
 
 interface HeroProps {
@@ -1036,7 +1036,7 @@ export function Hero({ headline, subtext, ctaText, ctaHref }: HeroProps) {
 // src/components/ProductShowcase.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import Image from 'next/image';
 import { GlassPanel } from './GlassPanel';
@@ -1119,7 +1119,7 @@ export function ProductShowcase({ imageSrc, imageAlt, tagline }: ProductShowcase
 // src/components/Feature.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef, ReactNode } from 'react';
 import { slideUp, staggerContainer, staggerItem } from '@/lib/animations';
 import { useParallax } from '@/hooks/useParallax';
@@ -1204,7 +1204,7 @@ export function Feature({
 // src/components/FullWidthVisual.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import Image from 'next/image';
 import { slideUp } from '@/lib/animations';
@@ -1270,7 +1270,7 @@ export function FullWidthVisual({ imageSrc, imageAlt, headline }: FullWidthVisua
 // src/components/Quote.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 
 interface QuoteProps {
@@ -1325,7 +1325,7 @@ export function Quote({ text, author, role }: QuoteProps) {
 // src/components/CTA.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { slideUp, staggerContainer, staggerItem } from '@/lib/animations';
 
@@ -1375,7 +1375,7 @@ export function CTA({ headline, buttonText, buttonHref }: CTAProps) {
 // src/components/Footer.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import Link from 'next/link';
 
@@ -1637,7 +1637,7 @@ export const Discord = ({ className = '' }: { className?: string }) => (
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.0",
+    "motion": "^14.14.0",
     "@studio-freight/lenis": "^1.0.0",
     "gsap": "^3.12.0"
   },

@@ -1,6 +1,6 @@
 # Elegant Minimal Dashboard - Exhaustive Technical Specification
 
-Generate a complete, production-ready dashboard application using Next.js, TypeScript, Tailwind CSS, and Framer Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
+Generate a complete, production-ready dashboard application using Next.js, TypeScript, Tailwind CSS, and Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
 
 **Design Inspiration:** Craft.do (document-first beauty), Cal.com (infrastructure clarity), Linear (micro-interaction polish).
 
@@ -14,7 +14,7 @@ Generate a complete, production-ready dashboard application using Next.js, TypeS
 - Next.js 14+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
-- Framer Motion for all animations
+- Motion for all animations
 - CSS Grid with named areas
 - Keyboard-accessible (⌘K command palette)
 - Light mode primary (dark mode optional)
@@ -1408,7 +1408,7 @@ const CommandPalette = () => {
 
 ### Spring Physics Configurations
 ```typescript
-// Framer Motion Spring Configs
+// Motion Spring Configs
 const springs = {
   // Gentle - for subtle movements
   gentle: {
@@ -1771,7 +1771,7 @@ useEffect(() => {
 ## Required npm Packages
 
 ```bash
-npm install framer-motion
+npm install motion
 npm install @radix-ui/react-dialog     # For command palette
 npm install @radix-ui/react-dropdown-menu  # For menus
 npm install clsx tailwind-merge        # For conditional classes

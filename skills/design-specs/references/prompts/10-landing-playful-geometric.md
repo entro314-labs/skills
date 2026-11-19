@@ -9,7 +9,7 @@ For creative tools, design products, or when you want energetic optimism. Bold s
 - **Framework**: Next.js 14+ with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom configuration
-- **Animation**: Framer Motion (spring physics, bouncy feel)
+- **Animation**: Motion (spring physics, bouncy feel)
 - **Output**: Single page component with all sections
 
 ---
@@ -506,7 +506,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 // src/components/FloatingShape.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 type ShapeType = 'circle' | 'square' | 'triangle';
 type ColorType = 'blue' | 'pink' | 'yellow' | 'green' | 'purple' | 'orange';
@@ -664,7 +664,7 @@ export function BackgroundShapes() {
 
 ```typescript
 // src/lib/animations.ts
-import { Variants, Transition } from 'framer-motion';
+import { Variants, Transition } from 'motion/react';
 
 // Playful spring - bouncy
 export const playfulSpring: Transition = {
@@ -801,7 +801,7 @@ export const tapSquish = {
 // src/components/AnimateInView.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef, ReactNode } from 'react';
 import { fadeInBounce, popIn, playfulSpring } from '@/lib/animations';
 
@@ -894,7 +894,7 @@ export function TiltedSection({
 // src/components/Header.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import { playfulSpring, tapSquish } from '@/lib/animations';
 
@@ -972,7 +972,7 @@ export function Header({ brandName, navItems, ctaText, ctaHref }: HeaderProps) {
 // src/components/Hero.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { staggerContainer, staggerItem, playfulSpring, tapSquish } from '@/lib/animations';
 import { FloatingShape } from './FloatingShape';
 
@@ -1067,7 +1067,7 @@ export function Hero({ headline, subtext, primaryCta, secondaryCta }: HeroProps)
 // src/components/LogoMarquee.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 
 interface LogoMarqueeProps {
@@ -1128,7 +1128,7 @@ export function LogoMarquee({ logos }: LogoMarqueeProps) {
 // src/components/FeaturesBento.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { staggerContainer, staggerItem, playfulSpring, hoverLift } from '@/lib/animations';
 
@@ -1213,7 +1213,7 @@ export function FeaturesBento({ features }: FeaturesBentoProps) {
 // src/components/HowItWorks.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { staggerContainer, staggerItem, playfulSpring } from '@/lib/animations';
 
@@ -1324,7 +1324,7 @@ export function HowItWorks({ headline, steps }: HowItWorksProps) {
 // src/components/Testimonials.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import Image from 'next/image';
 import { staggerContainer, staggerItem, playfulSpring } from '@/lib/animations';
@@ -1420,7 +1420,7 @@ export function Testimonials({ headline, testimonials }: TestimonialsProps) {
 // src/components/Pricing.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { staggerContainer, staggerItem, playfulSpring, tapSquish } from '@/lib/animations';
 
@@ -1567,7 +1567,7 @@ export function Pricing({ headline, tiers }: PricingProps) {
 // src/components/CTA.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { playfulSpring, tapSquish } from '@/lib/animations';
 import { FloatingShape } from './FloatingShape';
@@ -1645,7 +1645,7 @@ export function CTA({ headline, subtext, buttonText, buttonHref }: CTAProps) {
 // src/components/Footer.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 
 interface FooterProps {
@@ -1838,7 +1838,7 @@ export function Footer({ brandName, columns, socialLinks }: FooterProps) {
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.0"
+    "motion": "^14.14.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

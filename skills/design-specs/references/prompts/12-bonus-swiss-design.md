@@ -33,7 +33,7 @@ Swiss Design is the **opposite** of decorative design. There are:
   "dependencies": {
     "next": "^14.0.0",
     "react": "^18.2.0",
-    "framer-motion": "^10.16.0", // Minimal use - page transitions only
+    "motion": "^14.14.0", // Minimal use - page transitions only
     "clsx": "^2.0.0"
   },
   "devDependencies": {
@@ -834,11 +834,11 @@ const pageTransition = {
 };
 ```
 
-### Framer Motion Configuration
+### Motion Configuration
 
 ```tsx
 // lib/motion.ts
-import { Variants, Transition } from 'framer-motion';
+import { Variants, Transition } from 'motion/react';
 
 // The ONLY transition style for Swiss Design
 export const swissTransition: Transition = {

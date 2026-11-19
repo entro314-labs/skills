@@ -1,6 +1,6 @@
 # Warm Human Dashboard - Exhaustive Technical Specification
 
-Generate a complete, production-ready dashboard application using Next.js, TypeScript, Tailwind CSS, and Framer Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
+Generate a complete, production-ready dashboard application using Next.js, TypeScript, Tailwind CSS, and Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
 
 **Design Inspiration:** Headspace (gentle, nurturing), Airbnb (warm hospitality), Calm (soothing), Duolingo (encouraging gamification), Apple Health (friendly data).
 
@@ -16,7 +16,7 @@ Generate a complete, production-ready dashboard application using Next.js, TypeS
 - Next.js 14+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
-- Framer Motion for gentle animations
+- Motion for gentle animations
 - Light mode primary (dark mode optional)
 - Mobile-first responsive design
 - Include decorative background elements
@@ -1838,7 +1838,7 @@ const sparkleVariants = {
 ## Required npm Packages
 
 ```bash
-npm install framer-motion
+npm install motion
 npm install recharts                    # For charts
 npm install react-countup               # For number animation
 npm install @radix-ui/react-dialog      # For modals

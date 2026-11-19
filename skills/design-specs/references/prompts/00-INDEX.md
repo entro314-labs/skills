@@ -44,7 +44,7 @@ Quick reference for all design system prompts. Each prompt is engineered to prod
 
 1. **Iterate section by section** - Request hero first, then features, then footer
 2. **Reject generic output** - If it looks like typical SaaS, demand structural changes
-3. **Specify libraries upfront** - Mention Framer Motion, GSAP, Lenis explicitly
+3. **Specify libraries upfront** - Mention Motion, GSAP, Lenis explicitly
 4. **Provide screenshot references** - Pair text prompts with visual examples
 
 ### Customization Points
@@ -60,7 +60,7 @@ Each prompt has placeholder areas you should customize:
 Unless changed, all prompts assume:
 - Next.js + React + TypeScript
 - Tailwind CSS
-- Framer Motion for animations
+- Motion for animations
 - Single React component output
 
 ---

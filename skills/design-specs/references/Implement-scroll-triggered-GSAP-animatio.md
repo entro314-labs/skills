@@ -1,5 +1,5 @@
 Implement scroll-triggered GSAP animations with ScrollTrigger
-Build with Framer Motion layout animations, not opacity fades
+Build with Motion layout animations, not opacity fades
 
 single-page with sections that break the grid system
 
@@ -19,7 +19,7 @@ SVG blob shapes with animated path morphing
 Intersection Observer to trigger staggered fade-ins with 100ms delays
 
 Canvas-based animations for the graph/network visualization
-Spring physics animations (they use Framer Motion with spring configs)
+Spring physics animations (they use Motion with spring configs)
 Real-time cursor tracking with smooth interpolation
 Subtle parallax on scroll with different layers moving at different rates
 Micro-interactions on every hover state with custom easing curves

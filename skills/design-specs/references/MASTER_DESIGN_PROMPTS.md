@@ -119,7 +119,7 @@ Form inputs:
 - Numbers displayed in large monospace type as the primary visual
 
 **Animation (Minimal & Intentional):**
-- Use Framer Motion with `type: "tween"` NOT springs (springs are too "soft")
+- Use Motion with `type: "tween"` NOT springs (springs are too "soft")
 - Hover: `duration: 0.1`, `ease: "easeOut"` - snappy, not fluid
 - Page transitions: hard cuts or very fast slides (200ms max)
 - Loading states: rectangular progress bars, not spinners
@@ -162,7 +162,7 @@ Form inputs:
 - `<StatusBadge>`: Uppercase, bordered, solid background colors
 
 ### Output
-Single React component file. Next.js + TypeScript + Tailwind CSS. No external icon libraries - create simple SVG shapes inline. All animations via CSS transitions or Framer Motion `tween`.
+Single React component file. Next.js + TypeScript + Tailwind CSS. No external icon libraries - create simple SVG shapes inline. All animations via CSS transitions or Motion `tween`.
 
 ---
 
@@ -233,7 +233,7 @@ This dashboard should feel like a "control center for beautiful workspaces" - co
 
 ### Animation System (Linear-style)
 
-**Spring Physics Config (Framer Motion):**
+**Spring Physics Config (Motion):**
 ```javascript
 const springConfig = {
   gentle: { type: "spring", stiffness: 150, damping: 20 },
@@ -312,7 +312,7 @@ const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 - `<CommandPalette>`: Modal with spring animation, keyboard navigation
 
 ### Output
-Single React component. Next.js + TypeScript + Tailwind. Framer Motion for all animations. CSS Grid with named areas.
+Single React component. Next.js + TypeScript + Tailwind. Motion for all animations. CSS Grid with named areas.
 
 ---
 
@@ -759,7 +759,7 @@ Every element should feel like it was meticulously crafted. The page should feel
 // Parallax layers at different speeds
 ```
 
-**Framer Motion Springs:**
+**Motion Springs:**
 ```javascript
 const premiumSpring = {
   type: "spring",
@@ -1078,7 +1078,7 @@ Per the AI insight you gathered:
 Unless specified otherwise, prompts assume:
 - Next.js + React + TypeScript
 - Tailwind CSS
-- Framer Motion for animations
+- Motion for animations
 - Output as single React component file
 
 ## Anti-Patterns to Avoid

@@ -51,7 +51,7 @@ const visualReferences = {
   "dependencies": {
     "next": "^14.0.0",
     "react": "^18.2.0",
-    "framer-motion": "^10.16.0",
+    "motion": "^14.14.0",
     "@studio-freight/lenis": "^1.0.0",
     "clsx": "^2.0.0"
   },
@@ -549,7 +549,7 @@ Animation is CENTRAL to Retro-Futurism. Orbits, pulses, and scan lines create th
 
 ```typescript
 // lib/motion.ts
-import { Variants, Transition } from 'framer-motion';
+import { Variants, Transition } from 'motion/react';
 
 // Base transitions
 export const retroTransition: Transition = {
@@ -871,7 +871,7 @@ export function Starburst({
 // components/OrbitRing.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 interface OrbitRingProps {
@@ -938,7 +938,7 @@ export function OrbitRing({
 // components/RadarDisplay.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface RadarDisplayProps {
   size?: number;
@@ -1041,7 +1041,7 @@ Retro buttons have angled shapes and bold colors.
 ```tsx
 // components/Button.tsx
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -1110,7 +1110,7 @@ Button.displayName = 'Button';
 ```tsx
 // components/RetroCard.tsx
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface RetroCardProps {
   children: React.ReactNode;
@@ -1215,7 +1215,7 @@ export function StatusLight({
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface MissionCounterProps {
   value: number;
@@ -1288,7 +1288,7 @@ export function MissionCounter({
 'use client';
 
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useState } from 'react';
 import { StatusLight } from './StatusLight';
 
@@ -1405,7 +1405,7 @@ export function Navigation() {
 // sections/HeroSection.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from '@/components/Button';
 import { Starburst } from '@/components/Starburst';
 import { OrbitRing } from '@/components/OrbitRing';
@@ -1527,7 +1527,7 @@ export function HeroSection() {
 // sections/StatsSection.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { MissionCounter } from '@/components/MissionCounter';
 import { RadarDisplay } from '@/components/RadarDisplay';
 import { StatusLight } from '@/components/StatusLight';
@@ -1608,7 +1608,7 @@ export function StatsSection() {
 // sections/TechnologySection.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { RetroCard } from '@/components/RetroCard';
 import { Starburst } from '@/components/Starburst';
 import { staggerContainer, fadeUpScale } from '@/lib/motion';
@@ -1716,7 +1716,7 @@ export function TechnologySection() {
 // sections/TimelineSection.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { staggerContainer, fadeUpScale } from '@/lib/motion';
 
 const timelineSteps = [
@@ -1814,7 +1814,7 @@ export function TimelineSection() {
 // sections/CTASection.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from '@/components/Button';
 import { DiagonalStripes } from '@/components/DiagonalStripes';
 import { Starburst } from '@/components/Starburst';
@@ -1898,7 +1898,7 @@ export function CTASection() {
 // sections/ContactSection.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from '@/components/Button';
 import { staggerContainer, fadeUpScale } from '@/lib/motion';
 

@@ -1,6 +1,6 @@
 # Warm Human Landing Page - Exhaustive Technical Specification
 
-Generate a complete, production-ready landing page using Next.js, TypeScript, Tailwind CSS, and Framer Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
+Generate a complete, production-ready landing page using Next.js, TypeScript, Tailwind CSS, and Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
 
 **Target Products:** Wellness apps (Headspace, Calm), home services (Thumbtack, Houzz), education platforms (Coursera, Skillshare), personal finance, childcare, senior care, mental health, coaching/consulting.
 
@@ -14,7 +14,7 @@ Generate a complete, production-ready landing page using Next.js, TypeScript, Ta
 - Next.js 14+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
-- Framer Motion for animations
+- Motion for animations
 - Lenis for smooth scrolling
 - Fully responsive (mobile-first)
 - Complete page with all sections implemented
@@ -664,7 +664,7 @@ module.exports = {
 
 ### Hero Animation Sequence
 ```typescript
-// Framer Motion Variants
+// Motion Variants
 const heroContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -1706,7 +1706,7 @@ const observerOptions = {
   threshold: 0,
 };
 
-// Framer Motion Scroll Reveal Variants
+// Motion Scroll Reveal Variants
 const scrollReveal = {
   hidden: {
     opacity: 0,
@@ -1894,7 +1894,7 @@ requestAnimationFrame(raf);
 
 ### Parallax Setup
 ```typescript
-import { useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'motion/react';
 
 // Hero Background Parallax
 const HeroParallax = () => {
@@ -2145,7 +2145,7 @@ const CustomCursor = () => {
 ## Required npm Packages
 
 ```bash
-npm install framer-motion @studio-freight/lenis
+npm install motion @studio-freight/lenis
 npm install @radix-ui/react-accordion  # For FAQ
 npm install clsx tailwind-merge        # For conditional classes
 ```

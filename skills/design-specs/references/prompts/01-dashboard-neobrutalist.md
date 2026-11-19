@@ -9,13 +9,13 @@ You are a senior product designer and front-end engineer. Build a complete dashb
 ## Technical Stack
 
 ```bash
-npm install framer-motion
+npm install motion
 ```
 
 - Next.js 14+ with App Router
 - React 18+ with TypeScript
 - Tailwind CSS for styling
-- Framer Motion for animations (tween-based, NOT spring)
+- Motion for animations (tween-based, NOT spring)
 - No external icon libraries - create simple inline SVGs
 
 ---
@@ -561,12 +561,12 @@ High-density table with strong visual hierarchy.
 ## Animation Specifications
 
 ### General Principles
-- Use Framer Motion with `type: "tween"` - NO springs (too soft for brutalist)
+- Use Motion with `type: "tween"` - NO springs (too soft for brutalist)
 - Durations: 0.1s for hovers, 0.15s for state changes, 0.2s max for reveals
 - Easing: "easeOut" or "linear" - avoid bouncy curves
 - Prefer instant state changes where possible
 
-### Hover Animations (Framer Motion)
+### Hover Animations (Motion)
 ```jsx
 // Card/Button hover
 <motion.div
@@ -989,7 +989,7 @@ Generate a single React component file containing:
 1. Complete AppShell with sidebar, header, and main content area
 2. At least one complete dashboard view (Overview recommended)
 3. All component styles using Tailwind classes (matching the specs above)
-4. Framer Motion animations exactly as specified
+4. Motion animations exactly as specified
 5. Example data populated for demonstration
 6. All icons as inline SVGs (no icon libraries)
 7. Proper TypeScript types throughout

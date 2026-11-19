@@ -1,6 +1,6 @@
 # Developer-First Dark Dashboard - Exhaustive Technical Specification
 
-Generate a complete, production-ready developer dashboard using Next.js, TypeScript, Tailwind CSS, and Framer Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
+Generate a complete, production-ready developer dashboard using Next.js, TypeScript, Tailwind CSS, and Motion. This specification defines every visual element, animation parameter, and interactive behavior. Do not deviate from these values.
 
 **Design Inspiration:** Linear (polish + speed), Supabase Studio (data-centric), VS Code (IDE layout), Vercel Dashboard (dark aesthetic), GitHub (developer patterns).
 
@@ -14,7 +14,7 @@ Generate a complete, production-ready developer dashboard using Next.js, TypeScr
 - Next.js 14+ with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
-- Framer Motion for minimal, fast animations
+- Motion for minimal, fast animations
 - Dark mode only (no light mode)
 - Keyboard-accessible (Command Palette + shortcuts)
 - Monospace fonts for all data
@@ -2398,7 +2398,7 @@ const tableShortcuts = {
 ## Required npm Packages
 
 ```bash
-npm install framer-motion
+npm install motion
 npm install @radix-ui/react-dialog        # Modals
 npm install @radix-ui/react-dropdown-menu # Dropdowns
 npm install @radix-ui/react-checkbox      # Checkboxes

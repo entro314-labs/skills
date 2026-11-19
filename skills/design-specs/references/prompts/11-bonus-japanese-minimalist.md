@@ -9,7 +9,7 @@ A landing page inspired by Japanese design principles: Ma (negative space), Wabi
 - **Framework**: Next.js 14+ with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom configuration
-- **Animation**: Framer Motion (extremely subtle - nearly imperceptible)
+- **Animation**: Motion (extremely subtle - nearly imperceptible)
 - **Smooth Scroll**: Lenis (very slow lerp: 0.05)
 - **Output**: Single page component with all sections
 
@@ -638,7 +638,7 @@ const GrainFilter = () => (
 
 ```typescript
 // src/lib/animations.ts
-import { Variants, Transition } from 'framer-motion';
+import { Variants, Transition } from 'motion/react';
 
 // Base transition - very slow, contemplative
 export const zenTransition: Transition = {
@@ -784,7 +784,7 @@ export function useZenScroll() {
 // src/components/ScrollReveal.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef, ReactNode } from 'react';
 import { paperSettle, fadeIn } from '@/lib/animations';
 
@@ -834,7 +834,7 @@ export function ScrollReveal({
 // src/components/Header.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import { fadeIn } from '@/lib/animations';
 
@@ -923,7 +923,7 @@ export function Header({ brandName, navItems }: HeaderProps) {
 // src/components/Hero.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { staggerContainer, staggerItem, lineDraw } from '@/lib/animations';
 
 interface HeroProps {
@@ -1018,7 +1018,7 @@ export function Hero({ headline, subtitle, ctaText, ctaHref }: HeroProps) {
 // src/components/Philosophy.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { fadeIn, lineDraw } from '@/lib/animations';
 
@@ -1087,7 +1087,7 @@ export function Philosophy({ quote, attribution }: PhilosophyProps) {
 // src/components/Feature.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import Image from 'next/image';
 
@@ -1210,7 +1210,7 @@ export function Feature({
 // src/components/FullBleedImage.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import Image from 'next/image';
 
@@ -1266,7 +1266,7 @@ export function FullBleedImage({ imageSrc, imageAlt, caption }: FullBleedImagePr
 // src/components/VerticalAccent.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 
 interface VerticalAccentProps {
@@ -1324,7 +1324,7 @@ export function VerticalAccent({ kanji, meaning }: VerticalAccentProps) {
 // src/components/Principles.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 
 interface Principle {
@@ -1394,7 +1394,7 @@ export function Principles({ principles }: PrinciplesProps) {
 // src/components/Testimonial.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 
 interface TestimonialProps {
@@ -1458,7 +1458,7 @@ export function Testimonial({ quote, author, role, company }: TestimonialProps) 
 // src/components/CTA.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 
 interface CTAProps {
@@ -1510,7 +1510,7 @@ export function CTA({ headline, buttonText, buttonHref }: CTAProps) {
 // src/components/Footer.tsx
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import Link from 'next/link';
 
@@ -1996,7 +1996,7 @@ export function ZenImage({
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.0",
+    "motion": "^14.14.0",
     "@studio-freight/lenis": "^1.0.0"
   },
   "devDependencies": {

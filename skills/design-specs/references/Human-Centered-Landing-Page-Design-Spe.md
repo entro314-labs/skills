@@ -209,12 +209,12 @@
 
 **Core Libraries:**
 ```
-npm install gsap @studio-freight/lenis framer-motion
+npm install gsap @studio-freight/lenis motion
 ```
 
 **Simplified Patterns:**
 - Lenis smooth scroll (config: lerp: 0.1, duration: 1.2)
-- Framer Motion for hover states and reveals
+- Motion for hover states and reveals
 - Intersection Observer for scroll triggers
 - CSS custom properties for theming
 - requestAnimationFrame for floating circles only

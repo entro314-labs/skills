@@ -6,7 +6,7 @@ Generate a **single React component** that renders a complete neobrutalist landi
 - Next.js 14+ with App Router
 - TypeScript strict mode
 - Tailwind CSS with custom configuration below
-- Framer Motion for animations (TWEEN ONLY - NO SPRINGS)
+- Motion for animations (TWEEN ONLY - NO SPRINGS)
 - NO external icon libraries - custom stroke-only SVG icons
 - Mobile-first responsive design
 
@@ -2194,7 +2194,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(1);
 Neobrutalism demands snappy, intentional animations. NO elastic/bouncy movements.
 
 ```typescript
-// Framer Motion Configuration
+// Motion Configuration
 // ONLY USE THESE TRANSITION TYPES:
 
 // Snappy hover states
@@ -2525,7 +2525,7 @@ export function GitHubIcon({ className = '' }: { className?: string }) {
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 
 interface AnimatedCounterProps {
   value: number;
@@ -2591,7 +2591,7 @@ export function AnimatedCounter({
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.0"
+    "motion": "^14.14.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
@@ -2773,7 +2773,7 @@ export const sampleData = {
 1. **Rounded corners** - NEVER use border-radius > 0 anywhere
 2. **Soft/blurred shadows** - ALL shadows must be solid offset (blur: 0)
 3. **Gradients** - NO linear-gradient, radial-gradient, or gradient overlays
-4. **Spring animations** - NO Framer Motion spring physics, bouncy effects
+4. **Spring animations** - NO Motion spring physics, bouncy effects
 5. **Smooth scrolling** - Native scroll only, no Lenis/Locomotive
 6. **Icon libraries** - NO Lucide, Heroicons, Feather, etc. Custom stroke SVGs only
 7. **Symmetric layouts** - Avoid centered, equal-column grids

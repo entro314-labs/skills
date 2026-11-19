@@ -6,7 +6,7 @@ Generate a **single React component** that renders a complete editorial/magazine
 - Next.js 14+ with App Router
 - TypeScript strict mode
 - Tailwind CSS with custom configuration below
-- Framer Motion for minimal scroll reveals (images only)
+- Motion for minimal scroll reveals (images only)
 - Mobile-first responsive design
 - CSS Grid for complex editorial layouts
 
@@ -1856,7 +1856,7 @@ const relatedArticles = [
 Editorial design relies on typography, not animation. Use restraint.
 
 ```typescript
-// Framer Motion Configuration
+// Motion Configuration
 // ONLY for image reveals - NO text animation
 
 // Simple image fade + scale on scroll into view
@@ -1957,7 +1957,7 @@ export function EditorialLink({ href, children, external }: EditorialLinkProps) 
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.0"
+    "motion": "^14.14.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
@@ -1971,7 +1971,7 @@ export function EditorialLink({ href, children, external }: EditorialLinkProps) 
 }
 ```
 
-**Note**: Minimal dependencies. No animation libraries beyond Framer Motion. No icon libraries (no icons needed). Focus on typography.
+**Note**: Minimal dependencies. No animation libraries beyond Motion. No icon libraries (no icons needed). Focus on typography.
 
 ---
 

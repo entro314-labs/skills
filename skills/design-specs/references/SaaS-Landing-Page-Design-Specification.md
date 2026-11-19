@@ -153,13 +153,13 @@
 
 **Libraries:**
 ```
-npm install gsap @studio-freight/lenis framer-motion
+npm install gsap @studio-freight/lenis motion
 npm install locomotive-scroll splitting
 ```
 
 **Core Patterns:**
 - CSS Grid with explicit track sizing: grid-template-columns: repeat(12, 1fr)
-- Framer Motion spring: transition={{ type: "spring", stiffness: 200, damping: 20 }}
+- Motion spring: transition={{ type: "spring", stiffness: 200, damping: 20 }}
 - Intersection Observer for scroll triggers with rootMargin: "-20%"
 - Canvas animations with requestAnimationFrame loop
 - Web Animations API for choreographed sequences

@@ -9,13 +9,13 @@ You are a senior product designer and front-end engineer. Build a complete landi
 ## Technical Stack
 
 ```bash
-npm install framer-motion gsap @studio-freight/lenis
+npm install motion gsap @studio-freight/lenis
 ```
 
 - Next.js 14+ with App Router
 - React 18+ with TypeScript
 - Tailwind CSS for all styling
-- Framer Motion for component animations
+- Motion for component animations
 - GSAP + ScrollTrigger for scroll-based animations
 - Lenis for smooth scrolling
 - Canvas API for particle system
@@ -165,7 +165,7 @@ The page consists of exactly these sections in order:
    - "Sign in" link: same style as nav
    - Primary CTA button: "Get Started" or "Start Free"
 
-### Header Animation (Framer Motion)
+### Header Animation (Motion)
 ```jsx
 <motion.header
   initial={{ y: -100, opacity: 0 }}
@@ -425,7 +425,7 @@ export function ParticleCanvas() {
 }
 ```
 
-### Hero Animations (Framer Motion)
+### Hero Animations (Motion)
 ```jsx
 // Staggered entrance
 const heroVariants = {
@@ -1278,7 +1278,7 @@ useEffect(() => {
 // components/CustomCursor.tsx
 'use client';
 import { useEffect, useRef } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'motion/react';
 
 export function CustomCursor() {
   const cursorX = useMotionValue(0);
@@ -1399,7 +1399,7 @@ Generate a single complete landing page with:
 2. Canvas particle system in hero
 3. Custom cursor component
 4. Smooth scroll with Lenis
-5. All scroll-triggered animations with GSAP/Framer Motion
+5. All scroll-triggered animations with GSAP/Motion
 6. Responsive design for all breakpoints
 7. Complete CSS/Tailwind styling matching specs
 8. TypeScript types throughout

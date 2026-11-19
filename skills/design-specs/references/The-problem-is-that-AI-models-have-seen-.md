@@ -6,7 +6,7 @@ Reference specific aesthetics, not abstract qualities:
 Use CSS Grid with named grid areas, not flex containers
 Implement scroll-triggered GSAP animations with ScrollTrigger
 Use variable fonts with animation on font-weight and width axes
-Build with Framer Motion layout animations, not opacity fades
+Build with Motion layout animations, not opacity fades
 
 Break the component pattern:
 
@@ -31,7 +31,7 @@ Right - because the AI is pattern-matching the visual style but stripping out th
 What Linear actually does:
 
 Canvas-based animations for the graph/network visualization
-Spring physics animations (they use Framer Motion with spring configs)
+Spring physics animations (they use Motion with spring configs)
 Subtle parallax on scroll with different layers moving at different rates
 Micro-interactions on every hover state with custom easing curves
 
