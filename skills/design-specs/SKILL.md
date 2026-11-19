@@ -40,7 +40,7 @@ Every style folder uses the same file names:
 |---|---|
 | `brief.md` | The short prompt for the style |
 | `index.md` | Entry point: output requirements, structure overview, what to avoid, final notes, and the parts table |
-| `tokens.md` | Colors, typography, layout, spacing and global styles. The Tailwind theme blocks are here in paste order (the Swiss spec also keeps its transition tokens in `motion.md`) |
+| `tokens.md` | Colors, typography, layout, spacing and global styles. The Tailwind theme blocks are here in the order they must appear in `globals.css` (the Swiss spec also keeps its transition tokens in `motion.md`) |
 | `motion.md` | Animation system, timing, smooth scroll, cursor |
 | `components.md` | Buttons, forms, icons and other shared components |
 | `sections.md` | Page sections (landing pages) or dashboard views, in page order |
@@ -84,6 +84,7 @@ Tailwind v4 behavior the specs rely on:
 
 - Theme tokens are CSS variables. `--color-washi` in `@theme` creates `bg-washi`, `text-washi` and the variable `var(--color-washi)`. A `:root` variable that shares a theme name (for example `--shadow-md` or `--leading-tight`) also restyles the matching utility.
 - Tokens that point at another variable, such as `next/font` variables, go in `@theme inline`.
+- `globals.css` has one `@import "tailwindcss"`. A Google Fonts `@import url(...)` goes above it; a browser ignores an `@import` that follows other rules.
 - Any whole number works without a theme entry: `duration-800`, `border-3`, `z-9999`, `rotate-3`.
 - Buttons no longer get `cursor: pointer` from Preflight. Add `cursor-pointer`.
 - `border` and `ring` default to `currentColor`, and `ring` is 1px. Always name the color and width.

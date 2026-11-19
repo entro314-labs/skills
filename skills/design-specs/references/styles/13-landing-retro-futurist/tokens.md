@@ -453,8 +453,7 @@ const sectionSpacing = {
 
 ```css
 /* app/globals.css */
-@import "tailwindcss";
-/* @theme tokens: see the Tailwind theme blocks above */
+/* Continues globals.css, after the @import "tailwindcss" line and the @theme blocks above */
 
 @layer base {
   * {

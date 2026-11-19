@@ -160,6 +160,8 @@ Part of the [Developer-First Dark Dashboard specification](index.md).
 
 ### Font Stack
 ```css
+/* Put these @import lines at the very top of globals.css, above @import "tailwindcss".
+   A browser ignores an @import that comes after other rules. */
 /* UI Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 

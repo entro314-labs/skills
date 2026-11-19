@@ -688,8 +688,7 @@ const sectionSpacing = {
 
 ```css
 /* app/globals.css */
-@import "tailwindcss";
-/* @theme tokens: the theme blocks above, plus the transition tokens in motion.md */
+/* Continues globals.css, after the @import "tailwindcss" line and the @theme blocks above, and the transition tokens in motion.md */
 
 @layer base {
   * {

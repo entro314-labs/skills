@@ -143,6 +143,8 @@ Part of the [Warm Human Landing Page specification](index.md).
 
 ### Font Stack
 ```css
+/* Put these @import lines at the very top of globals.css, above @import "tailwindcss".
+   A browser ignores an @import that comes after other rules. */
 /* Serif - Headlines & Quotes */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
 
