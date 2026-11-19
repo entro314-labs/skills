@@ -27,25 +27,14 @@ Swiss Design is the **opposite** of decorative design. There are:
 
 ## Technical Stack
 
-```typescript
-// Required dependencies
-{
-  "dependencies": {
-    "next": "^16.4.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
-    "motion": "^14.14.0", // Minimal use - page transitions only
-    "clsx": "^2.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.0",
-    "@types/react": "^19.3.0",
-    "typescript": "^7.0.0",
-    "tailwindcss": "^4.3.0",
-    "@tailwindcss/postcss": "^4.3.0"
-  }
-}
+```bash
+npm install next react react-dom motion clsx
+npm install -D @types/node @types/react typescript tailwindcss @tailwindcss/postcss
 ```
+
+`motion`: Minimal use - page transitions only.
+
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
 
 ---
 

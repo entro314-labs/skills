@@ -45,26 +45,12 @@ const visualReferences = {
 
 ## Technical Stack
 
-```typescript
-// Required dependencies
-{
-  "dependencies": {
-    "next": "^16.4.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
-    "motion": "^14.14.0",
-    "lenis": "^1.3.0",
-    "clsx": "^2.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.0",
-    "@types/react": "^19.3.0",
-    "typescript": "^7.0.0",
-    "tailwindcss": "^4.3.0",
-    "@tailwindcss/postcss": "^4.3.0"
-  }
-}
+```bash
+npm install next react react-dom motion lenis clsx
+npm install -D @types/node @types/react typescript tailwindcss @tailwindcss/postcss
 ```
+
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
 
 ---
 

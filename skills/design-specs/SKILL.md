@@ -46,17 +46,24 @@ The brief for style N is section "N." of [references/master-design-prompts.md](r
 
 ## Stack the specs assume
 
-Versions were checked against the npm registry on 2026-11-19. Where a spec conflicts with current official documentation or with the versions installed in the project, the official docs and the project win.
+Versions were checked against the npm registry on 2026-11-19, and a Next.js app built from these versions with spec 09's theme and hooks compiles. Where a spec conflicts with current official documentation or with the versions installed in the project, the official docs and the project win.
 
 | Package | Version | Notes |
 |---|---|---|
 | `next` | 16.4 | App Router |
 | `react`, `react-dom` | 19.3 | `ref` is a regular prop; no `forwardRef` |
 | `typescript` | 7.0 | |
+| `@types/react`, `@types/react-dom` | 19.3 | |
+| `@types/node` | 26.6 | |
 | `tailwindcss`, `@tailwindcss/postcss` | 4.3 | CSS-first config: `@import "tailwindcss"` and `@theme` in `globals.css`, no `tailwind.config.js` |
+| `postcss` | 8.5 | |
 | `motion` | 14.14 | The package formerly named `framer-motion`. Import from `motion/react` |
 | `lenis` | 1.3 | The package formerly named `@studio-freight/lenis` |
 | `gsap` | 3.15 | With ScrollTrigger, in the specs that use it |
+| `clsx` | 2.1 | |
+| `tailwind-merge` | 3.7 | 3.x is the line that understands Tailwind 4 class names |
+
+This table is the only place versions are written down. The specs list package names without versions, so a version refresh edits this table and nothing else. Packages a single spec adds (Radix primitives, `cmdk`, `recharts`, `lucide-react` and similar) are installed at their current release.
 
 Output defaults to a single React component file unless the request says otherwise.
 

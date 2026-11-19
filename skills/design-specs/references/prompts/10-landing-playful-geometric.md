@@ -6,7 +6,7 @@ For creative tools, design products, or when you want energetic optimism. Bold s
 
 ## Output Requirements
 
-- **Framework**: Next.js 16+ with App Router
+- **Framework**: Next.js with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS with custom configuration
 - **Animation**: Motion (spring physics, bouncy feel)
@@ -1802,24 +1802,12 @@ export function Footer({ brandName, columns, socialLinks }: FooterProps) {
 
 ## Required npm Packages
 
-```json
-{
-  "dependencies": {
-    "next": "^16.4.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
-    "motion": "^14.14.0"
-  },
-  "devDependencies": {
-    "typescript": "^7.0.0",
-    "@types/react": "^19.3.0",
-    "@types/node": "^26.6.0",
-    "tailwindcss": "^4.3.0",
-    "@tailwindcss/postcss": "^4.3.0",
-    "postcss": "^8.5.0"
-  }
-}
+```bash
+npm install next react react-dom motion
+npm install -D typescript @types/react @types/node tailwindcss @tailwindcss/postcss postcss
 ```
+
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
 
 ---
 

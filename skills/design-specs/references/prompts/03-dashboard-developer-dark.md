@@ -11,7 +11,7 @@ Generate a complete, production-ready developer dashboard using Next.js, TypeScr
 ## Output Requirements
 
 - Single React component (or page with imported components)
-- Next.js 16+ with App Router
+- Next.js with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
 - Motion for minimal, fast animations
@@ -2404,6 +2404,8 @@ npm install prismjs                       # Syntax highlighting
 npm install lucide-react                  # Icons
 npm install clsx tailwind-merge           # Utilities
 ```
+
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
 
 ---
 

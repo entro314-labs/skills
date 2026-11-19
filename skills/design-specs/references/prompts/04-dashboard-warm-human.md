@@ -13,7 +13,7 @@ Generate a complete, production-ready dashboard application using Next.js, TypeS
 ## Output Requirements
 
 - Single React component (or page with imported components)
-- Next.js 16+ with App Router
+- Next.js with App Router
 - TypeScript strict mode
 - Tailwind CSS for all styling
 - Motion for gentle animations
@@ -1838,6 +1838,8 @@ npm install @radix-ui/react-progress    # For progress components
 npm install clsx tailwind-merge         # For utilities
 npm install lucide-react                # For icons
 ```
+
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
 
 ---
 

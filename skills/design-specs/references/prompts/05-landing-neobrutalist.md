@@ -3,7 +3,7 @@
 ## Output Requirements
 
 Generate a **single React component** that renders a complete neobrutalist landing page. Requirements:
-- Next.js 16+ with App Router
+- Next.js with App Router
 - TypeScript strict mode
 - Tailwind CSS v4 with the custom theme below
 - Motion for animations (TWEEN ONLY - NO SPRINGS)
@@ -2597,25 +2597,12 @@ export function AnimatedCounter({
 
 ## Required npm Packages
 
-```json
-{
-  "dependencies": {
-    "next": "^16.4.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
-    "motion": "^14.14.0"
-  },
-  "devDependencies": {
-    "typescript": "^7.0.0",
-    "@types/node": "^26.6.0",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "tailwindcss": "^4.3.0",
-    "@tailwindcss/postcss": "^4.3.0",
-    "postcss": "^8.5.0"
-  }
-}
+```bash
+npm install next react react-dom motion
+npm install -D typescript @types/node @types/react @types/react-dom tailwindcss @tailwindcss/postcss postcss
 ```
+
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
 
 **Note**: Minimal dependencies. No GSAP (use CSS animations instead). No Lenis (native scroll). No icon libraries (custom stroke SVGs).
 

@@ -12,8 +12,10 @@ You are a senior product designer and front-end engineer. Build a complete landi
 npm install motion gsap lenis
 ```
 
-- Next.js 16+ with App Router
-- React 19+ with TypeScript
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
+
+- Next.js with App Router
+- React with TypeScript
 - Tailwind CSS for all styling
 - Motion for component animations
 - GSAP + ScrollTrigger for scroll-based animations

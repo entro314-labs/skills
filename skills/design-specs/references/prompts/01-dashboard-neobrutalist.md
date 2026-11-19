@@ -12,8 +12,10 @@ You are a senior product designer and front-end engineer. Build a complete dashb
 npm install motion
 ```
 
-- Next.js 16+ with App Router
-- React 19+ with TypeScript
+Install the current releases. The versions this spec was checked against are in the stack table in the skill's SKILL.md.
+
+- Next.js with App Router
+- React with TypeScript
 - Tailwind CSS for styling
 - Motion for animations (tween-based, NOT spring)
 - No external icon libraries - create simple inline SVGs
