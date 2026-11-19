@@ -1,0 +1,3 @@
+The `backdrop-blur-xl` combined with `-translate-x-1/2` can cause compositing issues on some browsers. Let me try adding `will-change-transform` to force GPU acceleration and prevent flickering:
+
+Added `will-change-transform` which tells the browser to prepare this element for GPU-accelerated compositing. This should help with the flickering caused by the `backdrop-blur-xl` + `-translate-x-1/2` combination.

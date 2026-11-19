@@ -1,0 +1,87 @@
+{
+  "projectName": "Claude Code Documentation",
+  "description": "Command documentation system with drift prevention",
+
+  "hooks": {
+    "pre-tool-use": [
+      "# Before any Edit/Write operation on command files",
+      "if [[ \"$CLAUDE_TOOL\" == \"Edit\" || \"$CLAUDE_TOOL\" == \"Write\" || \"$CLAUDE_TOOL\" == \"MultiEdit\" ]]; then",
+      "  if [[ \"$CLAUDE_TOOL_ARGS\" == *\"/commands/\"* ]]; then",
+      "    echo '🔍 Validating command file changes...'",
+      "    ./.claude/hooks/pre-edit-validation.sh \"$CLAUDE_TOOL_ARGS\"",
+      "  fi",
+      "fi"
+    ],
+
+    "post-tool-use": [
+      "# After any Edit/Write operation",
+      "if [[ \"$CLAUDE_TOOL\" == \"Edit\" || \"$CLAUDE_TOOL\" == \"Write\" || \"$CLAUDE_TOOL\" == \"MultiEdit\" ]]; then",
+      "  if [[ \"$CLAUDE_TOOL_ARGS\" == *\"/commands/\"* ]]; then",
+      "    ./.claude/hooks/post-edit-update.sh \"$CLAUDE_TOOL_ARGS\"",
+      "  fi",
+      "fi"
+    ],
+
+    "session-start": [
+      "echo '📖 DRIFT PREVENTION ACTIVE'",
+      "echo 'Remember to:'",
+      "echo '  1. Check PROJECT_MANIFEST.md for current patterns'",
+      "echo '  2. Review REFACTOR_PLAN.md for priority issues'",
+      "echo '  3. Use /validate --all to check current state'",
+      "if [ -f 'REFACTOR_PLAN.md' ]; then",
+      "  blocking_issues=$(grep -c '🔴.*\\[ \\]' REFACTOR_PLAN.md || echo '0')",
+      "  if [ \"$blocking_issues\" -gt 0 ]; then",
+      "    echo \"⚠️  $blocking_issues blocking issues in REFACTOR_PLAN.md\"",
+      "  fi",
+      "fi"
+    ],
+
+    "session-end": [
+      "echo '📝 SESSION END CHECKLIST:'",
+      "echo '  □ Updated CLAUDE.md with architectural decisions'",
+      "echo '  □ Updated REFACTOR_PLAN.md with any new issues identified'",
+      "echo '  □ Updated PROJECT_MANIFEST.md if patterns changed'",
+      "echo '  □ Ran final validation: /standardize --aspect all'",
+      "echo ''",
+      "echo 'Next session: Read PROJECT_MANIFEST.md first!'"
+    ]
+  },
+
+  "validation": {
+    "commandSyntax": {
+      "description": "Prevent /project:command syntax drift",
+      "pattern": "/project:",
+      "severity": "error",
+      "message": "Use /command syntax instead of /project:command"
+    },
+
+    "requiredFrontmatter": {
+      "description": "Ensure command files have proper structure",
+      "requiredFields": ["slashCommand", "examples", "description", "permissions"]
+    }
+  },
+
+  "reminders": {
+    "beforeMajorChanges": [
+      "Check PROJECT_MANIFEST.md for established patterns",
+      "Consider impact on related commands",
+      "Update cross-references if needed"
+    ],
+
+    "afterChanges": [
+      "Test changes with /validate --all",
+      "Update documentation if patterns changed",
+      "Consider running /standardize --aspect all"
+    ]
+  },
+
+  "quickCommands": {
+    "drift-check": "/validate --all && /review latest --quick",
+    "weekly-maintenance": "/standardize --aspect all && /technical-debt --dependencies",
+    "monthly-cleanup": "/technical-debt --full && /clean --duplicates && /dependencies analyze"
+  },
+
+  "memoryFiles": ["CLAUDE.md", "PROJECT_MANIFEST.md", "REFACTOR_PLAN.md"],
+
+  "autoIncludeFiles": ["PROJECT_MANIFEST.md", "REFACTOR_PLAN.md"]
+}
