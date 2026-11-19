@@ -1,6 +1,8 @@
 # Master Design Prompts
 
 > Base prompts engineered to produce genuinely unique, bespoke designs that avoid typical AI patterns.
+>
+> These are the brief versions (roughly 40-150 lines per style). Each has an exhaustive counterpart with the same number in [prompts/](prompts/).
 
 ---
 
@@ -15,7 +17,7 @@
 2. [Landing Pages](#landing-pages)
    - [Neobrutalist Landing Page](#5-neobrutalist-landing-page)
    - [Warm Human Landing Page](#6-warm-human-landing-page)
-   - [Editorial/Magazine Landing Page](#7-editorial-magazine-landing-page)
+   - [Editorial/Magazine Landing Page](#7-editorialmagazine-landing-page)
    - [Tech SaaS Premium (Linear/Supabase/Clerk Fusion)](#8-tech-saas-premium-landing-page)
    - [Cinematic Dark Landing Page](#9-cinematic-dark-landing-page)
    - [Playful Geometric Landing Page](#10-playful-geometric-landing-page)
@@ -1057,36 +1059,4 @@ Bridging 1960s space-age optimism with modern capabilities.
 
 # Usage Notes
 
-## How to Use These Prompts
-
-1. **Select the appropriate prompt** for your use case
-2. **Customize the product description** where indicated
-3. **Specify your tech stack** if different from defaults
-4. **Add specific features** you need for your product
-5. **Request section-by-section** implementation for best results
-
-## Iteration Strategy
-
-Per the AI insight you gathered:
-- Iterate section by section rather than requesting full pages
-- Reject first output if it feels generic - demand structural changes
-- Ask for specific animation libraries/techniques upfront
-- Provide screenshot references alongside text prompts when possible
-
-## Technical Defaults
-
-Unless specified otherwise, prompts assume:
-- Next.js + React + TypeScript
-- Tailwind CSS
-- Motion for animations
-- Output as single React component file
-
-## Anti-Patterns to Avoid
-
-Always explicitly tell the AI to NOT do these:
-- 3-column equal-width feature card grids
-- Centered hero with text-over-image
-- Generic rounded cards with soft shadows
-- Gradient backgrounds with floating shapes (unless intentional)
-- Stock icon libraries (Heroicons, Lucide as generic)
-- "Trust the process" / "Built with love" style copy
+How to customize and iterate on these prompts, and the anti-patterns to reject, are in [prompting-notes.md](prompting-notes.md). The stack the prompts assume is in [SKILL.md](../SKILL.md).
