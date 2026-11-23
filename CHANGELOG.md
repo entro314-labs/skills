@@ -16,4 +16,5 @@
 
 ### Changed
 
+- `crete` 1.1.1: the plugin carries a display name, "Athens to Crete", so it is listed by its name where plugins are shown.
 - `design-specs`: specs now target Next.js 16, React 19, TypeScript 7, Tailwind CSS 4 (CSS `@theme` blocks instead of `tailwind.config`), Motion 14 (`motion/react`, replacing `framer-motion`), Lenis 1.3 (`lenis`, replacing `@studio-freight/lenis`) and GSAP 3.15. `SKILL.md` is now a style picker and the only place package versions are written; the specs name packages without versions. Each style has its own folder under `references/styles/` with a `brief.md`, an `index.md` entry point and the full specification split into parts (`tokens.md`, `motion.md`, `components.md`, `sections.md`, `page.md`), replacing the single 1,000-2,800 line files and the combined master prompts file. Each colour value is now written once per spec, in the Tailwind theme. The three overlapping layout notes are merged into `technique-checklist.md`, and the two prompting notes and the prompt index into `prompting-notes.md`.
