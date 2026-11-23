@@ -8,6 +8,7 @@ Agent Skills from entro314.labs. Each skill is a folder under `skills/` with a `
 | --- | --- |
 | [ui-declutter](skills/ui-declutter/SKILL.md) | Edits the visible text and decoration of a web page, app screen, game menu, chart or dashboard down to what its user needs. |
 | [ux-joy-audit](skills/ux-joy-audit/SKILL.md) | Audits pages and flows for clear, human copy, low-friction onboarding, waiting states, micro-interactions and component fit, then applies the approved changes. Includes a fit guide for Iris UI components. |
+| [socratic-method](skills/socratic-method/SKILL.md) | Leads the user to their own answer with one open question at a time: examines a claim, plan, design or decision, or teaches a concept, and answers directly once asked to. |
 
 ### brand-writing
 
@@ -223,6 +224,7 @@ Add the marketplace once, then install the plugins you want:
 /plugin marketplace add entro314-labs/skills
 /plugin install ui-declutter@entro314-labs
 /plugin install ux-joy-audit@entro314-labs
+/plugin install socratic-method@entro314-labs
 /plugin install brand-writing@entro314-labs
 /plugin install remotion@entro314-labs
 /plugin install crete@entro314-labs
@@ -241,6 +243,7 @@ The same from a shell:
 claude plugin marketplace add entro314-labs/skills
 claude plugin install ui-declutter@entro314-labs
 claude plugin install ux-joy-audit@entro314-labs
+claude plugin install socratic-method@entro314-labs
 claude plugin install brand-writing@entro314-labs
 claude plugin install remotion@entro314-labs
 claude plugin install crete@entro314-labs

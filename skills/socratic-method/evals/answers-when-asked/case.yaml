@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: answers-when-asked
+expected_outcome: |
+  The reply answers the question directly: the retry loop should have jitter, with a short reason. It does not withhold the answer behind another question.

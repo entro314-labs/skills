@@ -12,6 +12,7 @@
 - `crete` plugin (Athens to Crete methodology) in `plugins/crete/`, moved here from `entro314-labs/athens-to-crete`.
 - Seven plugins (123 skills, 3 subagents) converted from earlier Claude Code slash commands, analysis prompts and guide collections: `codebase-analysis`, `business-analysis`, `drift-prevention`, `code-quality`, `thinking-tools`, `dev-guides` (with the `ui-engineer`, `ui-ux-designer` and `react-nextjs-expert` subagents) and `dev-workflow`.
 - `ux-joy-audit` skill: a five-lens audit of pages and flows (comprehension, human copy and voice, onboarding, waiting states and micro-interactions, component fit), with references for dry-wit message pools and Iris UI component fit.
+- `socratic-method` skill: asks the user one open question at a time so they reach their own conclusion about a claim, plan, design or concept, answers directly when asked to, and closes with what changed and what is still open.
 
 ### Changed
 

@@ -27,6 +27,15 @@
       ]
     },
     {
+      "name": "socratic-method",
+      "description": "Lead the user to their own answer with one open question at a time: examine a claim, plan or design, or teach a concept, and answer directly once asked to.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/socratic-method"
+      ]
+    },
+    {
       "name": "brand-writing",
       "description": "Six interlocking writing skills: positioning and messaging, brand voice, copywriting, landing-page copy, copy editing and UX writing.",
       "source": "./",

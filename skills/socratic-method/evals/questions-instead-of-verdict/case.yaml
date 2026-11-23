@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: questions-instead-of-verdict
+expected_outcome: |
+  The reply gives no verdict on moving from Redis to Kafka and no recommendation. It ends on a single open question that picks up something the user said, and it waits for the answer.

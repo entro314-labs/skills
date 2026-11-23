@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: states-a-fact-then-asks
+expected_outcome: |
+  The reply states the fact the user cannot reason out, that the header is Cache-Control with the max-age directive, and then continues the Socratic session with a single open question about HTTP caching.
