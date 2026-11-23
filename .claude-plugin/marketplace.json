@@ -18,6 +18,15 @@
       ]
     },
     {
+      "name": "ux-joy-audit",
+      "description": "Audit pages and flows for clear, human copy, low-friction onboarding, waiting states, micro-interactions and component fit, then apply the approved changes.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/ux-joy-audit"
+      ]
+    },
+    {
       "name": "brand-writing",
       "description": "Six interlocking writing skills: positioning and messaging, brand voice, copywriting, landing-page copy, copy editing and UX writing.",
       "source": "./",
